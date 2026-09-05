@@ -209,6 +209,23 @@ human reviewer, custom deployment-branch policies enabled, and exactly one
 deployment rule for `main`. The environment configuration was read back through
 the GitHub API and matched those controls.
 
+### Post-bootstrap plan-role refresh evidence
+
+GitHub Actions run `33987438994` exercised the plan role against the populated
+production state for the first time. Both validation jobs and `app:build`
+passed, while `infra:plan` stopped during refresh because AWS denied the two
+read-only actions `cloudfront:DescribeFunction` and
+`s3:GetReplicationConfiguration`. Apply, publication, and smoke-check jobs were
+skipped, so the failed run made no production change.
+
+The locked AWS provider 6.63.0 S3 bucket read implementation and the exact job
+log were reviewed before changing the policy. After separate explicit human
+approval, a saved bootstrap plan updated only
+`aws_iam_role_policy.plan_read` in place to add those two actions: 0 resources
+were added, 1 changed, and 0 destroyed. A fresh bootstrap plan then reported no
+changes, and the AWS policy simulator returned `allowed` for both actions on the
+scoped production resources.
+
 The project owner added the separate one.com application CNAME for
 `nordhold.asperntallow.de`. Both authoritative one.com name servers and the
 public resolver subsequently returned `d195tdpz6cudel.cloudfront.net`. An HTTPS

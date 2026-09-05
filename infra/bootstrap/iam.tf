@@ -145,6 +145,7 @@ data "aws_iam_policy_document" "plan_read" {
       "acm:GetCertificate",
       "acm:ListCertificates",
       "acm:ListTagsForCertificate",
+      "cloudfront:DescribeFunction",
       "cloudfront:Get*",
     ]
     resources = ["*"]
@@ -159,6 +160,7 @@ data "aws_iam_policy_document" "plan_read" {
       "s3:GetEncryptionConfiguration",
       "s3:GetLifecycleConfiguration",
       "s3:GetObjectAttributes",
+      "s3:GetReplicationConfiguration",
       "s3:ListBucket",
       "s3:ListBucketVersions",
     ]
