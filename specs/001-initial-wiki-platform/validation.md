@@ -277,3 +277,39 @@ in the application bucket and zero invalidations. No application bundle has
 been published, and the smoke-check job was skipped. T092 and T093 remain open
 until the corrected revision passes review, integration, protected deployment,
 and public release verification.
+
+### Successful publication and smoke-check remediation
+
+After review and integration of the deployment-path correction, the project
+owner approved both protected production jobs in GitHub Actions run
+`33989162633`. The two validation jobs, `app:build`, `infra:plan`,
+`infra:apply`, and the corrected `app:deploy` all passed. The retained production
+plan checksum and metadata matched commit
+`bf551237db82fe330c7d93fbdf4324044c956abb`; Terraform reported no changes and
+0 create, 0 update, and 0 delete actions.
+
+Publication uploaded 15 objects. AWS reads confirmed revalidating cache metadata
+for the application shell, release metadata, and wiki content, immutable
+one-year cache metadata for fingerprinted assets, and a completed targeted
+CloudFront invalidation. Public requests to the root and direct Arc Tower route
+returned HTTP 200. The published `release.json` contained version `0.1.0`, build
+date `2026-09-05`, and the exact integrated commit SHA.
+
+The final `infra:verify` job nevertheless failed in its local comparison logic:
+`verify-release.ts` passed the complete bundle manifest, including
+`schemaVersion`, `validTowerRoute`, and `files`, to the validator that correctly
+requires standalone release metadata to contain exactly `version`, `buildDate`,
+and `commitSha`. The smoke script now explicitly extracts those three embedded
+fields before strict validation while continuing to validate the published
+`release.json` as a standalone exact record.
+
+A focused unit test reproduced the invalid boundary and now verifies extraction
+from the larger manifest without weakening the strict release contract. The
+release test first failed with the missing extractor, then all 40 functional
+unit tests, TypeScript, ESLint, Prettier, content validation, contract drift,
+dependency audit, and workflow policy validation passed. Re-running the exact
+failed smoke command locally with the retained CI bundle successfully verified
+release `0.1.0`, the integrated commit SHA, HTTPS root, redirect, and direct
+tower route against the public domain. T092 and T093 remain open until the
+corrected smoke revision is reviewed, integrated, and passes the complete main
+workflow.

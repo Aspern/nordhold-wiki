@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-import { validateReleaseMetadata } from "../src/types/release.ts";
+import { extractReleaseMetadata, validateReleaseMetadata } from "../src/types/release.ts";
 
 interface BundleManifest {
   readonly version: string;
@@ -65,7 +65,7 @@ async function main(): Promise<void> {
   const manifest = JSON.parse(
     await readFile(resolve(requiredArgument("--manifest")), "utf8"),
   ) as BundleManifest;
-  const expectedRelease = validateReleaseMetadata(manifest);
+  const expectedRelease = extractReleaseMetadata(manifest);
   if (!/^\/towers\/[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(manifest.validTowerRoute)) {
     throw new Error("Bundle manifest does not provide a valid stable tower route.");
   }

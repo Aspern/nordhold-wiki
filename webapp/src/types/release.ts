@@ -68,3 +68,22 @@ export function validateReleaseMetadata(
     commitSha: candidate.commitSha as string,
   });
 }
+
+export function extractReleaseMetadata(
+  value: unknown,
+  expectedPackageVersion?: string,
+): ReleaseMetadata {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    return validateReleaseMetadata(value, expectedPackageVersion);
+  }
+
+  const candidate = value as Readonly<Record<string, unknown>>;
+  return validateReleaseMetadata(
+    {
+      version: candidate.version,
+      buildDate: candidate.buildDate,
+      commitSha: candidate.commitSha,
+    },
+    expectedPackageVersion,
+  );
+}
