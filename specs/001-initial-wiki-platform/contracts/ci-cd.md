@@ -8,20 +8,21 @@ display `name` must exactly match the required value below. All reusable actions
 are pinned to reviewed immutable commit SHAs.
 
 ```text
-validate                      build                         deploy          verify
-infra:validate ----+--------> app:build ------+----------> app:deploy ---> infra:verify
-app:validate ------+--------> infra:plan ------+
+validate                      build                     deploy                         verify
+infra:validate ----+--------> app:build ----+---------> infra:apply ---> app:deploy ---> infra:verify
+app:validate ------+--------> infra:plan ----+
 ```
 
-Both build-stage jobs require all applicable validate-stage jobs. Deployment
-requires both build-stage jobs and verification requires deployment. A failed,
+Both build-stage jobs require all applicable validate-stage jobs. `infra:apply`
+requires both build-stage jobs, `app:deploy` requires the successful apply and
+the built bundle, and verification requires application deployment. A failed,
 cancelled, or absent required prerequisite cannot be treated as release success.
 
 ## Event Policy
 
 | Event                   | Validation/build behavior                                                                                                                                                                                                                                                                                                                  | Mutation behavior                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| Pull request            | Run relevant application checks for application/content/workflow changes. Run infrastructure validation for infrastructure or shared deployment-automation changes. Run `infra:plan` only after the one-time bootstrap has established remote state and the OIDC plan role; rerun the initial infrastructure pull request after bootstrap. | Never enter `app:deploy`; never assume the production apply role.                                |
+| Pull request            | Run relevant application checks for application/content/workflow changes. Run infrastructure validation for infrastructure or shared deployment-automation changes. Run `infra:plan` only after the one-time bootstrap has established remote state and the OIDC plan role; rerun the initial infrastructure pull request after bootstrap. | Never enter `infra:apply` or `app:deploy`; never assume the production apply role.               |
 | Push to `main`          | Rerun every release-relevant validate and build job against that exact commit and create a fresh production plan.                                                                                                                                                                                                                          | May enter the protected `production` environment only after all gates pass and a human approves. |
 | Manual production rerun | Must reference a `main` revision and rerun applicable gates, build, and fresh plan.                                                                                                                                                                                                                                                        | Same protected environment, role, and approval rules as a push.                                  |
 
@@ -128,7 +129,7 @@ getting, putting, and deleting only its `.tflock` object. The role otherwise has
 only the resource `Get`, `List`, and `Describe` actions required to refresh the
 accepted Terraform scope; it cannot apply, publish, or invalidate.
 
-## Job: `app:deploy`
+## Job: `infra:apply`
 
 Stage: `deploy`
 
@@ -142,18 +143,28 @@ This job is permitted only when all conditions are true:
 - no other production mutation holds the concurrency group.
 
 After approval, the job obtains short-lived credentials through the production
-OIDC apply role, downloads both artifacts, and verifies every digest and embedded
-revision. It applies exactly `production.tfplan`, retrieves Terraform outputs,
-then publishes the extracted `wiki-bundle` to only the named S3 application
-bucket. Fingerprinted assets receive immutable cache metadata; `index.html`,
-content JSON, and `release.json` receive revalidation metadata. Synchronization
-may delete stale deployment objects only within that explicitly resolved bucket
-prefix. Finally it creates a narrowly scoped CloudFront invalidation for mutable
-shell and JSON paths.
+OIDC apply role, downloads only the plan artifact, and verifies its digest and
+embedded revision. It applies exactly `production.tfplan` and does not download
+or publish the application bundle.
 
-The job records the approver, commit, artifact digest, plan digest, Terraform
-result, distribution ID, and deployment time in the GitHub deployment record. It
-does not rebuild, edit DNS, use static AWS keys, or bypass a failed gate.
+## Job: `app:deploy`
+
+Stage: `deploy`
+
+This job runs only on `main` after `infra:apply` and `app:build` succeed for the
+same workflow run and commit. It obtains short-lived credentials through the
+production OIDC apply role, downloads and verifies the exact `wiki-bundle`, reads
+the resulting Terraform outputs without planning or applying, and publishes only
+to the resolved S3 application bucket. Fingerprinted assets receive immutable
+cache metadata; `index.html`, content JSON, and `release.json` receive
+revalidation metadata. Synchronization may delete stale deployment objects only
+within that explicitly resolved bucket prefix. Finally it creates a narrowly
+scoped CloudFront invalidation for mutable shell and JSON paths.
+
+Together the two jobs record the approver, commit, artifact digest, plan digest,
+Terraform result, distribution ID, and deployment time in GitHub deployment
+records. Neither job rebuilds, edits DNS, uses static AWS keys, or bypasses a
+failed gate, and `app:deploy` never calls `terraform apply`.
 
 ## Job: `infra:verify`
 

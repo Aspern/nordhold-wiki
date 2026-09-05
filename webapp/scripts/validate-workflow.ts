@@ -7,6 +7,7 @@ const requiredJobNames = [
   "app:validate",
   "app:build",
   "infra:plan",
+  "infra:apply",
   "app:deploy",
   "infra:verify",
 ] as const;
@@ -22,6 +23,18 @@ const requiredActionPins = [
 
 function occurrences(text: string, value: string): number {
   return text.split(value).length - 1;
+}
+
+function jobBlock(workflow: string, jobId: string): string {
+  const marker = `\n  ${jobId}:\n`;
+  const start = workflow.indexOf(marker);
+  if (start < 0) {
+    return "";
+  }
+  const contentStart = start + marker.length;
+  const remaining = workflow.slice(contentStart);
+  const nextJobOffset = remaining.search(/\n {2}[a-z][a-z0-9_]*:\n/u);
+  return nextJobOffset < 0 ? remaining : remaining.slice(0, nextJobOffset);
 }
 
 async function main(): Promise<void> {
@@ -50,6 +63,7 @@ async function main(): Promise<void> {
   const requiredFragments = [
     "needs: [infra_validate, app_validate]",
     "needs: [app_build, infra_plan]",
+    "needs: [app_build, infra_apply]",
     "needs: [app_deploy]",
     "environment: production",
     "github.ref == 'refs/heads/main'",
@@ -63,6 +77,34 @@ async function main(): Promise<void> {
       issues.push(`Workflow is missing required control '${fragment}'.`);
     }
   }
+  const infraApply = jobBlock(workflow, "infra_apply");
+  const appDeploy = jobBlock(workflow, "app_deploy");
+  for (const control of [
+    "github.ref == 'refs/heads/main'",
+    "environment: production",
+    "role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}",
+    "terraform -chdir=infra/production apply -auto-approve production.tfplan",
+  ]) {
+    if (!infraApply.includes(control)) {
+      issues.push(`infra:apply is missing required control '${control}'.`);
+    }
+  }
+  if (appDeploy.includes("terraform -chdir=infra/production apply")) {
+    issues.push("app:deploy must not apply Terraform.");
+  }
+  if (
+    occurrences(
+      workflow,
+      "terraform -chdir=infra/production apply -auto-approve production.tfplan",
+    ) !== 1
+  ) {
+    issues.push("Workflow must apply the production Terraform plan exactly once.");
+  }
+  for (const control of ["aws s3 sync", "aws cloudfront create-invalidation"]) {
+    if (!appDeploy.includes(control)) {
+      issues.push(`app:deploy is missing publication control '${control}'.`);
+    }
+  }
   if (/aws_access_key_id|aws_secret_access_key|AKIA[0-9A-Z]{16}/iu.test(workflow)) {
     issues.push("Workflow contains a static AWS credential pattern.");
   }
@@ -70,7 +112,7 @@ async function main(): Promise<void> {
     throw new Error(`Workflow policy validation failed:\n- ${issues.sort().join("\n- ")}`);
   }
   console.log(
-    "Workflow policy valid: six exact jobs, immutable actions, staged gates, and OIDC deploy controls.",
+    "Workflow policy valid: seven exact jobs, separated apply/publication, immutable actions, staged gates, and OIDC deploy controls.",
   );
 }
 

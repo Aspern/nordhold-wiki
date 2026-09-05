@@ -22,6 +22,10 @@ permissions:
 env:
   TERRAFORM_VERSION: "1.16.1"
 
+concurrency:
+  group: wiki-platform-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   infra_validate:
     name: infra:validate
@@ -214,15 +218,53 @@ jobs:
           path: reports/terraform-plan
           if-no-files-found: error
 
-  app_deploy:
-    name: app:deploy
+  infra_apply:
+    name: infra:apply
     needs: [app_build, infra_plan]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment: production
-    concurrency:
-      group: nordhold-wiki-production
-      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: production-plan-${{ github.sha }}
+          path: plan
+      - uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}
+      - name: Verify and apply the promoted plan
+        env:
+          EXPECTED_PLAN_ARTIFACT_DIGEST: ${{ needs.infra_plan.outputs.artifact_digest }}
+          TF_VAR_application_bucket_name: ${{ vars.AWS_APPLICATION_BUCKET }}
+          TF_VAR_certificate_arn: ${{ vars.AWS_CERTIFICATE_ARN }}
+          TF_VAR_cost_owner: ${{ vars.AWS_COST_OWNER }}
+        shell: bash
+        run: |
+          test -n "$EXPECTED_PLAN_ARTIFACT_DIGEST"
+          test "$(jq -r .commitSha plan/plan-metadata.json)" = "${{ github.sha }}"
+          test "$(sha256sum plan/production.tfplan | cut -d' ' -f1)" = "$(cut -d' ' -f1 plan/production.tfplan.sha256)"
+          terraform -chdir=infra/production init -reconfigure -lockfile=readonly \
+            -backend-config="bucket=${{ vars.AWS_STATE_BUCKET }}" \
+            -backend-config="key=${{ vars.AWS_PRODUCTION_STATE_KEY }}" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
+          cp plan/production.tfplan infra/production/production.tfplan
+          terraform -chdir=infra/production apply -auto-approve production.tfplan
+
+  app_deploy:
+    name: app:deploy
+    needs: [app_build, infra_apply]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
     permissions:
       contents: read
       id-token: write
@@ -236,39 +278,23 @@ jobs:
         with:
           name: wiki-bundle-${{ github.sha }}
           path: bundle
-      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        with:
-          name: production-plan-${{ github.sha }}
-          path: plan
       - uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}
-      - name: Verify and apply the promoted plan
+      - name: Resolve targets and publish the exact application bundle
         env:
           EXPECTED_BUNDLE_ARTIFACT_DIGEST: ${{ needs.app_build.outputs.artifact_digest }}
-          EXPECTED_PLAN_ARTIFACT_DIGEST: ${{ needs.infra_plan.outputs.artifact_digest }}
-          TF_VAR_application_bucket_name: ${{ vars.AWS_APPLICATION_BUCKET }}
-          TF_VAR_certificate_arn: ${{ vars.AWS_CERTIFICATE_ARN }}
-          TF_VAR_cost_owner: ${{ vars.AWS_COST_OWNER }}
         shell: bash
         run: |
           test -n "$EXPECTED_BUNDLE_ARTIFACT_DIGEST"
-          test -n "$EXPECTED_PLAN_ARTIFACT_DIGEST"
-          test "$(jq -r .commitSha plan/plan-metadata.json)" = "${{ github.sha }}"
           test "$(jq -r .commitSha bundle/bundle-manifest.json)" = "${{ github.sha }}"
           (cd bundle && jq -r '.files[] | "\(.sha256)  \(.path)"' bundle-manifest.json | sha256sum -c -)
-          test "$(sha256sum plan/production.tfplan | cut -d' ' -f1)" = "$(cut -d' ' -f1 plan/production.tfplan.sha256)"
           terraform -chdir=infra/production init -reconfigure -lockfile=readonly \
             -backend-config="bucket=${{ vars.AWS_STATE_BUCKET }}" \
             -backend-config="key=${{ vars.AWS_PRODUCTION_STATE_KEY }}" \
             -backend-config="region=${{ vars.AWS_REGION }}"
-          cp plan/production.tfplan infra/production/production.tfplan
-          terraform -chdir=infra/production apply -auto-approve production.tfplan
           terraform -chdir=infra/production output -json > ../../production-outputs.json
-      - name: Publish the exact application bundle
-        shell: bash
-        run: |
           bucket="$(jq -r .application_bucket_name.value production-outputs.json)"
           distribution="$(jq -r .cloudfront_distribution_id.value production-outputs.json)"
           test "$bucket" = "${{ vars.AWS_APPLICATION_BUCKET }}"

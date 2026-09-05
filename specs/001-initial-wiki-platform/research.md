@@ -385,6 +385,12 @@ publish to the named bucket, and invalidate the named distribution. Workflow
 actions are pinned to reviewed immutable commit SHAs. No AWS access keys are
 stored in GitHub or the repository.
 
+The deploy stage separates mutation responsibilities: `infra:apply` verifies and
+applies the retained plan only on `main`, while the dependent `app:deploy` job
+reads the resulting Terraform outputs and publishes the retained application
+bundle without calling `terraform apply`. Workflow-level concurrency serializes
+the complete release chain rather than leaving a gap between job-level locks.
+
 Source: [GitHub OIDC for AWS](https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws).
 
 ### Decision: narrow post-deployment verification

@@ -152,10 +152,11 @@ unexpected audience; do not create a second provider from this bootstrap root.
 
 ## CI Deployment and Caching
 
-The protected workflow applies the exact saved production plan, then promotes
-the already checksummed application artifact. It never rebuilds during deploy.
-It resolves the bucket and distribution from Terraform outputs and refuses a
-bucket that differs from protected configuration.
+The protected workflow uses a dedicated `infra:apply` job to apply the exact
+saved production plan only on `main`. After that job succeeds, `app:deploy`
+promotes the already checksummed application artifact without applying
+Terraform or rebuilding. It resolves the bucket and distribution from Terraform
+outputs and refuses a bucket that differs from protected configuration.
 
 Fingerprint assets under `/assets/` receive a one-year immutable cache policy.
 `index.html`, `/content/*`, and `/release.json` revalidate. Deployment invalidates

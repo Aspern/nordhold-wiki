@@ -12,8 +12,9 @@ components, stable tower routes, German and English localization, and validated,
 version-controlled JSON generated from a reproducible local game-data workflow.
 Terraform will provision a private Amazon S3 origin behind CloudFront, ACM TLS,
 and narrowly scoped GitHub Actions OIDC deployment roles. GitHub Actions will
-implement the required validate, build, deploy, and verify job sequence without
-rebuilding the promoted application artifact. The first production run remains
+implement the required validate, build, dedicated infrastructure-apply,
+application-deploy, and verify job sequence without rebuilding the promoted
+application artifact. The first production run remains
 disabled until implementation convergence, full validation, draft pull-request
 review, and human integration of the accepted revision into `main` are complete.
 A separately approved one-time bootstrap may run outside CI from the reviewed

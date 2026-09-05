@@ -109,11 +109,15 @@ access remote state or AWS.
 - Both provider lock files exist and are not ignored.
 - State, backup state, backend configuration, variable values, saved plans,
   application build output, and reports are ignored as required.
-- Static workflow inspection passed for the six exact jobs `infra:validate`,
-  `app:validate`, `app:build`, `infra:plan`, `app:deploy`, and `infra:verify`.
+- Static workflow inspection passed for the seven exact jobs `infra:validate`,
+  `app:validate`, `app:build`, `infra:plan`, `infra:apply`, `app:deploy`, and
+  `infra:verify`.
 - The workflow uses immutable action revisions, saved plan and bundle artifacts,
   artifact/manifest/hash checks, GitHub OIDC, a protected production environment,
-  and the required validate-to-build-to-deploy-to-verify dependency gates.
+  a main-only Terraform apply separated from application publication, and the
+  required validate-to-build-to-deploy-to-verify dependency gates.
+- The revised workflow policy validator, TypeScript check, ESLint, and Prettier
+  checks passed after the apply/publication split.
 - The command-level bootstrap, certificate/DNS, state migration/recovery, cache,
   cost, deployment, invalidation, and minimal source-revert rollback procedures
   were reviewed for presence and consistency with the accepted plan.
