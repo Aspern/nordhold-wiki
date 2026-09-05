@@ -1,0 +1,293 @@
+name: Wiki platform
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/wiki-platform.yml"
+      - "infra/**"
+      - "specs/001-initial-wiki-platform/**"
+      - "webapp/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/wiki-platform.yml"
+      - "infra/**"
+      - "specs/001-initial-wiki-platform/**"
+      - "webapp/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TERRAFORM_VERSION: "1.16.1"
+
+jobs:
+  infra_validate:
+    name: infra:validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+      - name: Validate Terraform roots
+        shell: bash
+        run: |
+          mkdir -p reports/terraform
+          terraform fmt -check -recursive infra 2>&1 | tee reports/terraform/format.txt
+          for root in bootstrap production; do
+            terraform -chdir="infra/${root}" init -backend=false -lockfile=readonly
+            terraform -chdir="infra/${root}" validate -json > "reports/terraform/${root}-validate.json"
+          done
+          test -f infra/bootstrap/.terraform.lock.hcl
+          test -f infra/production/.terraform.lock.hcl
+          ! git ls-files | grep -E '(\.tfstate|\.tfplan|backend\.hcl|\.tfvars)$'
+      - name: Upload Terraform reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: terraform-validation-${{ github.sha }}
+          path: reports/terraform
+          if-no-files-found: warn
+
+  app_validate:
+    name: app:validate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: webapp
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: webapp/package-lock.json
+          registry-url: https://registry.npmjs.org
+      - name: Install locked dependencies once
+        run: npm ci
+      - name: Prepare reports
+        run: mkdir -p reports
+      - id: typecheck
+        name: TypeScript
+        continue-on-error: true
+        run: npm run typecheck 2>&1 | tee reports/typecheck.txt
+      - id: lint
+        name: ESLint
+        continue-on-error: true
+        run: npm run lint:report
+      - id: format
+        name: Prettier
+        continue-on-error: true
+        run: npm run format:check 2>&1 | tee reports/prettier.txt
+      - id: contracts
+        name: Content contract drift
+        continue-on-error: true
+        run: npm run content:contracts 2>&1 | tee reports/content-contracts.txt
+      - id: content
+        name: Content validation
+        continue-on-error: true
+        run: npm run content:validate 2>&1 | tee reports/content-validation.txt
+      - id: tests
+        name: Functional unit tests
+        continue-on-error: true
+        run: npm run test:ci
+      - id: audit
+        name: Dependency audit
+        continue-on-error: true
+        run: npm audit --json --audit-level=high > reports/npm-audit.json
+      - name: Enforce application quality results
+        if: always()
+        env:
+          RESULTS: ${{ join(steps.*.outcome, ' ') }}
+        run: |
+          printf '%s\n' "$RESULTS" > reports/step-outcomes.txt
+          test "${{ steps.typecheck.outcome }}" = success
+          test "${{ steps.lint.outcome }}" = success
+          test "${{ steps.format.outcome }}" = success
+          test "${{ steps.contracts.outcome }}" = success
+          test "${{ steps.content.outcome }}" = success
+          test "${{ steps.tests.outcome }}" = success
+          test "${{ steps.audit.outcome }}" = success
+      - name: Upload application reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: application-validation-${{ github.sha }}
+          path: webapp/reports
+          if-no-files-found: error
+
+  app_build:
+    name: app:build
+    needs: [infra_validate, app_validate]
+    runs-on: ubuntu-latest
+    outputs:
+      artifact_digest: ${{ steps.bundle.outputs.artifact-digest }}
+    defaults:
+      run:
+        working-directory: webapp
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: webapp/package-lock.json
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - name: Build one immutable release bundle
+        env:
+          NORDHOLD_COMMIT_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          export NORDHOLD_BUILD_DATE="$(date -u +%F)"
+          npm run build
+          npm run bundle:validate
+      - id: bundle
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: wiki-bundle-${{ github.sha }}
+          path: webapp/dist
+          if-no-files-found: error
+
+  infra_plan:
+    name: infra:plan
+    needs: [infra_validate, app_validate]
+    if: github.event_name != 'pull_request' || vars.BOOTSTRAP_COMPLETE == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      artifact_digest: ${{ steps.plan_artifact.outputs.artifact-digest }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - id: scope
+        name: Detect plan scope
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" != pull_request ]]; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          elif git diff --quiet "${{ github.event.pull_request.base.sha }}"...HEAD -- infra .github/workflows/wiki-platform.yml; then
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.scope.outputs.run == 'true'
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+      - if: steps.scope.outputs.run == 'true'
+        uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_PLAN_ROLE_ARN }}
+      - if: steps.scope.outputs.run == 'true'
+        name: Create fresh production plan
+        env:
+          TF_VAR_application_bucket_name: ${{ vars.AWS_APPLICATION_BUCKET }}
+          TF_VAR_certificate_arn: ${{ vars.AWS_CERTIFICATE_ARN }}
+          TF_VAR_cost_owner: ${{ vars.AWS_COST_OWNER }}
+        shell: bash
+        run: |
+          mkdir -p reports/terraform-plan
+          terraform -chdir=infra/production init -reconfigure -lockfile=readonly \
+            -backend-config="bucket=${{ vars.AWS_STATE_BUCKET }}" \
+            -backend-config="key=${{ vars.AWS_PRODUCTION_STATE_KEY }}" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
+          terraform -chdir=infra/production plan -out=production.tfplan
+          terraform -chdir=infra/production show -no-color production.tfplan > reports/terraform-plan/production.txt
+          terraform -chdir=infra/production show -json production.tfplan > reports/terraform-plan/production.json
+          sha256sum infra/production/production.tfplan > reports/terraform-plan/production.tfplan.sha256
+          printf '{"commitSha":"%s","workspace":"production"}\n' "${{ github.sha }}" > reports/terraform-plan/plan-metadata.json
+          cp infra/production/production.tfplan reports/terraform-plan/production.tfplan
+      - id: plan_artifact
+        if: steps.scope.outputs.run == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: production-plan-${{ github.sha }}
+          path: reports/terraform-plan
+          if-no-files-found: error
+
+  app_deploy:
+    name: app:deploy
+    needs: [app_build, infra_plan]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: nordhold-wiki-production
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: wiki-bundle-${{ github.sha }}
+          path: bundle
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: production-plan-${{ github.sha }}
+          path: plan
+      - uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}
+      - name: Verify and apply the promoted plan
+        env:
+          EXPECTED_BUNDLE_ARTIFACT_DIGEST: ${{ needs.app_build.outputs.artifact_digest }}
+          EXPECTED_PLAN_ARTIFACT_DIGEST: ${{ needs.infra_plan.outputs.artifact_digest }}
+          TF_VAR_application_bucket_name: ${{ vars.AWS_APPLICATION_BUCKET }}
+          TF_VAR_certificate_arn: ${{ vars.AWS_CERTIFICATE_ARN }}
+          TF_VAR_cost_owner: ${{ vars.AWS_COST_OWNER }}
+        shell: bash
+        run: |
+          test -n "$EXPECTED_BUNDLE_ARTIFACT_DIGEST"
+          test -n "$EXPECTED_PLAN_ARTIFACT_DIGEST"
+          test "$(jq -r .commitSha plan/plan-metadata.json)" = "${{ github.sha }}"
+          test "$(jq -r .commitSha bundle/bundle-manifest.json)" = "${{ github.sha }}"
+          (cd bundle && jq -r '.files[] | "\(.sha256)  \(.path)"' bundle-manifest.json | sha256sum -c -)
+          test "$(sha256sum plan/production.tfplan | cut -d' ' -f1)" = "$(cut -d' ' -f1 plan/production.tfplan.sha256)"
+          terraform -chdir=infra/production init -reconfigure -lockfile=readonly \
+            -backend-config="bucket=${{ vars.AWS_STATE_BUCKET }}" \
+            -backend-config="key=${{ vars.AWS_PRODUCTION_STATE_KEY }}" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
+          cp plan/production.tfplan infra/production/production.tfplan
+          terraform -chdir=infra/production apply -auto-approve production.tfplan
+          terraform -chdir=infra/production output -json > ../../production-outputs.json
+      - name: Publish the exact application bundle
+        shell: bash
+        run: |
+          bucket="$(jq -r .application_bucket_name.value production-outputs.json)"
+          distribution="$(jq -r .cloudfront_distribution_id.value production-outputs.json)"
+          test "$bucket" = "${{ vars.AWS_APPLICATION_BUCKET }}"
+          aws s3 sync bundle "s3://${bucket}" --delete --exclude 'assets/*' --cache-control 'no-cache, max-age=0'
+          aws s3 sync bundle/assets "s3://${bucket}/assets" --delete --cache-control 'public, max-age=31536000, immutable'
+          aws cloudfront create-invalidation --distribution-id "$distribution" --paths '/index.html' '/release.json' '/content/*'
+
+  infra_verify:
+    name: infra:verify
+    needs: [app_deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: wiki-bundle-${{ github.sha }}
+          path: bundle
+      - name: Verify the public release
+        run: node webapp/scripts/verify-release.ts --base-url https://nordhold.asperntallow.de/ --manifest bundle/bundle-manifest.json
