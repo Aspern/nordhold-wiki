@@ -176,7 +176,7 @@ provider. Two later PR attempts identified the exact `acm:ListCertificates` and
 each read-only permission was added through a separately reviewed and approved
 one-policy Terraform plan. Every resulting bootstrap follow-up plan was empty.
 
-GitHub Actions run `33985723889` then completed successfully for the current PR
+GitHub Actions run `33985949525` then completed successfully for the current PR
 revision. `infra:validate`, `app:validate`, `app:build`, and `infra:plan` passed;
 `infra:apply`, `app:deploy`, and `infra:verify` were skipped as required for a
 pull request. The downloaded production-plan artifact matched its workflow
@@ -185,9 +185,38 @@ checksum. The reviewed plan contains 11 creates, 0 updates, and 0 destroys: the
 private application bucket and controls plus the CloudFront OAC, function,
 policies, and distribution.
 
-No production plan has been applied, no application bundle has been published,
-and no CloudFront invalidation or deployed smoke check has run. The protected
-`production` environment, initial empty production apply, CloudFront one.com
-CNAME, human PR integration, and verified `main` release remain outstanding.
-Tasks T090-T093 therefore remain open until their complete lifecycle gates are
-satisfied.
+### Initial production infrastructure evidence
+
+The project owner explicitly approved the retained 11-create, zero-update,
+zero-destroy production plan. On 2026-09-05, that exact checksummed CI plan was
+applied locally with Terraform 1.16.1 and the approved short-lived operator
+session. The apply created 11 resources, changed none, and destroyed none. A
+fresh post-apply plan reported no changes.
+
+The empty application origin was verified to contain zero objects, deny direct
+public access, enable versioning and AES-256 encryption, retain all four public
+access blocks, use a non-public bucket policy, and include every required tag.
+The production remote-state object exists at the reviewed key with versioning
+and AES-256 encryption. The CloudFront distribution reached `Deployed`, uses
+the issued bootstrap certificate and `nordhold.asperntallow.de` alias, redirects
+HTTP to HTTPS, uses Price Class 100, attaches an always-signing SigV4 S3 OAC,
+contains the three reviewed cache behaviors, and includes every required tag.
+Direct requests to the private S3 origin and the intentionally empty CloudFront
+distribution both returned HTTP 403 as expected before application publication.
+
+The GitHub `production` environment was created with `Aspern` as its required
+human reviewer, custom deployment-branch policies enabled, and exactly one
+deployment rule for `main`. The environment configuration was read back through
+the GitHub API and matched those controls.
+
+The project owner added the separate one.com application CNAME for
+`nordhold.asperntallow.de`. Both authoritative one.com name servers and the
+public resolver subsequently returned `d195tdpz6cudel.cloudfront.net`. An HTTPS
+request through the public hostname completed TLS negotiation and returned the
+expected HTTP 403 from the intentionally empty distribution. This completed the
+approved no-publication bootstrap boundary in T090.
+
+No application bundle has been published, and no CloudFront invalidation or
+deployed smoke check has run. A fresh post-bootstrap pull-request plan, human PR
+integration, and the verified `main` release required by T091-T093 remain
+outstanding.
