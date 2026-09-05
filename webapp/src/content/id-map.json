@@ -1,0 +1,537 @@
+{
+  "schemaVersion": "1.0.0",
+  "towers": [
+    {
+      "sourceKey": "ArcTower",
+      "id": "arc-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "ArrowTower",
+      "id": "arrow-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "ChaosReaperTower",
+      "id": "chaos-reaper",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "FrostTower",
+      "id": "frost-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "RavenTower",
+      "id": "raven-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "ObliskTower",
+      "id": "runestone-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "ShadowTower",
+      "id": "shadow-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "TornadoTower",
+      "id": "tornado-tower",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "VolcanoMortarTower",
+      "id": "volcano-mortar",
+      "sourceKeyAliases": []
+    }
+  ],
+  "banners": [
+    {
+      "sourceKey": "tower-specific:CripplingShotRogueData:CripplingShotTitle",
+      "id": "barbed-arrows",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:BarrierBaneData:BarrierBaneTitle",
+      "id": "barrier-bane",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:BarrierBreakerData:BarrierBreakerBannerTitle",
+      "id": "barrier-shatter",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:BloodyChainData:BloodyChainTitle",
+      "id": "bloody-chain",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:BodkinArrowRogueData:BodkinArrowTitle",
+      "id": "bodkin-arrow",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:BrandingData:BrandingTitle",
+      "id": "branding",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CelestialJumpsData:CelestialJumpsTitle",
+      "id": "celestial-jumps",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:ChainCritsRogueData:ChainCritsTitle",
+      "id": "chain-crits",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:ExtendedChainRogueData:ExtendedChainTitle",
+      "id": "chain-echo",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ChaosBoltsData:ChaosBoltsTitle",
+      "id": "chaos-bolts",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:ChaosStormData:ChaosStormTitle",
+      "id": "chaos-storm",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ChargedArrowsData:ChargedArrowsTitle",
+      "id": "charged-arrows",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:ChillExplosionRogueData:ChillExplosionTitle",
+      "id": "chill-explosion",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ClinkingMasteryData:ClinkingMasteryTitle",
+      "id": "clinking-mastery",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:ColdSnapRogueData:ColdSnapRogueTitle",
+      "id": "cold-snap",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:CollapseRogueData:CollapseRogueTitle",
+      "id": "collapse",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CorpseExplosionRogueData:CorpseExplosionTitle",
+      "id": "corpse-explosion-fusion",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:CorpseExplosionRogueData:CorpseExplosionTitle",
+      "id": "corpse-explosion-tower-specific",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:CrescendoBlastData:CrescendoBlasTitle",
+      "id": "crescendo-blast",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CrimsonBeakData:CrimsonBeakTitle",
+      "id": "crimson-beak",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CripplingPainData:CripplingPainTitle",
+      "id": "crippling-pain",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:BleedCritsData:BleedCritsTitle",
+      "id": "critical-bleed",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:NexusAltRogueData:NexusAltTitle",
+      "id": "critical-bond",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CriticalBreachData:CriticalBreachTitle",
+      "id": "critical-breach",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:CriticalImpactData:CriticalImpactTitle",
+      "id": "critical-impact",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:CriticalNexusRogueData:CriticalNexusTitle",
+      "id": "critical-nexus",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DamnableWeakData:DamnableWeak",
+      "id": "damnable-weak",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:DarkWorshipData:DarkWorshipTitle",
+      "id": "dark-worship",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:DarknessData:DarknessRogueTitle",
+      "id": "darkness",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:CritAuraRogueData:CritAuraTitle",
+      "id": "deadly-presence",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DestructiveStrikeData:DestructiveStrikeRogueTitle",
+      "id": "destructive-strike",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "generalist:DispersionData:DispersionTitle",
+      "id": "dispersion",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:DoomBlastRogueData:DoomBlastTitle",
+      "id": "doom-blast",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DoomColdData:DoomColdTitle",
+      "id": "doom-cold",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DoomScatteringData:DoomScatteringTitle",
+      "id": "doom-scattering",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DoubleNovaData:DoubleNovaTitle",
+      "id": "double-nova",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:DoubleStrikeData:DoubleStrikeTitle",
+      "id": "double-strike",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:EarthquakeData:EarthquakeTitle",
+      "id": "earthquake",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:FireArrowsData:FireArrowsTitle",
+      "id": "fire-arrows",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:FocusRuneRogueData:FocusRuneTitle",
+      "id": "focus-rune",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:FrostMagicianData:FrostMagicianRogueTitle",
+      "id": "frost-magician",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:FrostScytheData:FrostScytheTitle",
+      "id": "frost-scythe",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:GhostRavenRogueData:GhostRavenTitle",
+      "id": "ghost-raven",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:GlacialNovaData:GlacialNovaTitle",
+      "id": "glacial-nova",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:HydraData:HydraTitle",
+      "id": "hydra",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:IcedTargetData:IcedTargetTitle",
+      "id": "iced-target",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:IcyDeathRogueData:IcyDeathRogueTitle",
+      "id": "icy-death",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:InsanityRogueData:InsanityRogueTitle",
+      "id": "insanity",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:HolyPillarData:HolyPillarTitle",
+      "id": "light-pillar",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:LightningSurgeRogueData:LightningSurgeTitle",
+      "id": "lightning-surge",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:LightburstData:LightburstTitle",
+      "id": "lightstorm",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:PiercingArrowRogueData:PiercingArrowTitle",
+      "id": "lucky-shot",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:MagicalChargeData:MagicalChargeRogueTitle",
+      "id": "magical-charge",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:MagmaFieldRogueCard:MagmaFieldTitle",
+      "id": "magma-field",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:MasteryData:MasteryRogueTitle",
+      "id": "mastery",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "generalist:MultitudeData:MultitudeTitle",
+      "id": "multitude",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:MysticWindsData:MysticWindsTitle",
+      "id": "mystic-winds",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:NightburstData:NightburstTitle",
+      "id": "nightburst",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:OmnipotenceData:OmnipotenceRogueTitle",
+      "id": "omnipotence",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:OpeningBlitzRogueData:OpeningBlitzTitle",
+      "id": "opening-blitz",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:OutreachFirstRogueData:OutreachFirstTitle",
+      "id": "outreach-first",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:OverdoseData:OverdoseRogueTitle",
+      "id": "overdose",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:OverheatingRogueData:OverheatingTitle",
+      "id": "overheating",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:PactOfDuskData:PactOfDuskTitle",
+      "id": "pact-of-dusk",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:PainfulColdData:PainfulColdRogueTitle",
+      "id": "painful-cold",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "generalist:PowerRiseData:PowerRiseTitle",
+      "id": "power-rise",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:PrecisionShotsData:PrecisionShotsTitle",
+      "id": "precision-shots",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:PrismData:PrismRogueTitle",
+      "id": "prism",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:RapidArcherRogueData:RapidArcherTitle",
+      "id": "rapid-archer",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:RaptureRogueData:RaptureRogueTitle",
+      "id": "rapture",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:RingOfDeathRogueData:RingOfDeathTitle",
+      "id": "ring-of-death",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:RapidfireAuraRogueData:RapidfireAuraTitle",
+      "id": "runic-fire-aura",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ScorchingData:ScorchingTitle",
+      "id": "scorching",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:ScraperRogueData:ScraperRogueTitle",
+      "id": "scraper",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ShadowTornadoData:ShadowTornadoTitle",
+      "id": "shadow-tornado",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:ShockWaveData:ShockWaveRogueTitle",
+      "id": "shockwave",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:SkyfallArrowsRogueData:SkyfallArrowsTitle",
+      "id": "skyfall-arrows",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:SoulflameData:SoulflameTitle",
+      "id": "soulflame",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:SpeedyDeathData:SpeedyDeathTitle",
+      "id": "speedy-death",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:SpinningScytheData:SpinningScytheTitle",
+      "id": "spinning-scythe",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:SpiralOfPainData:SpiralOfPainTitle",
+      "id": "spiral-of-pain",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:SquallData:SquallRogueTitle",
+      "id": "squall",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:StormBringerData:StormbringerRogueTitle",
+      "id": "stormbringer",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:SuperNovaData:SuperNovaTitle",
+      "id": "supernova",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:SweeperData:SweeperTitle",
+      "id": "sweeper",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:TempestStopperRogueData:TempestStopperRogueTitle",
+      "id": "tempest-stopper",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "unique:ThorsWrathData:ThorsWrathTitle",
+      "id": "thor-s-wrath",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:TimberwindMarkRogueData:TimberwindMarkTitle",
+      "id": "timberwind-mark",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:TripleThreatRogueCard:TripleThreatTitle",
+      "id": "trinity",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:TwinFeathersRogueData:TwinFeathersTitle",
+      "id": "twin-feathers",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:UnchainedRageData:UnchainedRageTitle",
+      "id": "unchained-rage",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:VenomousBleedData:VenomousBleedTitle",
+      "id": "venomous-bleed",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:VolcanicEruptionData:VolcanicEruptionRogueTitle",
+      "id": "volcanic-eruption",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:VulnerabilityRogueData:VulnerabilityRogueTitle",
+      "id": "vulnerability",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:WideBlastRogueData:WideBlastTitle",
+      "id": "wide-blast",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "fusion:DoomlanceData:DoomlanceTitle",
+      "id": "wings-of-chaos",
+      "sourceKeyAliases": []
+    },
+    {
+      "sourceKey": "tower-specific:WrathScatteringRogueData:WrathScatteringTitle",
+      "id": "wrath-scattering",
+      "sourceKeyAliases": []
+    }
+  ]
+}

@@ -27,9 +27,18 @@ DEFAULT_KEYWORDS = (
     "banner",
     "abilit",
     "skill",
+    "rogue",
+    # Current banner implementations are not consistently named *RogueData.
+    # Several active tower, fusion, and generalist banner types use only a
+    # domain-specific *Data suffix, so this broader selector is required for a
+    # complete fact inventory. Raw output remains temporary and review-gated.
+    "data",
     "localization",
     "languagesource",
 )
+EXCLUDED_UI_CLASSES = {
+    "AllTowerFusionsInfo": "Fusion Matrix presentation helper; it is not a gameplay fact source",
+}
 REQUIRED_FILES = (
     Path("NordHold_Data/resources.assets"),
     Path("NordHold_Data/level2"),
@@ -158,40 +167,94 @@ def main() -> int:
     build_id = read_build_id(game_root)
     keywords = tuple(keyword.lower() for keyword in (args.keyword or DEFAULT_KEYWORDS))
 
-    generator = TypeTreeGenerator(unity_version)
+    generator = TypeTreeGenerator(unity_version, generator="AssetStudio")
     generator.load_local_game(str(game_root))
 
     records: list[dict[str, Any]] = []
     parse_errors: list[dict[str, Any]] = []
+    excluded_records: list[dict[str, Any]] = []
     for source, environment in environments:
-        environment.typetree_generator = generator
         relative_source = source.relative_to(game_root).as_posix()
         for obj in environment.objects:
             if obj.type.name != "MonoBehaviour":
                 continue
+            try:
+                name = obj.peek_name()
+                monobehaviour = obj.parse_monobehaviour_head()
+                script = monobehaviour.m_Script.deref_parse_as_object()
+                script_identity = " ".join(
+                    (
+                        script.m_AssemblyName,
+                        script.m_Namespace,
+                        script.m_ClassName,
+                    )
+                )
+            except Exception as error:
+                parse_errors.append(
+                    {
+                        "source": relative_source,
+                        "path_id": (
+                            str(path_id)
+                            if (path_id := getattr(obj, "path_id", None)) is not None
+                            else None
+                        ),
+                        "error_type": type(error).__name__,
+                        "error": f"failed to inspect record name: {error}",
+                    }
+                )
+                continue
+
+            searchable_identity = script_identity.lower()
+            if not any(keyword in searchable_identity for keyword in keywords):
+                continue
+            if script.m_ClassName in EXCLUDED_UI_CLASSES:
+                excluded_records.append(
+                    {
+                        "source": relative_source,
+                        "path_id": str(obj.path_id),
+                        "name": name,
+                        "script_class": script.m_ClassName,
+                        "reason": EXCLUDED_UI_CLASSES[script.m_ClassName],
+                    }
+                )
+                continue
+            environment.typetree_generator = generator
             try:
                 data = obj.parse_as_dict()
             except Exception as error:  # Preserve failures for completeness review.
                 parse_errors.append(
                     {
                         "source": relative_source,
-                        "path_id": getattr(obj, "path_id", None),
+                        "path_id": (
+                            str(path_id)
+                            if (path_id := getattr(obj, "path_id", None)) is not None
+                            else None
+                        ),
                         "error_type": type(error).__name__,
                         "error": str(error),
                     }
                 )
                 continue
+            finally:
+                environment.typetree_generator = None
 
-            searchable = json.dumps(data, ensure_ascii=False, default=str).lower()
-            if any(keyword in searchable for keyword in keywords):
-                records.append(
-                    {
-                        "source": relative_source,
-                        "path_id": getattr(obj, "path_id", None),
-                        "name": data.get("m_Name") if isinstance(data, dict) else None,
-                        "data": data,
-                    }
-                )
+            records.append(
+                {
+                    "source": relative_source,
+                    "path_id": (
+                        str(path_id)
+                        if (path_id := getattr(obj, "path_id", None)) is not None
+                        else None
+                    ),
+                    "name": name,
+                    "script": {
+                        "assembly": script.m_AssemblyName,
+                        "namespace": script.m_Namespace,
+                        "class": script.m_ClassName,
+                    },
+                    "data": data,
+                }
+            )
 
     output = args.output or (
         Path(tempfile.gettempdir())
@@ -219,12 +282,15 @@ def main() -> int:
                 "UnityPy": package_version("UnityPy"),
                 "TypeTreeGeneratorAPI": package_version("TypeTreeGeneratorAPI"),
             },
+            "python_version": ".".join(str(part) for part in sys.version_info[:3]),
             "keywords": list(keywords),
         },
         "record_count": len(records),
         "parse_error_count": len(parse_errors),
+        "excluded_record_count": len(excluded_records),
         "records": records,
         "parse_errors": parse_errors,
+        "excluded_records": excluded_records,
     }
     output.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, default=str),

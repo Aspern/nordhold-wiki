@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nordhold.asperntallow.de/contracts/stable-id-map.schema.json",
+  "title": "Nordhold Wiki Stable ID Map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "towers", "banners"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "towers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/mapping" }
+    },
+    "banners": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/mapping" }
+    }
+  },
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceKey", "id", "sourceKeyAliases"],
+      "properties": {
+        "sourceKey": { "$ref": "#/$defs/sourceKey" },
+        "id": { "$ref": "#/$defs/stableId" },
+        "sourceKeyAliases": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceKey" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

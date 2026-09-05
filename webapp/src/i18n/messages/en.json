@@ -1,0 +1,46 @@
+{
+  "app": {
+    "title": "Nordhold Wiki"
+  },
+  "catalogue": {
+    "introduction": "Explore every tower and discover the banners it can receive.",
+    "noResultsBody": "Try another tower name or clear the search.",
+    "noResultsTitle": "No towers found",
+    "openTower": "View banners",
+    "resultCount": "Showing {count} of {total} towers",
+    "searchLabel": "Search towers",
+    "title": "Tower archive"
+  },
+  "classification": {
+    "fusion": "Fusion banners",
+    "generalist": "Generalist banners",
+    "tower-specific": "Tower-specific banners",
+    "unique": "Unique banners"
+  },
+  "detail": {
+    "bannerSection": "Available banners",
+    "categoryCount": "Banners in this category: {count}",
+    "emptyGroup": "No eligible banners in this group.",
+    "eyebrow": "Tower dossier",
+    "fusionCombination": "Fusion tower combination",
+    "noResultsBody": "Try another banner name or clear the search.",
+    "noResultsTitle": "No banners found",
+    "resultCount": "Showing {count} of {total} eligible banners",
+    "searchLabel": "Search eligible banners"
+  },
+  "header": {
+    "attribution": "powered by Aspern Tallow",
+    "published": "Published",
+    "version": "Version"
+  },
+  "navigation": {
+    "backToTowers": "Back to all towers"
+  },
+  "notFound": {
+    "body": "This page or tower does not exist in the current wiki data.",
+    "title": "Nothing found here"
+  },
+  "search": {
+    "clear": "Clear search"
+  }
+}

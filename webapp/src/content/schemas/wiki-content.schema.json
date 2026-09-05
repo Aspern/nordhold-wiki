@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nordhold.asperntallow.de/contracts/wiki-content.schema.json",
+  "title": "Nordhold Wiki Content Dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "gameBuildId", "towers", "banners", "eligibility"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "gameBuildId": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+    },
+    "towers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/tower" }
+    },
+    "banners": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/banner" }
+    },
+    "eligibility": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/eligibility" }
+    }
+  },
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "sourceKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en"],
+      "properties": {
+        "en": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "de": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "requiredLocalizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "de"],
+      "properties": {
+        "en": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "de": { "type": "string", "minLength": 1, "maxLength": 500 }
+      }
+    },
+    "imageVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "assetId",
+        "path",
+        "width",
+        "height",
+        "sha256",
+        "authorship",
+        "licenseReference",
+        "alt"
+      ],
+      "properties": {
+        "kind": { "const": "image" },
+        "assetId": { "$ref": "#/$defs/stableId" },
+        "path": {
+          "type": "string",
+          "pattern": "^src/assets/entities/towers/[a-z0-9][a-z0-9._/-]*\\.png$"
+        },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authorship": {
+          "const": "authorized"
+        },
+        "licenseReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "alt": { "$ref": "#/$defs/localizedText" }
+      }
+    },
+    "cssVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "assetId",
+        "seed",
+        "motif",
+        "authorship",
+        "licenseReference",
+        "alt"
+      ],
+      "properties": {
+        "kind": { "const": "css" },
+        "assetId": { "$ref": "#/$defs/stableId" },
+        "seed": { "type": "integer", "minimum": 1, "maximum": 999999 },
+        "motif": {
+          "type": "string",
+          "enum": ["crest", "rune", "orbit", "burst", "weave", "blade", "crown", "vortex"]
+        },
+        "authorship": { "const": "original" },
+        "licenseReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "alt": { "$ref": "#/$defs/localizedText" }
+      }
+    },
+    "tower": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceKey",
+        "sortOrder",
+        "name",
+        "effectSummary",
+        "visual",
+        "provenanceRef"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "sourceKey": { "$ref": "#/$defs/sourceKey" },
+        "sortOrder": { "type": "integer", "minimum": 0 },
+        "name": { "$ref": "#/$defs/localizedText" },
+        "effectSummary": { "$ref": "#/$defs/requiredLocalizedText" },
+        "visual": { "$ref": "#/$defs/imageVisual" },
+        "provenanceRef": { "$ref": "#/$defs/stableId" }
+      }
+    },
+    "banner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceKey",
+        "sortOrder",
+        "classification",
+        "name",
+        "effectSummary",
+        "visual",
+        "provenanceRef"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "sourceKey": { "$ref": "#/$defs/sourceKey" },
+        "sortOrder": { "type": "integer", "minimum": 0 },
+        "classification": {
+          "type": "string",
+          "enum": ["tower-specific", "generalist", "unique", "fusion"]
+        },
+        "towerAffinityId": { "$ref": "#/$defs/stableId" },
+        "name": { "$ref": "#/$defs/localizedText" },
+        "effectSummary": { "$ref": "#/$defs/requiredLocalizedText" },
+        "visual": { "$ref": "#/$defs/cssVisual" },
+        "provenanceRef": { "$ref": "#/$defs/stableId" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "classification": { "const": "tower-specific" } },
+            "required": ["classification"]
+          },
+          "then": { "required": ["towerAffinityId"] },
+          "else": { "not": { "required": ["towerAffinityId"] } }
+        }
+      ]
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["towerId", "bannerId", "provenanceRef"],
+      "properties": {
+        "towerId": { "$ref": "#/$defs/stableId" },
+        "bannerId": { "$ref": "#/$defs/stableId" },
+        "provenanceRef": { "$ref": "#/$defs/stableId" }
+      }
+    }
+  }
+}

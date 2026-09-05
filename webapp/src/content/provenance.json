@@ -1,0 +1,5091 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetId": "nordhold-build-23261523",
+  "game": {
+    "steamAppId": "3028310",
+    "buildId": "23261523",
+    "unityVersion": "2023.1.22f1"
+  },
+  "extraction": {
+    "extractor": ".agents/skills/nordhold-game-data/scripts/extract_game_data.py",
+    "extractorVersion": "1.0.0",
+    "pythonVersion": "3.13.5",
+    "dependencies": {
+      "TypeTreeGeneratorAPI": "0.0.10",
+      "UnityPy": "1.25.3"
+    },
+    "generatedAt": "2026-09-05T14:32:11.984Z",
+    "parseErrors": [],
+    "uncertainties": []
+  },
+  "records": [
+    {
+      "id": "banner-barbed-arrows-source",
+      "entityType": "banner",
+      "entityId": "barbed-arrows",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13350",
+          "internalKey": "CripplingShotRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-barrier-bane-source",
+      "entityType": "banner",
+      "entityId": "barrier-bane",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13398",
+          "internalKey": "BarrierBaneData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-barrier-shatter-source",
+      "entityType": "banner",
+      "entityId": "barrier-shatter",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13340",
+          "internalKey": "BarrierBreakerData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-bloody-chain-source",
+      "entityType": "banner",
+      "entityId": "bloody-chain",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13399",
+          "internalKey": "BloodyChainData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-bodkin-arrow-source",
+      "entityType": "banner",
+      "entityId": "bodkin-arrow",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13342",
+          "internalKey": "BodkinArrowRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-branding-source",
+      "entityType": "banner",
+      "entityId": "branding",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13400",
+          "internalKey": "BrandingData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-celestial-jumps-source",
+      "entityType": "banner",
+      "entityId": "celestial-jumps",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13401",
+          "internalKey": "CelestialJumpsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-chain-crits-source",
+      "entityType": "banner",
+      "entityId": "chain-crits",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13343",
+          "internalKey": "ChainCritsRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-chain-echo-source",
+      "entityType": "banner",
+      "entityId": "chain-echo",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13358",
+          "internalKey": "ExtendedChainRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-chaos-bolts-source",
+      "entityType": "banner",
+      "entityId": "chaos-bolts",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13402",
+          "internalKey": "ChaosBoltsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-chaos-storm-source",
+      "entityType": "banner",
+      "entityId": "chaos-storm",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13344",
+          "internalKey": "ChaosStormData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-charged-arrows-source",
+      "entityType": "banner",
+      "entityId": "charged-arrows",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13403",
+          "internalKey": "ChargedArrowsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-chill-explosion-source",
+      "entityType": "banner",
+      "entityId": "chill-explosion",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13345",
+          "internalKey": "ChillExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-clinking-mastery-source",
+      "entityType": "banner",
+      "entityId": "clinking-mastery",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13404",
+          "internalKey": "ClinkingMasteryData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-cold-snap-source",
+      "entityType": "banner",
+      "entityId": "cold-snap",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13346",
+          "internalKey": "ColdSnapRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-collapse-source",
+      "entityType": "banner",
+      "entityId": "collapse",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13347",
+          "internalKey": "CollapseRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-corpse-explosion-fusion-source",
+      "entityType": "banner",
+      "entityId": "corpse-explosion-fusion",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13405",
+          "internalKey": "CorpseExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-corpse-explosion-tower-specific-source",
+      "entityType": "banner",
+      "entityId": "corpse-explosion-tower-specific",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13348",
+          "internalKey": "CorpseExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-crescendo-blast-source",
+      "entityType": "banner",
+      "entityId": "crescendo-blast",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13349",
+          "internalKey": "CrescendoBlastData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-crimson-beak-source",
+      "entityType": "banner",
+      "entityId": "crimson-beak",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13406",
+          "internalKey": "CrimsonBeakData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-crippling-pain-source",
+      "entityType": "banner",
+      "entityId": "crippling-pain",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13407",
+          "internalKey": "CripplingPainData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-critical-bleed-source",
+      "entityType": "banner",
+      "entityId": "critical-bleed",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13341",
+          "internalKey": "BleedCritsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-critical-bond-source",
+      "entityType": "banner",
+      "entityId": "critical-bond",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13370",
+          "internalKey": "NexusAltRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-critical-breach-source",
+      "entityType": "banner",
+      "entityId": "critical-breach",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13408",
+          "internalKey": "CriticalBreachData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-critical-impact-source",
+      "entityType": "banner",
+      "entityId": "critical-impact",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13409",
+          "internalKey": "CriticalImpactData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-critical-nexus-source",
+      "entityType": "banner",
+      "entityId": "critical-nexus",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13352",
+          "internalKey": "CriticalNexusRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-damnable-weak-source",
+      "entityType": "banner",
+      "entityId": "damnable-weak",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13410",
+          "internalKey": "DamnableWeakData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-dark-worship-source",
+      "entityType": "banner",
+      "entityId": "dark-worship",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13353",
+          "internalKey": "DarkWorshipData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-darkness-source",
+      "entityType": "banner",
+      "entityId": "darkness",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13354",
+          "internalKey": "DarknessData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-deadly-presence-source",
+      "entityType": "banner",
+      "entityId": "deadly-presence",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13351",
+          "internalKey": "CritAuraRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-destructive-strike-source",
+      "entityType": "banner",
+      "entityId": "destructive-strike",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13411",
+          "internalKey": "DestructiveStrikeData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-dispersion-source",
+      "entityType": "banner",
+      "entityId": "dispersion",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-doom-blast-source",
+      "entityType": "banner",
+      "entityId": "doom-blast",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13355",
+          "internalKey": "DoomBlastRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-doom-cold-source",
+      "entityType": "banner",
+      "entityId": "doom-cold",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13412",
+          "internalKey": "DoomColdData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-doom-scattering-source",
+      "entityType": "banner",
+      "entityId": "doom-scattering",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13413",
+          "internalKey": "DoomScatteringData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-double-nova-source",
+      "entityType": "banner",
+      "entityId": "double-nova",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13415",
+          "internalKey": "DoubleNovaData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-double-strike-source",
+      "entityType": "banner",
+      "entityId": "double-strike",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13356",
+          "internalKey": "DoubleStrikeData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-earthquake-source",
+      "entityType": "banner",
+      "entityId": "earthquake",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13357",
+          "internalKey": "EarthquakeData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-fire-arrows-source",
+      "entityType": "banner",
+      "entityId": "fire-arrows",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13416",
+          "internalKey": "FireArrowsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-focus-rune-source",
+      "entityType": "banner",
+      "entityId": "focus-rune",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13359",
+          "internalKey": "FocusRuneRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-frost-magician-source",
+      "entityType": "banner",
+      "entityId": "frost-magician",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13360",
+          "internalKey": "FrostMagicianData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-frost-scythe-source",
+      "entityType": "banner",
+      "entityId": "frost-scythe",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13417",
+          "internalKey": "FrostScytheData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-ghost-raven-source",
+      "entityType": "banner",
+      "entityId": "ghost-raven",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13361",
+          "internalKey": "GhostRavenRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-glacial-nova-source",
+      "entityType": "banner",
+      "entityId": "glacial-nova",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13362",
+          "internalKey": "GlacialNovaData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-hydra-source",
+      "entityType": "banner",
+      "entityId": "hydra",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13418",
+          "internalKey": "HydraData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-iced-target-source",
+      "entityType": "banner",
+      "entityId": "iced-target",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13419",
+          "internalKey": "IcedTargetData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-icy-death-source",
+      "entityType": "banner",
+      "entityId": "icy-death",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13364",
+          "internalKey": "IcyDeathRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-insanity-source",
+      "entityType": "banner",
+      "entityId": "insanity",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13365",
+          "internalKey": "InsanityRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-light-pillar-source",
+      "entityType": "banner",
+      "entityId": "light-pillar",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13363",
+          "internalKey": "HolyPillarData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-lightning-surge-source",
+      "entityType": "banner",
+      "entityId": "lightning-surge",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13366",
+          "internalKey": "LightningSurgeRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-lightstorm-source",
+      "entityType": "banner",
+      "entityId": "lightstorm",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13420",
+          "internalKey": "LightburstData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-lucky-shot-source",
+      "entityType": "banner",
+      "entityId": "lucky-shot",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13377",
+          "internalKey": "PiercingArrowRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-magical-charge-source",
+      "entityType": "banner",
+      "entityId": "magical-charge",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13367",
+          "internalKey": "MagicalChargeData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-magma-field-source",
+      "entityType": "banner",
+      "entityId": "magma-field",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13368",
+          "internalKey": "MagmaFieldRogueCard"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-mastery-source",
+      "entityType": "banner",
+      "entityId": "mastery",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13369",
+          "internalKey": "MasteryData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-multitude-source",
+      "entityType": "banner",
+      "entityId": "multitude",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-mystic-winds-source",
+      "entityType": "banner",
+      "entityId": "mystic-winds",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13421",
+          "internalKey": "MysticWindsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-nightburst-source",
+      "entityType": "banner",
+      "entityId": "nightburst",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13422",
+          "internalKey": "NightburstData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-omnipotence-source",
+      "entityType": "banner",
+      "entityId": "omnipotence",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13371",
+          "internalKey": "OmnipotenceData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-opening-blitz-source",
+      "entityType": "banner",
+      "entityId": "opening-blitz",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13372",
+          "internalKey": "OpeningBlitzRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-outreach-first-source",
+      "entityType": "banner",
+      "entityId": "outreach-first",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13373",
+          "internalKey": "OutreachFirstRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-overdose-source",
+      "entityType": "banner",
+      "entityId": "overdose",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13374",
+          "internalKey": "OverdoseData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-overheating-source",
+      "entityType": "banner",
+      "entityId": "overheating",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13375",
+          "internalKey": "OverheatingRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-pact-of-dusk-source",
+      "entityType": "banner",
+      "entityId": "pact-of-dusk",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13423",
+          "internalKey": "PactOfDuskData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-painful-cold-source",
+      "entityType": "banner",
+      "entityId": "painful-cold",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13376",
+          "internalKey": "PainfulColdData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-power-rise-source",
+      "entityType": "banner",
+      "entityId": "power-rise",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-precision-shots-source",
+      "entityType": "banner",
+      "entityId": "precision-shots",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13424",
+          "internalKey": "PrecisionShotsData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-prism-source",
+      "entityType": "banner",
+      "entityId": "prism",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13378",
+          "internalKey": "PrismData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-rapid-archer-source",
+      "entityType": "banner",
+      "entityId": "rapid-archer",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13379",
+          "internalKey": "RapidArcherRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-rapture-source",
+      "entityType": "banner",
+      "entityId": "rapture",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13381",
+          "internalKey": "RaptureRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-ring-of-death-source",
+      "entityType": "banner",
+      "entityId": "ring-of-death",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13382",
+          "internalKey": "RingOfDeathRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-runic-fire-aura-source",
+      "entityType": "banner",
+      "entityId": "runic-fire-aura",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13380",
+          "internalKey": "RapidfireAuraRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-scorching-source",
+      "entityType": "banner",
+      "entityId": "scorching",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13425",
+          "internalKey": "ScorchingData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-scraper-source",
+      "entityType": "banner",
+      "entityId": "scraper",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13383",
+          "internalKey": "ScraperRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-shadow-tornado-source",
+      "entityType": "banner",
+      "entityId": "shadow-tornado",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13426",
+          "internalKey": "ShadowTornadoData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-shockwave-source",
+      "entityType": "banner",
+      "entityId": "shockwave",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13427",
+          "internalKey": "ShockWaveData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-skyfall-arrows-source",
+      "entityType": "banner",
+      "entityId": "skyfall-arrows",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13384",
+          "internalKey": "SkyfallArrowsRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-soulflame-source",
+      "entityType": "banner",
+      "entityId": "soulflame",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13428",
+          "internalKey": "SoulflameData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-speedy-death-source",
+      "entityType": "banner",
+      "entityId": "speedy-death",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13429",
+          "internalKey": "SpeedyDeathData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-spinning-scythe-source",
+      "entityType": "banner",
+      "entityId": "spinning-scythe",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13430",
+          "internalKey": "SpinningScytheData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-spiral-of-pain-source",
+      "entityType": "banner",
+      "entityId": "spiral-of-pain",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13431",
+          "internalKey": "SpiralOfPainData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-squall-source",
+      "entityType": "banner",
+      "entityId": "squall",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13385",
+          "internalKey": "SquallData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-stormbringer-source",
+      "entityType": "banner",
+      "entityId": "stormbringer",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13386",
+          "internalKey": "StormBringerData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-supernova-source",
+      "entityType": "banner",
+      "entityId": "supernova",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13387",
+          "internalKey": "SuperNovaData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-sweeper-source",
+      "entityType": "banner",
+      "entityId": "sweeper",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13432",
+          "internalKey": "SweeperData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-tempest-stopper-source",
+      "entityType": "banner",
+      "entityId": "tempest-stopper",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13388",
+          "internalKey": "TempestStopperRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-thor-s-wrath-source",
+      "entityType": "banner",
+      "entityId": "thor-s-wrath",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13390",
+          "internalKey": "ThorsWrathData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-timberwind-mark-source",
+      "entityType": "banner",
+      "entityId": "timberwind-mark",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13391",
+          "internalKey": "TimberwindMarkRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-trinity-source",
+      "entityType": "banner",
+      "entityId": "trinity",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13392",
+          "internalKey": "TripleThreatRogueCard"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-twin-feathers-source",
+      "entityType": "banner",
+      "entityId": "twin-feathers",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13393",
+          "internalKey": "TwinFeathersRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-unchained-rage-source",
+      "entityType": "banner",
+      "entityId": "unchained-rage",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13433",
+          "internalKey": "UnchainedRageData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-venomous-bleed-source",
+      "entityType": "banner",
+      "entityId": "venomous-bleed",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13434",
+          "internalKey": "VenomousBleedData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-volcanic-eruption-source",
+      "entityType": "banner",
+      "entityId": "volcanic-eruption",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13394",
+          "internalKey": "VolcanicEruptionData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-vulnerability-source",
+      "entityType": "banner",
+      "entityId": "vulnerability",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13395",
+          "internalKey": "VulnerabilityRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-wide-blast-source",
+      "entityType": "banner",
+      "entityId": "wide-blast",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13396",
+          "internalKey": "WideBlastRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-wings-of-chaos-source",
+      "entityType": "banner",
+      "entityId": "wings-of-chaos",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13414",
+          "internalKey": "DoomlanceData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "banner-wrath-scattering-source",
+      "entityType": "banner",
+      "entityId": "wrath-scattering",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13397",
+          "internalKey": "WrathScatteringRogueData"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-bloody-chain",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:bloody-chain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13399",
+          "internalKey": "BloodyChainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-celestial-jumps",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:celestial-jumps",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13401",
+          "internalKey": "CelestialJumpsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-chain-crits",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:chain-crits",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13343",
+          "internalKey": "ChainCritsRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-chain-echo",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:chain-echo",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13358",
+          "internalKey": "ExtendedChainRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-charged-arrows",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:charged-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13403",
+          "internalKey": "ChargedArrowsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-critical-bond",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:critical-bond",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13370",
+          "internalKey": "NexusAltRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-critical-breach",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:critical-breach",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13408",
+          "internalKey": "CriticalBreachData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-critical-nexus",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:critical-nexus",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13352",
+          "internalKey": "CriticalNexusRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-destructive-strike",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:destructive-strike",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13411",
+          "internalKey": "DestructiveStrikeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-iced-target",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:iced-target",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13419",
+          "internalKey": "IcedTargetData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-lightning-surge",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:lightning-surge",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13366",
+          "internalKey": "LightningSurgeRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-lightstorm",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:lightstorm",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13420",
+          "internalKey": "LightburstData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-opening-blitz",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:opening-blitz",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13372",
+          "internalKey": "OpeningBlitzRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-shockwave",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:shockwave",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13427",
+          "internalKey": "ShockWaveData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arc-tower-thor-s-wrath",
+      "entityType": "eligibility",
+      "entityId": "arc-tower:thor-s-wrath",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13390",
+          "internalKey": "ThorsWrathData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-barbed-arrows",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:barbed-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13350",
+          "internalKey": "CripplingShotRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-bloody-chain",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:bloody-chain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13399",
+          "internalKey": "BloodyChainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-bodkin-arrow",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:bodkin-arrow",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13342",
+          "internalKey": "BodkinArrowRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-chaos-bolts",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:chaos-bolts",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13402",
+          "internalKey": "ChaosBoltsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-charged-arrows",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:charged-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13403",
+          "internalKey": "ChargedArrowsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-corpse-explosion-fusion",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:corpse-explosion-fusion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13405",
+          "internalKey": "CorpseExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-fire-arrows",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:fire-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13416",
+          "internalKey": "FireArrowsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-lucky-shot",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:lucky-shot",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13377",
+          "internalKey": "PiercingArrowRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-pact-of-dusk",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:pact-of-dusk",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13423",
+          "internalKey": "PactOfDuskData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-precision-shots",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:precision-shots",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13424",
+          "internalKey": "PrecisionShotsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-rapid-archer",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:rapid-archer",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13379",
+          "internalKey": "RapidArcherRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-skyfall-arrows",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:skyfall-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13384",
+          "internalKey": "SkyfallArrowsRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-timberwind-mark",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:timberwind-mark",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13391",
+          "internalKey": "TimberwindMarkRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-arrow-tower-venomous-bleed",
+      "entityType": "eligibility",
+      "entityId": "arrow-tower:venomous-bleed",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13434",
+          "internalKey": "VenomousBleedData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-barrier-bane",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:barrier-bane",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13398",
+          "internalKey": "BarrierBaneData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-barrier-shatter",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:barrier-shatter",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13340",
+          "internalKey": "BarrierBreakerData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-chaos-bolts",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:chaos-bolts",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13402",
+          "internalKey": "ChaosBoltsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-chaos-storm",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:chaos-storm",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13344",
+          "internalKey": "ChaosStormData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-crimson-beak",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:crimson-beak",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13406",
+          "internalKey": "CrimsonBeakData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-critical-bleed",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:critical-bleed",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13341",
+          "internalKey": "BleedCritsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-dark-worship",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:dark-worship",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13353",
+          "internalKey": "DarkWorshipData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-deadly-presence",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:deadly-presence",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13351",
+          "internalKey": "CritAuraRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-dispersion",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-double-nova",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:double-nova",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13415",
+          "internalKey": "DoubleNovaData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-double-strike",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:double-strike",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13356",
+          "internalKey": "DoubleStrikeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-frost-scythe",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:frost-scythe",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13417",
+          "internalKey": "FrostScytheData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-multitude",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-power-rise",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-spinning-scythe",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:spinning-scythe",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13430",
+          "internalKey": "SpinningScytheData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-venomous-bleed",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:venomous-bleed",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13434",
+          "internalKey": "VenomousBleedData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-chaos-reaper-wings-of-chaos",
+      "entityType": "eligibility",
+      "entityId": "chaos-reaper:wings-of-chaos",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13414",
+          "internalKey": "DoomlanceData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-chill-explosion",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:chill-explosion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13345",
+          "internalKey": "ChillExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-clinking-mastery",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:clinking-mastery",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13404",
+          "internalKey": "ClinkingMasteryData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-cold-snap",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:cold-snap",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13346",
+          "internalKey": "ColdSnapRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-crippling-pain",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:crippling-pain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13407",
+          "internalKey": "CripplingPainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-critical-breach",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:critical-breach",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13408",
+          "internalKey": "CriticalBreachData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-doom-cold",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:doom-cold",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13412",
+          "internalKey": "DoomColdData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-double-nova",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:double-nova",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13415",
+          "internalKey": "DoubleNovaData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-frost-magician",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:frost-magician",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13360",
+          "internalKey": "FrostMagicianData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-frost-scythe",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:frost-scythe",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13417",
+          "internalKey": "FrostScytheData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-glacial-nova",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:glacial-nova",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13362",
+          "internalKey": "GlacialNovaData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-iced-target",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:iced-target",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13419",
+          "internalKey": "IcedTargetData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-icy-death",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:icy-death",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13364",
+          "internalKey": "IcyDeathRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-painful-cold",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:painful-cold",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13376",
+          "internalKey": "PainfulColdData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-frost-tower-speedy-death",
+      "entityType": "eligibility",
+      "entityId": "frost-tower:speedy-death",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13429",
+          "internalKey": "SpeedyDeathData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-clinking-mastery",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:clinking-mastery",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13404",
+          "internalKey": "ClinkingMasteryData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-crimson-beak",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:crimson-beak",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13406",
+          "internalKey": "CrimsonBeakData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-critical-impact",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:critical-impact",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13409",
+          "internalKey": "CriticalImpactData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-damnable-weak",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:damnable-weak",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13410",
+          "internalKey": "DamnableWeakData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-doom-blast",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:doom-blast",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13355",
+          "internalKey": "DoomBlastRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-doom-cold",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:doom-cold",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13412",
+          "internalKey": "DoomColdData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-doom-scattering",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:doom-scattering",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13413",
+          "internalKey": "DoomScatteringData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-ghost-raven",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:ghost-raven",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13361",
+          "internalKey": "GhostRavenRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-mastery",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:mastery",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13369",
+          "internalKey": "MasteryData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-omnipotence",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:omnipotence",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13371",
+          "internalKey": "OmnipotenceData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-sweeper",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:sweeper",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13432",
+          "internalKey": "SweeperData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-twin-feathers",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:twin-feathers",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13393",
+          "internalKey": "TwinFeathersRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-unchained-rage",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:unchained-rage",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13433",
+          "internalKey": "UnchainedRageData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-wings-of-chaos",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:wings-of-chaos",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13414",
+          "internalKey": "DoomlanceData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-raven-tower-wrath-scattering",
+      "entityType": "eligibility",
+      "entityId": "raven-tower:wrath-scattering",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13397",
+          "internalKey": "WrathScatteringRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-branding",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:branding",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13400",
+          "internalKey": "BrandingData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-celestial-jumps",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:celestial-jumps",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13401",
+          "internalKey": "CelestialJumpsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-crippling-pain",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:crippling-pain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13407",
+          "internalKey": "CripplingPainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-focus-rune",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:focus-rune",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13359",
+          "internalKey": "FocusRuneRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-hydra",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:hydra",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13418",
+          "internalKey": "HydraData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-light-pillar",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:light-pillar",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13363",
+          "internalKey": "HolyPillarData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-lightstorm",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:lightstorm",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13420",
+          "internalKey": "LightburstData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-magical-charge",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:magical-charge",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13367",
+          "internalKey": "MagicalChargeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-mystic-winds",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:mystic-winds",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13421",
+          "internalKey": "MysticWindsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-prism",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:prism",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13378",
+          "internalKey": "PrismData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-runic-fire-aura",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:runic-fire-aura",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13380",
+          "internalKey": "RapidfireAuraRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-scorching",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:scorching",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13425",
+          "internalKey": "ScorchingData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-speedy-death",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:speedy-death",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13429",
+          "internalKey": "SpeedyDeathData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-runestone-tower-trinity",
+      "entityType": "eligibility",
+      "entityId": "runestone-tower:trinity",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13392",
+          "internalKey": "TripleThreatRogueCard"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-corpse-explosion-fusion",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:corpse-explosion-fusion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13405",
+          "internalKey": "CorpseExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-corpse-explosion-tower-specific",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:corpse-explosion-tower-specific",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13348",
+          "internalKey": "CorpseExplosionRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-damnable-weak",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:damnable-weak",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13410",
+          "internalKey": "DamnableWeakData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-darkness",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:darkness",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13354",
+          "internalKey": "DarknessData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-insanity",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:insanity",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13365",
+          "internalKey": "InsanityRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-nightburst",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:nightburst",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13422",
+          "internalKey": "NightburstData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-overdose",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:overdose",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13374",
+          "internalKey": "OverdoseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-pact-of-dusk",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:pact-of-dusk",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13423",
+          "internalKey": "PactOfDuskData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-rapture",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:rapture",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13381",
+          "internalKey": "RaptureRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-ring-of-death",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:ring-of-death",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13382",
+          "internalKey": "RingOfDeathRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-shadow-tornado",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:shadow-tornado",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13426",
+          "internalKey": "ShadowTornadoData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-soulflame",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:soulflame",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13428",
+          "internalKey": "SoulflameData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-spiral-of-pain",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:spiral-of-pain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13431",
+          "internalKey": "SpiralOfPainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-unchained-rage",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:unchained-rage",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13433",
+          "internalKey": "UnchainedRageData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-shadow-tower-vulnerability",
+      "entityType": "eligibility",
+      "entityId": "shadow-tower:vulnerability",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13395",
+          "internalKey": "VulnerabilityRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-barrier-bane",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:barrier-bane",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13398",
+          "internalKey": "BarrierBaneData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-collapse",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:collapse",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13347",
+          "internalKey": "CollapseRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-critical-impact",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:critical-impact",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13409",
+          "internalKey": "CriticalImpactData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-dispersion",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-doom-scattering",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:doom-scattering",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13413",
+          "internalKey": "DoomScatteringData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-earthquake",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:earthquake",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13357",
+          "internalKey": "EarthquakeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-multitude",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-mystic-winds",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:mystic-winds",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13421",
+          "internalKey": "MysticWindsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-power-rise",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-scorching",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:scorching",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13425",
+          "internalKey": "ScorchingData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-scraper",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:scraper",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13383",
+          "internalKey": "ScraperRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-shadow-tornado",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:shadow-tornado",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13426",
+          "internalKey": "ShadowTornadoData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-spinning-scythe",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:spinning-scythe",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13430",
+          "internalKey": "SpinningScytheData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-spiral-of-pain",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:spiral-of-pain",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13431",
+          "internalKey": "SpiralOfPainData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-squall",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:squall",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13385",
+          "internalKey": "SquallData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-stormbringer",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:stormbringer",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13386",
+          "internalKey": "StormBringerData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-sweeper",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:sweeper",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13432",
+          "internalKey": "SweeperData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-tornado-tower-tempest-stopper",
+      "entityType": "eligibility",
+      "entityId": "tornado-tower:tempest-stopper",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13388",
+          "internalKey": "TempestStopperRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-branding",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:branding",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13400",
+          "internalKey": "BrandingData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-crescendo-blast",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:crescendo-blast",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13349",
+          "internalKey": "CrescendoBlastData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-destructive-strike",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:destructive-strike",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13411",
+          "internalKey": "DestructiveStrikeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-dispersion",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:dispersion",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13435",
+          "internalKey": "DispersionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-fire-arrows",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:fire-arrows",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13416",
+          "internalKey": "FireArrowsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-hydra",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:hydra",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13418",
+          "internalKey": "HydraData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-magma-field",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:magma-field",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13368",
+          "internalKey": "MagmaFieldRogueCard"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-multitude",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:multitude",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13436",
+          "internalKey": "MultitudeData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-nightburst",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:nightburst",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13422",
+          "internalKey": "NightburstData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-outreach-first",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:outreach-first",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13373",
+          "internalKey": "OutreachFirstRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-overheating",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:overheating",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13375",
+          "internalKey": "OverheatingRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-power-rise",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:power-rise",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13437",
+          "internalKey": "PowerRiseData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-precision-shots",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:precision-shots",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13424",
+          "internalKey": "PrecisionShotsData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-shockwave",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:shockwave",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13427",
+          "internalKey": "ShockWaveData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-soulflame",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:soulflame",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13428",
+          "internalKey": "SoulflameData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-supernova",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:supernova",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13387",
+          "internalKey": "SuperNovaData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-volcanic-eruption",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:volcanic-eruption",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13394",
+          "internalKey": "VolcanicEruptionData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "eligible-volcano-mortar-wide-blast",
+      "entityType": "eligibility",
+      "entityId": "volcano-mortar:wide-blast",
+      "evidence": "runtime-reference",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/level2",
+          "objectPathId": "147939",
+          "internalKey": "RogueCardsManager"
+        },
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13396",
+          "internalKey": "WideBlastRogueData"
+        }
+      ],
+      "localizationLanguages": [],
+      "notes": []
+    },
+    {
+      "id": "tower-arc-tower-source",
+      "entityType": "tower",
+      "entityId": "arc-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14203",
+          "internalKey": "ArcTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-arrow-tower-source",
+      "entityType": "tower",
+      "entityId": "arrow-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13851",
+          "internalKey": "ArrowTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-chaos-reaper-source",
+      "entityType": "tower",
+      "entityId": "chaos-reaper",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14251",
+          "internalKey": "ChaosReaperTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-frost-tower-source",
+      "entityType": "tower",
+      "entityId": "frost-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14339",
+          "internalKey": "FrostTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-raven-tower-source",
+      "entityType": "tower",
+      "entityId": "raven-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13830",
+          "internalKey": "RavenTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-runestone-tower-source",
+      "entityType": "tower",
+      "entityId": "runestone-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14210",
+          "internalKey": "ObliskTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-shadow-tower-source",
+      "entityType": "tower",
+      "entityId": "shadow-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14328",
+          "internalKey": "ShadowTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-tornado-tower-source",
+      "entityType": "tower",
+      "entityId": "tornado-tower",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "13823",
+          "internalKey": "TornadoTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    },
+    {
+      "id": "tower-volcano-mortar-source",
+      "entityType": "tower",
+      "entityId": "volcano-mortar",
+      "evidence": "direct-record",
+      "sources": [
+        {
+          "sourceAsset": "NordHold_Data/resources.assets",
+          "objectPathId": "14267",
+          "internalKey": "VolcanoMortarTower"
+        }
+      ],
+      "localizationLanguages": [
+        "en",
+        "de"
+      ],
+      "notes": []
+    }
+  ]
+}

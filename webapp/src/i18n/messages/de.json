@@ -1,0 +1,46 @@
+{
+  "app": {
+    "title": "Nordhold Wiki"
+  },
+  "catalogue": {
+    "introduction": "Entdecke alle Türme und die Banner, die sie erhalten können.",
+    "noResultsBody": "Versuche einen anderen Turmnamen oder leere die Suche.",
+    "noResultsTitle": "Keine Türme gefunden",
+    "openTower": "Banner anzeigen",
+    "resultCount": "{count} von {total} Türmen angezeigt",
+    "searchLabel": "Türme durchsuchen",
+    "title": "Turmarchiv"
+  },
+  "classification": {
+    "fusion": "Fusionsbanner",
+    "generalist": "Generalistenbanner",
+    "tower-specific": "Turmspezifische Banner",
+    "unique": "Einzigartige Banner"
+  },
+  "detail": {
+    "bannerSection": "Verfügbare Banner",
+    "categoryCount": "Banner in dieser Kategorie: {count}",
+    "emptyGroup": "Keine passenden Banner in dieser Gruppe.",
+    "eyebrow": "Turmdossier",
+    "fusionCombination": "Turmkombination für Fusion",
+    "noResultsBody": "Versuche einen anderen Bannernamen oder leere die Suche.",
+    "noResultsTitle": "Keine Banner gefunden",
+    "resultCount": "{count} von {total} verfügbaren Bannern angezeigt",
+    "searchLabel": "Verfügbare Banner durchsuchen"
+  },
+  "header": {
+    "attribution": "powered by Aspern Tallow",
+    "published": "Veröffentlicht",
+    "version": "Version"
+  },
+  "navigation": {
+    "backToTowers": "Zurück zu allen Türmen"
+  },
+  "notFound": {
+    "body": "Diese Seite oder dieser Turm existiert nicht in den aktuellen Wiki-Daten.",
+    "title": "Hier wurde nichts gefunden"
+  },
+  "search": {
+    "clear": "Suche leeren"
+  }
+}

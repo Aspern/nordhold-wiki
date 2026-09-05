@@ -1,0 +1,3719 @@
+{
+  "schemaVersion": "1.0.0",
+  "gameBuildId": "23261523",
+  "towers": [
+    {
+      "id": "arc-tower",
+      "sourceKey": "ArcTower",
+      "sortOrder": 0,
+      "name": {
+        "en": "Arc Tower",
+        "de": "Arc Tower"
+      },
+      "effectSummary": {
+        "en": "Chains electrical attacks between enemies and ignores blocking.",
+        "de": "Verkettet elektrische Angriffe zwischen Gegnern und ignoriert Blocken."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "arc-tower-visual",
+        "path": "src/assets/entities/towers/arc-tower.png",
+        "width": 30,
+        "height": 32,
+        "sha256": "4a020c30d81fdbd7d290d3c0c3e0b61501b4e1090b7435939b80024b2a944238",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Arc Tower icon",
+          "de": "Symbol für Arc Tower"
+        }
+      },
+      "provenanceRef": "tower-arc-tower-source"
+    },
+    {
+      "id": "arrow-tower",
+      "sourceKey": "ArrowTower",
+      "sortOrder": 1,
+      "name": {
+        "en": "Arrow Tower",
+        "de": "Arrow Tower"
+      },
+      "effectSummary": {
+        "en": "Fires dependable ranged arrows with balanced damage and speed.",
+        "de": "Feuert zuverlässige Fernkampfpfeile mit ausgewogenem Schaden und Tempo."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "arrow-tower-visual",
+        "path": "src/assets/entities/towers/arrow-tower.png",
+        "width": 44,
+        "height": 25,
+        "sha256": "05f58aa6b029f4d32b56b6e468c70fe5326efda34fa9fd51205d66b4e95fb244",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Arrow Tower icon",
+          "de": "Symbol für Arrow Tower"
+        }
+      },
+      "provenanceRef": "tower-arrow-tower-source"
+    },
+    {
+      "id": "frost-tower",
+      "sourceKey": "FrostTower",
+      "sortOrder": 2,
+      "name": {
+        "en": "Frost Tower",
+        "de": "Frost Tower"
+      },
+      "effectSummary": {
+        "en": "Uses slow frost attacks that bypass blocking and hinder enemies.",
+        "de": "Nutzt langsame Frostangriffe, die Blocken umgehen und Gegner behindern."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "frost-tower-visual",
+        "path": "src/assets/entities/towers/frost-tower.png",
+        "width": 32,
+        "height": 33,
+        "sha256": "87846a715b5802effa055f16222a8a0cfc6f4ea861ac67046678cc899ea474ab",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Frost Tower icon",
+          "de": "Symbol für Frost Tower"
+        }
+      },
+      "provenanceRef": "tower-frost-tower-source"
+    },
+    {
+      "id": "volcano-mortar",
+      "sourceKey": "VolcanoMortarTower",
+      "sortOrder": 3,
+      "name": {
+        "en": "Volcano Mortar",
+        "de": "Volcano Mortar"
+      },
+      "effectSummary": {
+        "en": "Launches long-range explosive shots that leave burning areas.",
+        "de": "Verschießt weitreichende Explosivgeschosse, die Brandflächen hinterlassen."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "volcano-mortar-visual",
+        "path": "src/assets/entities/towers/volcano-mortar.png",
+        "width": 40,
+        "height": 29,
+        "sha256": "2dafd5db4964a8a55405c781b905f800c5ce5dda00fc8b623cb08741fb60d069",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Volcano Mortar icon",
+          "de": "Symbol für Volcano Mortar"
+        }
+      },
+      "provenanceRef": "tower-volcano-mortar-source"
+    },
+    {
+      "id": "shadow-tower",
+      "sourceKey": "ShadowTower",
+      "sortOrder": 4,
+      "name": {
+        "en": "Shadow Tower",
+        "de": "Shadow Tower"
+      },
+      "effectSummary": {
+        "en": "Strikes rapidly through armor and works with weakness effects.",
+        "de": "Greift schnell durch Rüstung hindurch an und nutzt Schwächeeffekte."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "shadow-tower-visual",
+        "path": "src/assets/entities/towers/shadow-tower.png",
+        "width": 32,
+        "height": 31,
+        "sha256": "8114aa7e9e29a10160266c955ddb5ea76248a649f25e8be6c72b520f8ab494f2",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Shadow Tower icon",
+          "de": "Symbol für Shadow Tower"
+        }
+      },
+      "provenanceRef": "tower-shadow-tower-source"
+    },
+    {
+      "id": "runestone-tower",
+      "sourceKey": "ObliskTower",
+      "sortOrder": 5,
+      "name": {
+        "en": "Runestone Tower",
+        "de": "Runestone Tower"
+      },
+      "effectSummary": {
+        "en": "Projects rapid runic beams and can support nearby towers.",
+        "de": "Projiziert schnelle Runenstrahlen und kann nahe Türme unterstützen."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "runestone-tower-visual",
+        "path": "src/assets/entities/towers/runestone-tower.png",
+        "width": 46,
+        "height": 27,
+        "sha256": "95682252a3daccc58c6b02fa289647456d48bdf33106aadea90fe959293d9922",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Runestone Tower icon",
+          "de": "Symbol für Runestone Tower"
+        }
+      },
+      "provenanceRef": "tower-runestone-tower-source"
+    },
+    {
+      "id": "tornado-tower",
+      "sourceKey": "TornadoTower",
+      "sortOrder": 6,
+      "name": {
+        "en": "Tornado Tower",
+        "de": "Tornado Tower"
+      },
+      "effectSummary": {
+        "en": "Creates swift tornadoes whose attacks ignore armor.",
+        "de": "Erzeugt schnelle Tornados, deren Angriffe Rüstung ignorieren."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "tornado-tower-visual",
+        "path": "src/assets/entities/towers/tornado-tower.png",
+        "width": 28,
+        "height": 34,
+        "sha256": "610aaae2c112c934f91b32aa9a3d84b40fe03013d752fdd9384296318cf46b8b",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Tornado Tower icon",
+          "de": "Symbol für Tornado Tower"
+        }
+      },
+      "provenanceRef": "tower-tornado-tower-source"
+    },
+    {
+      "id": "raven-tower",
+      "sourceKey": "RavenTower",
+      "sortOrder": 7,
+      "name": {
+        "en": "Raven Tower",
+        "de": "Raven Tower"
+      },
+      "effectSummary": {
+        "en": "Delivers powerful long-range shots that bypass magical barriers.",
+        "de": "Führt mächtige Fernangriffe aus, die magische Barrieren umgehen."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "raven-tower-visual",
+        "path": "src/assets/entities/towers/raven-tower.png",
+        "width": 37,
+        "height": 28,
+        "sha256": "cc78c543e68b2ad99447f37a092c5b229af6f932a82947019767c01cee8e03b3",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Raven Tower icon",
+          "de": "Symbol für Raven Tower"
+        }
+      },
+      "provenanceRef": "tower-raven-tower-source"
+    },
+    {
+      "id": "chaos-reaper",
+      "sourceKey": "ChaosReaperTower",
+      "sortOrder": 8,
+      "name": {
+        "en": "Chaos Reaper",
+        "de": "Chaos Reaper"
+      },
+      "effectSummary": {
+        "en": "Deals heavy close-range scythe strikes with strong critical and barrier damage.",
+        "de": "Verursacht schwere Sensenhiebe im Nahbereich mit hohem Krit- und Barrierschaden."
+      },
+      "visual": {
+        "kind": "image",
+        "assetId": "chaos-reaper-visual",
+        "path": "src/assets/entities/towers/chaos-reaper.png",
+        "width": 55,
+        "height": 55,
+        "sha256": "2a6caaf47609398fd88311f35adc0404d8fb206111e6540e648af1203ce791d8",
+        "authorship": "authorized",
+        "licenseReference": "src/assets/entities/towers/extraction-manifest.json",
+        "alt": {
+          "en": "Chaos Reaper icon",
+          "de": "Symbol für Chaos Reaper"
+        }
+      },
+      "provenanceRef": "tower-chaos-reaper-source"
+    }
+  ],
+  "banners": [
+    {
+      "id": "barrier-shatter",
+      "sourceKey": "tower-specific:BarrierBreakerData:BarrierBreakerBannerTitle",
+      "sortOrder": 0,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Barrier Shatter",
+        "de": "Durchbruch"
+      },
+      "effectSummary": {
+        "en": "Boosts Chaos Reaper damage against health and barriers.",
+        "de": "Steigert den Schaden des Chaos Reapers gegen Leben und Barrieren."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "barrier-shatter-visual",
+        "seed": 1,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Barrier Shatter",
+          "de": "Abstraktes Emblem für Durchbruch"
+        }
+      },
+      "provenanceRef": "banner-barrier-shatter-source",
+      "towerAffinityId": "chaos-reaper"
+    },
+    {
+      "id": "critical-bleed",
+      "sourceKey": "tower-specific:BleedCritsData:BleedCritsTitle",
+      "sortOrder": 1,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Critical Bleed",
+        "de": "Kritische Blutung"
+      },
+      "effectSummary": {
+        "en": "Converts part of Chaos Reaper critical damage into bleeding stacks.",
+        "de": "Wandelt einen Teil des kritischen Chaos-Reaper-Schadens in Blutungsstapel um."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "critical-bleed-visual",
+        "seed": 2,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Critical Bleed",
+          "de": "Abstraktes Emblem für Kritische Blutung"
+        }
+      },
+      "provenanceRef": "banner-critical-bleed-source",
+      "towerAffinityId": "chaos-reaper"
+    },
+    {
+      "id": "bodkin-arrow",
+      "sourceKey": "tower-specific:BodkinArrowRogueData:BodkinArrowTitle",
+      "sortOrder": 2,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Bodkin Arrow",
+        "de": "Bodkin-Pfeile"
+      },
+      "effectSummary": {
+        "en": "Raises the Arrow Tower's firing speed.",
+        "de": "Erhöht die Feuerrate des Arrow Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "bodkin-arrow-visual",
+        "seed": 3,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Bodkin Arrow",
+          "de": "Abstraktes Emblem für Bodkin-Pfeile"
+        }
+      },
+      "provenanceRef": "banner-bodkin-arrow-source",
+      "towerAffinityId": "arrow-tower"
+    },
+    {
+      "id": "chain-crits",
+      "sourceKey": "tower-specific:ChainCritsRogueData:ChainCritsTitle",
+      "sortOrder": 3,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Chain Crits",
+        "de": "Kettenkrits"
+      },
+      "effectSummary": {
+        "en": "Each critical hit builds additional critical chance.",
+        "de": "Jeder kritische Treffer baut zusätzliche kritische Chance auf."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "chain-crits-visual",
+        "seed": 4,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Chain Crits",
+          "de": "Abstraktes Emblem für Kettenkrits"
+        }
+      },
+      "provenanceRef": "banner-chain-crits-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "chaos-storm",
+      "sourceKey": "unique:ChaosStormData:ChaosStormTitle",
+      "sortOrder": 4,
+      "classification": "unique",
+      "name": {
+        "en": "Chaos Storm",
+        "de": "Chaossturm"
+      },
+      "effectSummary": {
+        "en": "Periodically releases multiple barrier-burning strikes around the target.",
+        "de": "Entfesselt regelmäßig mehrere barriereverbrennende Schläge im Zielgebiet."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "chaos-storm-visual",
+        "seed": 5,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Chaos Storm",
+          "de": "Abstraktes Emblem für Chaossturm"
+        }
+      },
+      "provenanceRef": "banner-chaos-storm-source"
+    },
+    {
+      "id": "chill-explosion",
+      "sourceKey": "tower-specific:ChillExplosionRogueData:ChillExplosionTitle",
+      "sortOrder": 5,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Chill Explosion",
+        "de": "Gefrierknall"
+      },
+      "effectSummary": {
+        "en": "Lets Frost Tower attacks occasionally freeze their targets.",
+        "de": "Lässt Angriffe des Frost Towers gelegentlich Ziele einfrieren."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "chill-explosion-visual",
+        "seed": 6,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Chill Explosion",
+          "de": "Abstraktes Emblem für Gefrierknall"
+        }
+      },
+      "provenanceRef": "banner-chill-explosion-source",
+      "towerAffinityId": "frost-tower"
+    },
+    {
+      "id": "cold-snap",
+      "sourceKey": "tower-specific:ColdSnapRogueData:ColdSnapRogueTitle",
+      "sortOrder": 6,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Cold Snap",
+        "de": "Kälteeinbruch"
+      },
+      "effectSummary": {
+        "en": "Strengthens and extends the Frost Tower's slowing effect.",
+        "de": "Verstärkt und verlängert den Verlangsamungseffekt des Frost Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "cold-snap-visual",
+        "seed": 7,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Cold Snap",
+          "de": "Abstraktes Emblem für Kälteeinbruch"
+        }
+      },
+      "provenanceRef": "banner-cold-snap-source",
+      "towerAffinityId": "frost-tower"
+    },
+    {
+      "id": "collapse",
+      "sourceKey": "tower-specific:CollapseRogueData:CollapseRogueTitle",
+      "sortOrder": 7,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Collapse",
+        "de": "Einsturz"
+      },
+      "effectSummary": {
+        "en": "Provides stone each wave and improves Tornado Tower critical chance.",
+        "de": "Gewährt pro Welle Stein und erhöht die kritische Chance des Tornado Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "collapse-visual",
+        "seed": 8,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Collapse",
+          "de": "Abstraktes Emblem für Einsturz"
+        }
+      },
+      "provenanceRef": "banner-collapse-source",
+      "towerAffinityId": "tornado-tower"
+    },
+    {
+      "id": "corpse-explosion-tower-specific",
+      "sourceKey": "tower-specific:CorpseExplosionRogueData:CorpseExplosionTitle",
+      "sortOrder": 8,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Corpse Explosion",
+        "de": "Leichenexplosion"
+      },
+      "effectSummary": {
+        "en": "Gives Shadow Tower kills a chance to detonate the victim for area damage.",
+        "de": "Gibt Shadow-Tower-Kills eine Chance, das Opfer für Flächenschaden explodieren zu lassen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "corpse-explosion-tower-specific-visual",
+        "seed": 9,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Corpse Explosion",
+          "de": "Abstraktes Emblem für Leichenexplosion"
+        }
+      },
+      "provenanceRef": "banner-corpse-explosion-tower-specific-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "crescendo-blast",
+      "sourceKey": "tower-specific:CrescendoBlastData:CrescendoBlasTitle",
+      "sortOrder": 9,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Crescendo Blast",
+        "de": "Crescendo"
+      },
+      "effectSummary": {
+        "en": "Trades normal blast size for a greatly enlarged fourth explosion.",
+        "de": "Tauscht normale Explosionsgröße gegen eine stark vergrößerte vierte Explosion."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "crescendo-blast-visual",
+        "seed": 10,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Crescendo Blast",
+          "de": "Abstraktes Emblem für Crescendo"
+        }
+      },
+      "provenanceRef": "banner-crescendo-blast-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "barbed-arrows",
+      "sourceKey": "tower-specific:CripplingShotRogueData:CripplingShotTitle",
+      "sortOrder": 10,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Barbed Arrows",
+        "de": "Widerhakenpfeile"
+      },
+      "effectSummary": {
+        "en": "Arrow hits inflict a stacking bleeding effect.",
+        "de": "Pfeiltreffer verursachen einen stapelbaren Blutungseffekt."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "barbed-arrows-visual",
+        "seed": 11,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Barbed Arrows",
+          "de": "Abstraktes Emblem für Widerhakenpfeile"
+        }
+      },
+      "provenanceRef": "banner-barbed-arrows-source",
+      "towerAffinityId": "arrow-tower"
+    },
+    {
+      "id": "deadly-presence",
+      "sourceKey": "tower-specific:CritAuraRogueData:CritAuraTitle",
+      "sortOrder": 11,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Deadly Presence",
+        "de": "Tödliche Präsenz"
+      },
+      "effectSummary": {
+        "en": "Improves critical damage for towers inside a Chaos Reaper's range.",
+        "de": "Erhöht den kritischen Schaden von Türmen im Radius eines Chaos Reapers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "deadly-presence-visual",
+        "seed": 12,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Deadly Presence",
+          "de": "Abstraktes Emblem für Tödliche Präsenz"
+        }
+      },
+      "provenanceRef": "banner-deadly-presence-source",
+      "towerAffinityId": "chaos-reaper"
+    },
+    {
+      "id": "critical-nexus",
+      "sourceKey": "tower-specific:CriticalNexusRogueData:CriticalNexusTitle",
+      "sortOrder": 12,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Critical Nexus",
+        "de": "Kritischer Nexus"
+      },
+      "effectSummary": {
+        "en": "Critical Arc Tower hits release chain lightning.",
+        "de": "Kritische Treffer des Arc Towers lösen Kettenblitze aus."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "critical-nexus-visual",
+        "seed": 13,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Critical Nexus",
+          "de": "Abstraktes Emblem für Kritischer Nexus"
+        }
+      },
+      "provenanceRef": "banner-critical-nexus-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "dark-worship",
+      "sourceKey": "tower-specific:DarkWorshipData:DarkWorshipTitle",
+      "sortOrder": 13,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Dark Worship",
+        "de": "Dunkle Anbetung"
+      },
+      "effectSummary": {
+        "en": "Raises Chaos Reaper critical chance and global spell damage.",
+        "de": "Erhöht die kritische Chance des Chaos Reapers und den globalen Zauberschaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "dark-worship-visual",
+        "seed": 14,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Dark Worship",
+          "de": "Abstraktes Emblem für Dunkle Anbetung"
+        }
+      },
+      "provenanceRef": "banner-dark-worship-source",
+      "towerAffinityId": "chaos-reaper"
+    },
+    {
+      "id": "darkness",
+      "sourceKey": "tower-specific:DarknessData:DarknessRogueTitle",
+      "sortOrder": 14,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Darkness",
+        "de": "Dunkelheit"
+      },
+      "effectSummary": {
+        "en": "Shadow Tower kills can mark victims to take more damage.",
+        "de": "Shadow-Tower-Kills können Opfer markieren, sodass sie mehr Schaden erleiden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "darkness-visual",
+        "seed": 15,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Darkness",
+          "de": "Abstraktes Emblem für Dunkelheit"
+        }
+      },
+      "provenanceRef": "banner-darkness-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "doom-blast",
+      "sourceKey": "tower-specific:DoomBlastRogueData:DoomBlastTitle",
+      "sortOrder": 15,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Doom Blast",
+        "de": "Schicksalsschlag"
+      },
+      "effectSummary": {
+        "en": "Killed enemies explode for damage based on their maximum health.",
+        "de": "Getötete Gegner explodieren mit Schaden abhängig von ihren maximalen Lebenspunkten."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "doom-blast-visual",
+        "seed": 16,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Doom Blast",
+          "de": "Abstraktes Emblem für Schicksalsschlag"
+        }
+      },
+      "provenanceRef": "banner-doom-blast-source",
+      "towerAffinityId": "raven-tower"
+    },
+    {
+      "id": "double-strike",
+      "sourceKey": "tower-specific:DoubleStrikeData:DoubleStrikeTitle",
+      "sortOrder": 16,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Double Strike",
+        "de": "Doppelschlag"
+      },
+      "effectSummary": {
+        "en": "Adds a second Chaos Reaper hit worth part of the first strike.",
+        "de": "Fügt einen zweiten Chaos-Reaper-Treffer mit einem Anteil des ersten Hiebs hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "double-strike-visual",
+        "seed": 17,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Double Strike",
+          "de": "Abstraktes Emblem für Doppelschlag"
+        }
+      },
+      "provenanceRef": "banner-double-strike-source",
+      "towerAffinityId": "chaos-reaper"
+    },
+    {
+      "id": "earthquake",
+      "sourceKey": "unique:EarthquakeData:EarthquakeTitle",
+      "sortOrder": 17,
+      "classification": "unique",
+      "name": {
+        "en": "Earthquake",
+        "de": "Erdbeben"
+      },
+      "effectSummary": {
+        "en": "Creates recurring damaging tremors around Tornado Towers that also stun.",
+        "de": "Erzeugt wiederkehrende Schadensbeben um Tornado Towers, die zusätzlich betäuben."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "earthquake-visual",
+        "seed": 18,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Earthquake",
+          "de": "Abstraktes Emblem für Erdbeben"
+        }
+      },
+      "provenanceRef": "banner-earthquake-source"
+    },
+    {
+      "id": "chain-echo",
+      "sourceKey": "tower-specific:ExtendedChainRogueData:ExtendedChainTitle",
+      "sortOrder": 18,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Chain Echo",
+        "de": "Echokette"
+      },
+      "effectSummary": {
+        "en": "Allows Arc Tower lightning to reach more targets.",
+        "de": "Lässt die Blitze des Arc Towers mehr Ziele erreichen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "chain-echo-visual",
+        "seed": 19,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Chain Echo",
+          "de": "Abstraktes Emblem für Echokette"
+        }
+      },
+      "provenanceRef": "banner-chain-echo-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "focus-rune",
+      "sourceKey": "tower-specific:FocusRuneRogueData:FocusRuneTitle",
+      "sortOrder": 19,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Focus Rune",
+        "de": "Fokusrune"
+      },
+      "effectSummary": {
+        "en": "Repeated attacks on one enemy steadily gain damage.",
+        "de": "Wiederholte Angriffe auf denselben Gegner gewinnen fortlaufend Schaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "focus-rune-visual",
+        "seed": 20,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Focus Rune",
+          "de": "Abstraktes Emblem für Fokusrune"
+        }
+      },
+      "provenanceRef": "banner-focus-rune-source",
+      "towerAffinityId": "runestone-tower"
+    },
+    {
+      "id": "frost-magician",
+      "sourceKey": "tower-specific:FrostMagicianData:FrostMagicianRogueTitle",
+      "sortOrder": 20,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Frost Magician",
+        "de": "Frostmagier"
+      },
+      "effectSummary": {
+        "en": "Frost Novas periodically grant energy with a global cooldown.",
+        "de": "Frostnovas gewähren regelmäßig Energie mit globaler Abklingzeit."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "frost-magician-visual",
+        "seed": 21,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Frost Magician",
+          "de": "Abstraktes Emblem für Frostmagier"
+        }
+      },
+      "provenanceRef": "banner-frost-magician-source",
+      "towerAffinityId": "frost-tower"
+    },
+    {
+      "id": "ghost-raven",
+      "sourceKey": "unique:GhostRavenRogueData:GhostRavenTitle",
+      "sortOrder": 21,
+      "classification": "unique",
+      "name": {
+        "en": "Ghost Raven",
+        "de": "Geisterrabe"
+      },
+      "effectSummary": {
+        "en": "Summons a spectral raven that periodically fires a damaging vortex.",
+        "de": "Beschwört einen Geisterraben, der regelmäßig einen Schadenswirbel abfeuert."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "ghost-raven-visual",
+        "seed": 22,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Ghost Raven",
+          "de": "Abstraktes Emblem für Geisterrabe"
+        }
+      },
+      "provenanceRef": "banner-ghost-raven-source"
+    },
+    {
+      "id": "glacial-nova",
+      "sourceKey": "unique:GlacialNovaData:GlacialNovaTitle",
+      "sortOrder": 22,
+      "classification": "unique",
+      "name": {
+        "en": "Glacial Nova",
+        "de": "Gletscher-Nova"
+      },
+      "effectSummary": {
+        "en": "Frost Tower kills can unleash a powerful nova with extra freeze potential.",
+        "de": "Frost-Tower-Kills können eine mächtige Nova mit zusätzlichem Gefrierpotenzial entfesseln."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "glacial-nova-visual",
+        "seed": 23,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Glacial Nova",
+          "de": "Abstraktes Emblem für Gletscher-Nova"
+        }
+      },
+      "provenanceRef": "banner-glacial-nova-source"
+    },
+    {
+      "id": "light-pillar",
+      "sourceKey": "unique:HolyPillarData:HolyPillarTitle",
+      "sortOrder": 23,
+      "classification": "unique",
+      "name": {
+        "en": "Light Pillar",
+        "de": "Lichtsäule"
+      },
+      "effectSummary": {
+        "en": "Kills can summon a sustained ray powered by Runestone Tower damage.",
+        "de": "Kills können einen anhaltenden Strahl auf Basis des Runestone-Tower-Schadens beschwören."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "light-pillar-visual",
+        "seed": 24,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Light Pillar",
+          "de": "Abstraktes Emblem für Lichtsäule"
+        }
+      },
+      "provenanceRef": "banner-light-pillar-source"
+    },
+    {
+      "id": "icy-death",
+      "sourceKey": "tower-specific:IcyDeathRogueData:IcyDeathRogueTitle",
+      "sortOrder": 24,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Icy Death",
+        "de": "Eisiger Tod"
+      },
+      "effectSummary": {
+        "en": "Creates an area whose damage per second grows over time.",
+        "de": "Erzeugt einen Bereich, dessen Schaden pro Sekunde mit der Zeit wächst."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "icy-death-visual",
+        "seed": 25,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Icy Death",
+          "de": "Abstraktes Emblem für Eisiger Tod"
+        }
+      },
+      "provenanceRef": "banner-icy-death-source",
+      "towerAffinityId": "frost-tower"
+    },
+    {
+      "id": "insanity",
+      "sourceKey": "tower-specific:InsanityRogueData:InsanityRogueTitle",
+      "sortOrder": 25,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Insanity",
+        "de": "Wahnsinn"
+      },
+      "effectSummary": {
+        "en": "Boosts Shadow Tower damage and adds projectiles at legendary rarity.",
+        "de": "Steigert Shadow-Tower-Schaden und fügt bei legendärer Seltenheit Projektile hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "insanity-visual",
+        "seed": 26,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Insanity",
+          "de": "Abstraktes Emblem für Wahnsinn"
+        }
+      },
+      "provenanceRef": "banner-insanity-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "lightning-surge",
+      "sourceKey": "tower-specific:LightningSurgeRogueData:LightningSurgeTitle",
+      "sortOrder": 26,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Lightning Surge",
+        "de": "Blitzschwall"
+      },
+      "effectSummary": {
+        "en": "Arc Tower hits can release an additional lightning surge.",
+        "de": "Treffer des Arc Towers können einen zusätzlichen Blitzschwall auslösen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "lightning-surge-visual",
+        "seed": 27,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Lightning Surge",
+          "de": "Abstraktes Emblem für Blitzschwall"
+        }
+      },
+      "provenanceRef": "banner-lightning-surge-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "magical-charge",
+      "sourceKey": "tower-specific:MagicalChargeData:MagicalChargeRogueTitle",
+      "sortOrder": 27,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Magical Charge",
+        "de": "Magische Ladung"
+      },
+      "effectSummary": {
+        "en": "Adds a share of spell damage to Runestone Tower attacks.",
+        "de": "Fügt Runestone-Tower-Angriffen einen Anteil des Zauberschadens hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "magical-charge-visual",
+        "seed": 28,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Magical Charge",
+          "de": "Abstraktes Emblem für Magische Ladung"
+        }
+      },
+      "provenanceRef": "banner-magical-charge-source",
+      "towerAffinityId": "runestone-tower"
+    },
+    {
+      "id": "magma-field",
+      "sourceKey": "tower-specific:MagmaFieldRogueCard:MagmaFieldTitle",
+      "sortOrder": 28,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Magma Field",
+        "de": "Magmafeld"
+      },
+      "effectSummary": {
+        "en": "Volcano Mortar explosions leave a stacking burning field.",
+        "de": "Explosionen des Volcano Mortars hinterlassen ein stapelbares Brandfeld."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "magma-field-visual",
+        "seed": 29,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Magma Field",
+          "de": "Abstraktes Emblem für Magmafeld"
+        }
+      },
+      "provenanceRef": "banner-magma-field-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "mastery",
+      "sourceKey": "tower-specific:MasteryData:MasteryRogueTitle",
+      "sortOrder": 29,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Mastery",
+        "de": "Meisterschaft"
+      },
+      "effectSummary": {
+        "en": "Increases Raven Tower damage for each of its banners.",
+        "de": "Erhöht den Schaden des Raven Towers für jedes seiner Banner."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "mastery-visual",
+        "seed": 30,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Mastery",
+          "de": "Abstraktes Emblem für Meisterschaft"
+        }
+      },
+      "provenanceRef": "banner-mastery-source",
+      "towerAffinityId": "raven-tower"
+    },
+    {
+      "id": "critical-bond",
+      "sourceKey": "tower-specific:NexusAltRogueData:NexusAltTitle",
+      "sortOrder": 30,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Critical Bond",
+        "de": "Kritische Bindung"
+      },
+      "effectSummary": {
+        "en": "Turns part of Arc Tower critical chance into critical damage.",
+        "de": "Wandelt einen Teil der kritischen Chance des Arc Towers in kritischen Schaden um."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "critical-bond-visual",
+        "seed": 31,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Critical Bond",
+          "de": "Abstraktes Emblem für Kritische Bindung"
+        }
+      },
+      "provenanceRef": "banner-critical-bond-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "omnipotence",
+      "sourceKey": "tower-specific:OmnipotenceData:OmnipotenceRogueTitle",
+      "sortOrder": 31,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Omnipotence",
+        "de": "Allmacht"
+      },
+      "effectSummary": {
+        "en": "Improves the Raven Tower's critical damage.",
+        "de": "Verbessert den kritischen Schaden des Raven Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "omnipotence-visual",
+        "seed": 32,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Omnipotence",
+          "de": "Abstraktes Emblem für Allmacht"
+        }
+      },
+      "provenanceRef": "banner-omnipotence-source",
+      "towerAffinityId": "raven-tower"
+    },
+    {
+      "id": "opening-blitz",
+      "sourceKey": "tower-specific:OpeningBlitzRogueData:OpeningBlitzTitle",
+      "sortOrder": 32,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Opening Blitz",
+        "de": "Eröffnungsblitz"
+      },
+      "effectSummary": {
+        "en": "Deals extra Arc Tower damage to enemies above seventy percent health.",
+        "de": "Verursacht zusätzlichen Arc-Tower-Schaden an Gegnern über siebzig Prozent Leben."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "opening-blitz-visual",
+        "seed": 33,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Opening Blitz",
+          "de": "Abstraktes Emblem für Eröffnungsblitz"
+        }
+      },
+      "provenanceRef": "banner-opening-blitz-source",
+      "towerAffinityId": "arc-tower"
+    },
+    {
+      "id": "outreach-first",
+      "sourceKey": "tower-specific:OutreachFirstRogueData:OutreachFirstTitle",
+      "sortOrder": 33,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Outreach First",
+        "de": "Eruptionszone"
+      },
+      "effectSummary": {
+        "en": "Extends Volcano Mortar range while slightly reducing fire rate.",
+        "de": "Vergrößert die Reichweite des Volcano Mortars bei leicht verringerter Feuerrate."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "outreach-first-visual",
+        "seed": 34,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Outreach First",
+          "de": "Abstraktes Emblem für Eruptionszone"
+        }
+      },
+      "provenanceRef": "banner-outreach-first-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "overdose",
+      "sourceKey": "tower-specific:OverdoseData:OverdoseRogueTitle",
+      "sortOrder": 34,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Overdose",
+        "de": "Exzess"
+      },
+      "effectSummary": {
+        "en": "Carries excess Shadow Tower damage onward and raises critical damage.",
+        "de": "Überträgt überschüssigen Shadow-Tower-Schaden und erhöht den kritischen Schaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "overdose-visual",
+        "seed": 35,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Overdose",
+          "de": "Abstraktes Emblem für Exzess"
+        }
+      },
+      "provenanceRef": "banner-overdose-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "overheating",
+      "sourceKey": "tower-specific:OverheatingRogueData:OverheatingTitle",
+      "sortOrder": 35,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Overheating",
+        "de": "Überhitzung"
+      },
+      "effectSummary": {
+        "en": "Each kill adds Volcano Mortar and burn damage for the current wave.",
+        "de": "Jeder Kill erhöht Volcano-Mortar- und Brandschaden für die laufende Welle."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "overheating-visual",
+        "seed": 36,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Overheating",
+          "de": "Abstraktes Emblem für Überhitzung"
+        }
+      },
+      "provenanceRef": "banner-overheating-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "painful-cold",
+      "sourceKey": "tower-specific:PainfulColdData:PainfulColdRogueTitle",
+      "sortOrder": 36,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Painful Cold",
+        "de": "Tödliche Kälte"
+      },
+      "effectSummary": {
+        "en": "Exchanges part of the Frost Tower's slowing power for damage.",
+        "de": "Tauscht einen Teil der Verlangsamungsstärke des Frost Towers gegen Schaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "painful-cold-visual",
+        "seed": 37,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Painful Cold",
+          "de": "Abstraktes Emblem für Tödliche Kälte"
+        }
+      },
+      "provenanceRef": "banner-painful-cold-source",
+      "towerAffinityId": "frost-tower"
+    },
+    {
+      "id": "lucky-shot",
+      "sourceKey": "tower-specific:PiercingArrowRogueData:PiercingArrowTitle",
+      "sortOrder": 37,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Lucky Shot",
+        "de": "Glückstreffer"
+      },
+      "effectSummary": {
+        "en": "Raises Arrow Tower damage and can add another shot.",
+        "de": "Erhöht den Schaden des Arrow Towers und kann einen weiteren Schuss hinzufügen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "lucky-shot-visual",
+        "seed": 38,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Lucky Shot",
+          "de": "Abstraktes Emblem für Glückstreffer"
+        }
+      },
+      "provenanceRef": "banner-lucky-shot-source",
+      "towerAffinityId": "arrow-tower"
+    },
+    {
+      "id": "prism",
+      "sourceKey": "tower-specific:PrismData:PrismRogueTitle",
+      "sortOrder": 38,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Prism",
+        "de": "Prisma"
+      },
+      "effectSummary": {
+        "en": "Transfers and amplifies damage between Runestone Towers.",
+        "de": "Überträgt und verstärkt Schaden zwischen Runestone Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "prism-visual",
+        "seed": 39,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Prism",
+          "de": "Abstraktes Emblem für Prisma"
+        }
+      },
+      "provenanceRef": "banner-prism-source",
+      "towerAffinityId": "runestone-tower"
+    },
+    {
+      "id": "rapid-archer",
+      "sourceKey": "tower-specific:RapidArcherRogueData:RapidArcherTitle",
+      "sortOrder": 39,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Rapid Archer",
+        "de": "Salvenschütze"
+      },
+      "effectSummary": {
+        "en": "Changes Arrow Tower attacks into three-shot bursts at a slower rate.",
+        "de": "Ändert Arrow-Tower-Angriffe in langsamere Dreiersalven."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "rapid-archer-visual",
+        "seed": 40,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Rapid Archer",
+          "de": "Abstraktes Emblem für Salvenschütze"
+        }
+      },
+      "provenanceRef": "banner-rapid-archer-source",
+      "towerAffinityId": "arrow-tower"
+    },
+    {
+      "id": "runic-fire-aura",
+      "sourceKey": "tower-specific:RapidfireAuraRogueData:RapidfireAuraTitle",
+      "sortOrder": 40,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Runic Fire Aura",
+        "de": "Runenfeuer-Aura"
+      },
+      "effectSummary": {
+        "en": "Runestone Towers accelerate nearby towers within their radius.",
+        "de": "Runestone Towers beschleunigen nahe Türme in ihrem Radius."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "runic-fire-aura-visual",
+        "seed": 41,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Runic Fire Aura",
+          "de": "Abstraktes Emblem für Runenfeuer-Aura"
+        }
+      },
+      "provenanceRef": "banner-runic-fire-aura-source",
+      "towerAffinityId": "runestone-tower"
+    },
+    {
+      "id": "rapture",
+      "sourceKey": "tower-specific:RaptureRogueData:RaptureRogueTitle",
+      "sortOrder": 41,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Rapture",
+        "de": "Seelenbruch"
+      },
+      "effectSummary": {
+        "en": "Strengthens the weakness applied by Shadow Towers.",
+        "de": "Verstärkt die vom Shadow Tower verursachte Schwäche."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "rapture-visual",
+        "seed": 42,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Rapture",
+          "de": "Abstraktes Emblem für Seelenbruch"
+        }
+      },
+      "provenanceRef": "banner-rapture-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "ring-of-death",
+      "sourceKey": "unique:RingOfDeathRogueData:RingOfDeathTitle",
+      "sortOrder": 42,
+      "classification": "unique",
+      "name": {
+        "en": "Ring of Death",
+        "de": "Ring des Todes"
+      },
+      "effectSummary": {
+        "en": "Every tenth Shadow Tower kill triggers a damaging execution nova.",
+        "de": "Jeder zehnte Shadow-Tower-Kill löst eine schädigende Hinrichtungsnova aus."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "ring-of-death-visual",
+        "seed": 43,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Ring of Death",
+          "de": "Abstraktes Emblem für Ring des Todes"
+        }
+      },
+      "provenanceRef": "banner-ring-of-death-source"
+    },
+    {
+      "id": "scraper",
+      "sourceKey": "tower-specific:ScraperRogueData:ScraperRogueTitle",
+      "sortOrder": 43,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Scraper",
+        "de": "Schaber"
+      },
+      "effectSummary": {
+        "en": "Tornado Tower damage rises as the target loses health.",
+        "de": "Der Schaden des Tornado Towers steigt, wenn das Ziel Leben verliert."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "scraper-visual",
+        "seed": 44,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Scraper",
+          "de": "Abstraktes Emblem für Schaber"
+        }
+      },
+      "provenanceRef": "banner-scraper-source",
+      "towerAffinityId": "tornado-tower"
+    },
+    {
+      "id": "skyfall-arrows",
+      "sourceKey": "unique:SkyfallArrowsRogueData:SkyfallArrowsTitle",
+      "sortOrder": 44,
+      "classification": "unique",
+      "name": {
+        "en": "Skyfall Arrows",
+        "de": "Pfeilregen"
+      },
+      "effectSummary": {
+        "en": "Calls down an Arrow Rain at regular intervals.",
+        "de": "Ruft in regelmäßigen Abständen einen Pfeilregen herab."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "skyfall-arrows-visual",
+        "seed": 45,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Skyfall Arrows",
+          "de": "Abstraktes Emblem für Pfeilregen"
+        }
+      },
+      "provenanceRef": "banner-skyfall-arrows-source"
+    },
+    {
+      "id": "squall",
+      "sourceKey": "tower-specific:SquallData:SquallRogueTitle",
+      "sortOrder": 45,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Squall",
+        "de": "Sturmböe"
+      },
+      "effectSummary": {
+        "en": "Tornadoes begin stronger and gradually lose power.",
+        "de": "Tornados beginnen stärker und verlieren allmählich Kraft."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "squall-visual",
+        "seed": 46,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Squall",
+          "de": "Abstraktes Emblem für Sturmböe"
+        }
+      },
+      "provenanceRef": "banner-squall-source",
+      "towerAffinityId": "tornado-tower"
+    },
+    {
+      "id": "stormbringer",
+      "sourceKey": "tower-specific:StormBringerData:StormbringerRogueTitle",
+      "sortOrder": 46,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Stormbringer",
+        "de": "Sturmbringer"
+      },
+      "effectSummary": {
+        "en": "Makes Tornado Tower vortices travel faster.",
+        "de": "Lässt die Wirbel des Tornado Towers schneller ziehen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "stormbringer-visual",
+        "seed": 47,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Stormbringer",
+          "de": "Abstraktes Emblem für Sturmbringer"
+        }
+      },
+      "provenanceRef": "banner-stormbringer-source",
+      "towerAffinityId": "tornado-tower"
+    },
+    {
+      "id": "supernova",
+      "sourceKey": "unique:SuperNovaData:SuperNovaTitle",
+      "sortOrder": 47,
+      "classification": "unique",
+      "name": {
+        "en": "Supernova",
+        "de": "Supernova"
+      },
+      "effectSummary": {
+        "en": "Volcano Mortar attacks can trigger a large supernova.",
+        "de": "Angriffe des Volcano Mortars können eine große Supernova auslösen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "supernova-visual",
+        "seed": 48,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Supernova",
+          "de": "Abstraktes Emblem für Supernova"
+        }
+      },
+      "provenanceRef": "banner-supernova-source"
+    },
+    {
+      "id": "tempest-stopper",
+      "sourceKey": "tower-specific:TempestStopperRogueData:TempestStopperRogueTitle",
+      "sortOrder": 48,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Tempest Stopper",
+        "de": "Windfessel"
+      },
+      "effectSummary": {
+        "en": "Adds a brief stun followed by temporary stun immunity.",
+        "de": "Fügt eine kurze Betäubung mit anschließender Betäubungsimmunität hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "tempest-stopper-visual",
+        "seed": 49,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Tempest Stopper",
+          "de": "Abstraktes Emblem für Windfessel"
+        }
+      },
+      "provenanceRef": "banner-tempest-stopper-source",
+      "towerAffinityId": "tornado-tower"
+    },
+    {
+      "id": "thor-s-wrath",
+      "sourceKey": "unique:ThorsWrathData:ThorsWrathTitle",
+      "sortOrder": 49,
+      "classification": "unique",
+      "name": {
+        "en": "Thor's Wrath",
+        "de": "Thors Zorn"
+      },
+      "effectSummary": {
+        "en": "Lets lightning revisit targets or concentrate unused jumps on one enemy.",
+        "de": "Lässt Blitze Ziele erneut treffen oder ungenutzte Sprünge auf einen Gegner bündeln."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "thor-s-wrath-visual",
+        "seed": 50,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Thor's Wrath",
+          "de": "Abstraktes Emblem für Thors Zorn"
+        }
+      },
+      "provenanceRef": "banner-thor-s-wrath-source"
+    },
+    {
+      "id": "timberwind-mark",
+      "sourceKey": "tower-specific:TimberwindMarkRogueData:TimberwindMarkTitle",
+      "sortOrder": 50,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Timberwind Mark",
+        "de": "Pfeiler des Waldes"
+      },
+      "effectSummary": {
+        "en": "Raises Arrow Tower damage and supplies wood for each Arrow Tower.",
+        "de": "Erhöht Arrow-Tower-Schaden und liefert Holz für jeden Arrow Tower."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "timberwind-mark-visual",
+        "seed": 51,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Timberwind Mark",
+          "de": "Abstraktes Emblem für Pfeiler des Waldes"
+        }
+      },
+      "provenanceRef": "banner-timberwind-mark-source",
+      "towerAffinityId": "arrow-tower"
+    },
+    {
+      "id": "trinity",
+      "sourceKey": "tower-specific:TripleThreatRogueCard:TripleThreatTitle",
+      "sortOrder": 51,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Trinity",
+        "de": "Dreifaltigkeit"
+      },
+      "effectSummary": {
+        "en": "Splits Runestone Tower beams across several enemies at reduced damage.",
+        "de": "Verteilt Runestone-Tower-Strahlen mit geringerem Schaden auf mehrere Gegner."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "trinity-visual",
+        "seed": 52,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Trinity",
+          "de": "Abstraktes Emblem für Dreifaltigkeit"
+        }
+      },
+      "provenanceRef": "banner-trinity-source",
+      "towerAffinityId": "runestone-tower"
+    },
+    {
+      "id": "twin-feathers",
+      "sourceKey": "tower-specific:TwinFeathersRogueData:TwinFeathersTitle",
+      "sortOrder": 52,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Twin Feathers",
+        "de": "Zwillingsfedern"
+      },
+      "effectSummary": {
+        "en": "Adds another Raven Tower shot while reducing individual shot damage.",
+        "de": "Fügt einen weiteren Raven-Tower-Schuss hinzu und senkt den Einzelschaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "twin-feathers-visual",
+        "seed": 53,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Twin Feathers",
+          "de": "Abstraktes Emblem für Zwillingsfedern"
+        }
+      },
+      "provenanceRef": "banner-twin-feathers-source",
+      "towerAffinityId": "raven-tower"
+    },
+    {
+      "id": "volcanic-eruption",
+      "sourceKey": "tower-specific:VolcanicEruptionData:VolcanicEruptionRogueTitle",
+      "sortOrder": 53,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Volcanic Eruption",
+        "de": "Vulkanausbruch"
+      },
+      "effectSummary": {
+        "en": "Greatly speeds up Volcano Mortar fire but removes manual control.",
+        "de": "Beschleunigt Volcano-Mortar-Feuer stark, entfernt aber die manuelle Steuerung."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "volcanic-eruption-visual",
+        "seed": 54,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Volcanic Eruption",
+          "de": "Abstraktes Emblem für Vulkanausbruch"
+        }
+      },
+      "provenanceRef": "banner-volcanic-eruption-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "vulnerability",
+      "sourceKey": "tower-specific:VulnerabilityRogueData:VulnerabilityRogueTitle",
+      "sortOrder": 54,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Vulnerability",
+        "de": "Verwundbarkeit"
+      },
+      "effectSummary": {
+        "en": "Extends weakness and makes it reduce defensive attributes.",
+        "de": "Verlängert Schwäche und lässt sie Verteidigungswerte senken."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "vulnerability-visual",
+        "seed": 55,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Vulnerability",
+          "de": "Abstraktes Emblem für Verwundbarkeit"
+        }
+      },
+      "provenanceRef": "banner-vulnerability-source",
+      "towerAffinityId": "shadow-tower"
+    },
+    {
+      "id": "wide-blast",
+      "sourceKey": "tower-specific:WideBlastRogueData:WideBlastTitle",
+      "sortOrder": 55,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Wide Blast",
+        "de": "Roter Riese"
+      },
+      "effectSummary": {
+        "en": "Expands the Volcano Mortar's explosion area.",
+        "de": "Vergrößert den Explosionsbereich des Volcano Mortars."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "wide-blast-visual",
+        "seed": 56,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Wide Blast",
+          "de": "Abstraktes Emblem für Roter Riese"
+        }
+      },
+      "provenanceRef": "banner-wide-blast-source",
+      "towerAffinityId": "volcano-mortar"
+    },
+    {
+      "id": "wrath-scattering",
+      "sourceKey": "tower-specific:WrathScatteringRogueData:WrathScatteringTitle",
+      "sortOrder": 56,
+      "classification": "tower-specific",
+      "name": {
+        "en": "Wrath Scattering",
+        "de": "Zornstreuung"
+      },
+      "effectSummary": {
+        "en": "Splits Raven Tower shots into several new projectiles.",
+        "de": "Teilt Raven-Tower-Schüsse in mehrere neue Projektile auf."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "wrath-scattering-visual",
+        "seed": 57,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Wrath Scattering",
+          "de": "Abstraktes Emblem für Zornstreuung"
+        }
+      },
+      "provenanceRef": "banner-wrath-scattering-source",
+      "towerAffinityId": "raven-tower"
+    },
+    {
+      "id": "barrier-bane",
+      "sourceKey": "fusion:BarrierBaneData:BarrierBaneTitle",
+      "sortOrder": 57,
+      "classification": "fusion",
+      "name": {
+        "en": "Barrier Bane",
+        "de": "Barrierenfluch"
+      },
+      "effectSummary": {
+        "en": "Shares Barrier Shatter's bonus barrier damage with Tornado Towers.",
+        "de": "Überträgt den zusätzlichen Barrierschaden von Durchbruch auf Tornado Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "barrier-bane-visual",
+        "seed": 58,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Barrier Bane",
+          "de": "Abstraktes Emblem für Barrierenfluch"
+        }
+      },
+      "provenanceRef": "banner-barrier-bane-source"
+    },
+    {
+      "id": "bloody-chain",
+      "sourceKey": "fusion:BloodyChainData:BloodyChainTitle",
+      "sortOrder": 58,
+      "classification": "fusion",
+      "name": {
+        "en": "Bloody Chain",
+        "de": "Blutkette"
+      },
+      "effectSummary": {
+        "en": "Arc Tower jumps carry bleeding created by Arrow Towers.",
+        "de": "Sprünge des Arc Towers übertragen vom Arrow Tower verursachte Blutung."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "bloody-chain-visual",
+        "seed": 59,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Bloody Chain",
+          "de": "Abstraktes Emblem für Blutkette"
+        }
+      },
+      "provenanceRef": "banner-bloody-chain-source"
+    },
+    {
+      "id": "branding",
+      "sourceKey": "fusion:BrandingData:BrandingTitle",
+      "sortOrder": 59,
+      "classification": "fusion",
+      "name": {
+        "en": "Branding",
+        "de": "Einbrennen"
+      },
+      "effectSummary": {
+        "en": "Runestone beams add burn stacks derived from Magma Field.",
+        "de": "Runenstrahlen fügen aus Magmafeld abgeleitete Brandstapel hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "branding-visual",
+        "seed": 60,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Branding",
+          "de": "Abstraktes Emblem für Einbrennen"
+        }
+      },
+      "provenanceRef": "banner-branding-source"
+    },
+    {
+      "id": "celestial-jumps",
+      "sourceKey": "fusion:CelestialJumpsData:CelestialJumpsTitle",
+      "sortOrder": 60,
+      "classification": "fusion",
+      "name": {
+        "en": "Celestial Jumps",
+        "de": "Runische Sprünge"
+      },
+      "effectSummary": {
+        "en": "Runestone Towers near Arc Towers can create their own chain jumps.",
+        "de": "Runestone Towers nahe Arc Towers können eigene Kettensprünge erzeugen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "celestial-jumps-visual",
+        "seed": 61,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Celestial Jumps",
+          "de": "Abstraktes Emblem für Runische Sprünge"
+        }
+      },
+      "provenanceRef": "banner-celestial-jumps-source"
+    },
+    {
+      "id": "chaos-bolts",
+      "sourceKey": "fusion:ChaosBoltsData:ChaosBoltsTitle",
+      "sortOrder": 61,
+      "classification": "fusion",
+      "name": {
+        "en": "Chaos Bolts",
+        "de": "Chaosbolzen"
+      },
+      "effectSummary": {
+        "en": "Critical Arrow Tower hits apply bleeding scaled by Critical Bleed.",
+        "de": "Kritische Arrow-Tower-Treffer verursachen durch Kritische Blutung skalierte Blutung."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "chaos-bolts-visual",
+        "seed": 62,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Chaos Bolts",
+          "de": "Abstraktes Emblem für Chaosbolzen"
+        }
+      },
+      "provenanceRef": "banner-chaos-bolts-source"
+    },
+    {
+      "id": "charged-arrows",
+      "sourceKey": "fusion:ChargedArrowsData:ChargedArrowsTitle",
+      "sortOrder": 62,
+      "classification": "fusion",
+      "name": {
+        "en": "Charged Arrows",
+        "de": "Geladene Pfeile"
+      },
+      "effectSummary": {
+        "en": "Arrow Towers beside Arc Towers can launch empowered chain jumps.",
+        "de": "Arrow Towers neben Arc Towers können verstärkte Kettensprünge auslösen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "charged-arrows-visual",
+        "seed": 63,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Charged Arrows",
+          "de": "Abstraktes Emblem für Geladene Pfeile"
+        }
+      },
+      "provenanceRef": "banner-charged-arrows-source"
+    },
+    {
+      "id": "clinking-mastery",
+      "sourceKey": "fusion:ClinkingMasteryData:ClinkingMasteryTitle",
+      "sortOrder": 63,
+      "classification": "fusion",
+      "name": {
+        "en": "Clinking Mastery",
+        "de": "Frostmeister"
+      },
+      "effectSummary": {
+        "en": "Passes a multiplied share of Raven mastery damage to Frost Towers.",
+        "de": "Überträgt einen multiplizierten Anteil des Raven-Meisterschaftsschadens auf Frost Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "clinking-mastery-visual",
+        "seed": 64,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Clinking Mastery",
+          "de": "Abstraktes Emblem für Frostmeister"
+        }
+      },
+      "provenanceRef": "banner-clinking-mastery-source"
+    },
+    {
+      "id": "corpse-explosion-fusion",
+      "sourceKey": "fusion:CorpseExplosionRogueData:CorpseExplosionTitle",
+      "sortOrder": 64,
+      "classification": "fusion",
+      "name": {
+        "en": "Corpse Explosion",
+        "de": "Leichenexplosion"
+      },
+      "effectSummary": {
+        "en": "Shadow Tower kills can explode and spread Arrow Tower bleeding.",
+        "de": "Shadow-Tower-Kills können explodieren und Blutung des Arrow Towers verteilen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "corpse-explosion-fusion-visual",
+        "seed": 65,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Corpse Explosion",
+          "de": "Abstraktes Emblem für Leichenexplosion"
+        }
+      },
+      "provenanceRef": "banner-corpse-explosion-fusion-source"
+    },
+    {
+      "id": "crimson-beak",
+      "sourceKey": "fusion:CrimsonBeakData:CrimsonBeakTitle",
+      "sortOrder": 65,
+      "classification": "fusion",
+      "name": {
+        "en": "Crimson Beak",
+        "de": "Scharlachschnabel"
+      },
+      "effectSummary": {
+        "en": "Raven Tower shots consume bleeding stacks for multiplied damage.",
+        "de": "Raven-Tower-Schüsse verbrauchen Blutungsstapel für multiplizierten Schaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "crimson-beak-visual",
+        "seed": 66,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Crimson Beak",
+          "de": "Abstraktes Emblem für Scharlachschnabel"
+        }
+      },
+      "provenanceRef": "banner-crimson-beak-source"
+    },
+    {
+      "id": "crippling-pain",
+      "sourceKey": "fusion:CripplingPainData:CripplingPainTitle",
+      "sortOrder": 66,
+      "classification": "fusion",
+      "name": {
+        "en": "Crippling Pain",
+        "de": "Lähmungsschmerz"
+      },
+      "effectSummary": {
+        "en": "Runestone Tower attacks apply a share of Frost Tower slowing.",
+        "de": "Runestone-Tower-Angriffe wenden einen Anteil der Frost-Tower-Verlangsamung an."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "crippling-pain-visual",
+        "seed": 67,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Crippling Pain",
+          "de": "Abstraktes Emblem für Lähmungsschmerz"
+        }
+      },
+      "provenanceRef": "banner-crippling-pain-source"
+    },
+    {
+      "id": "critical-breach",
+      "sourceKey": "fusion:CriticalBreachData:CriticalBreachTitle",
+      "sortOrder": 67,
+      "classification": "fusion",
+      "name": {
+        "en": "Critical Breach",
+        "de": "Kritischer Riss"
+      },
+      "effectSummary": {
+        "en": "Arc Towers deal greater critical damage to slowed enemies.",
+        "de": "Arc Towers verursachen höheren kritischen Schaden an verlangsamten Gegnern."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "critical-breach-visual",
+        "seed": 68,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Critical Breach",
+          "de": "Abstraktes Emblem für Kritischer Riss"
+        }
+      },
+      "provenanceRef": "banner-critical-breach-source"
+    },
+    {
+      "id": "critical-impact",
+      "sourceKey": "fusion:CriticalImpactData:CriticalImpactTitle",
+      "sortOrder": 68,
+      "classification": "fusion",
+      "name": {
+        "en": "Critical Impact",
+        "de": "Kritisches Duo"
+      },
+      "effectSummary": {
+        "en": "Shares reduced Collapse and Omnipotence effects between both towers.",
+        "de": "Teilt abgeschwächte Einsturz- und Allmacht-Effekte zwischen beiden Türmen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "critical-impact-visual",
+        "seed": 69,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Critical Impact",
+          "de": "Abstraktes Emblem für Kritisches Duo"
+        }
+      },
+      "provenanceRef": "banner-critical-impact-source"
+    },
+    {
+      "id": "damnable-weak",
+      "sourceKey": "fusion:DamnableWeakData:DamnableWeak",
+      "sortOrder": 69,
+      "classification": "fusion",
+      "name": {
+        "en": "Damnable Weak",
+        "de": "Schicksalsbruch"
+      },
+      "effectSummary": {
+        "en": "Adds scaled Doom Blast damage to Shadow attacks against weakened enemies.",
+        "de": "Fügt Shadow-Angriffen gegen geschwächte Gegner skalierten Schicksalsschlag-Schaden hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "damnable-weak-visual",
+        "seed": 70,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Damnable Weak",
+          "de": "Abstraktes Emblem für Schicksalsbruch"
+        }
+      },
+      "provenanceRef": "banner-damnable-weak-source"
+    },
+    {
+      "id": "destructive-strike",
+      "sourceKey": "fusion:DestructiveStrikeData:DestructiveStrikeRogueTitle",
+      "sortOrder": 70,
+      "classification": "fusion",
+      "name": {
+        "en": "Destructive Strike",
+        "de": "Vernichtungsschlag"
+      },
+      "effectSummary": {
+        "en": "Lightning Surge leaves a strong burning field enhanced by Magma Field.",
+        "de": "Blitzschwall hinterlässt ein starkes, durch Magmafeld verbessertes Brandfeld."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "destructive-strike-visual",
+        "seed": 71,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Destructive Strike",
+          "de": "Abstraktes Emblem für Vernichtungsschlag"
+        }
+      },
+      "provenanceRef": "banner-destructive-strike-source"
+    },
+    {
+      "id": "doom-cold",
+      "sourceKey": "fusion:DoomColdData:DoomColdTitle",
+      "sortOrder": 71,
+      "classification": "fusion",
+      "name": {
+        "en": "Doom Cold",
+        "de": "Unheilvolle Kälte"
+      },
+      "effectSummary": {
+        "en": "Doom Blast can leave a slowing zone behind.",
+        "de": "Schicksalsschlag kann eine Verlangsamungszone hinterlassen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "doom-cold-visual",
+        "seed": 72,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Doom Cold",
+          "de": "Abstraktes Emblem für Unheilvolle Kälte"
+        }
+      },
+      "provenanceRef": "banner-doom-cold-source"
+    },
+    {
+      "id": "doom-scattering",
+      "sourceKey": "fusion:DoomScatteringData:DoomScatteringTitle",
+      "sortOrder": 72,
+      "classification": "fusion",
+      "name": {
+        "en": "Doom Scattering",
+        "de": "Schicksalsstreuung"
+      },
+      "effectSummary": {
+        "en": "Tornado kills can trigger an empowered Wrath Scattering volley.",
+        "de": "Tornado-Kills können eine verstärkte Schicksalsstreuungs-Salve auslösen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "doom-scattering-visual",
+        "seed": 73,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Doom Scattering",
+          "de": "Abstraktes Emblem für Schicksalsstreuung"
+        }
+      },
+      "provenanceRef": "banner-doom-scattering-source"
+    },
+    {
+      "id": "wings-of-chaos",
+      "sourceKey": "fusion:DoomlanceData:DoomlanceTitle",
+      "sortOrder": 73,
+      "classification": "fusion",
+      "name": {
+        "en": "Wings of Chaos",
+        "de": "Chaosflügel"
+      },
+      "effectSummary": {
+        "en": "Shares critical aura and Omnipotence bonuses between both towers.",
+        "de": "Teilt Boni von kritischer Aura und Allmacht zwischen beiden Türmen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "wings-of-chaos-visual",
+        "seed": 74,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Wings of Chaos",
+          "de": "Abstraktes Emblem für Chaosflügel"
+        }
+      },
+      "provenanceRef": "banner-wings-of-chaos-source"
+    },
+    {
+      "id": "double-nova",
+      "sourceKey": "fusion:DoubleNovaData:DoubleNovaTitle",
+      "sortOrder": 74,
+      "classification": "fusion",
+      "name": {
+        "en": "Double Nova",
+        "de": "Doppelnova"
+      },
+      "effectSummary": {
+        "en": "Frost Tower attacks can release a second nova.",
+        "de": "Angriffe des Frost Towers können eine zweite Nova freisetzen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "double-nova-visual",
+        "seed": 75,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Double Nova",
+          "de": "Abstraktes Emblem für Doppelnova"
+        }
+      },
+      "provenanceRef": "banner-double-nova-source"
+    },
+    {
+      "id": "fire-arrows",
+      "sourceKey": "fusion:FireArrowsData:FireArrowsTitle",
+      "sortOrder": 75,
+      "classification": "fusion",
+      "name": {
+        "en": "Fire Arrows",
+        "de": "Feuerpfeile"
+      },
+      "effectSummary": {
+        "en": "Arrow Tower shots add burn stacks scaled by Magma Field.",
+        "de": "Arrow-Tower-Schüsse fügen durch Magmafeld skalierte Brandstapel hinzu."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "fire-arrows-visual",
+        "seed": 76,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Fire Arrows",
+          "de": "Abstraktes Emblem für Feuerpfeile"
+        }
+      },
+      "provenanceRef": "banner-fire-arrows-source"
+    },
+    {
+      "id": "frost-scythe",
+      "sourceKey": "fusion:FrostScytheData:FrostScytheTitle",
+      "sortOrder": 76,
+      "classification": "fusion",
+      "name": {
+        "en": "Frost Scythe",
+        "de": "Frostsichel"
+      },
+      "effectSummary": {
+        "en": "Chaos Reapers deal multiplied damage to slowed enemies.",
+        "de": "Chaos Reaper verursachen multiplizierten Schaden an verlangsamten Gegnern."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "frost-scythe-visual",
+        "seed": 77,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Frost Scythe",
+          "de": "Abstraktes Emblem für Frostsichel"
+        }
+      },
+      "provenanceRef": "banner-frost-scythe-source"
+    },
+    {
+      "id": "hydra",
+      "sourceKey": "fusion:HydraData:HydraTitle",
+      "sortOrder": 77,
+      "classification": "fusion",
+      "name": {
+        "en": "Hydra",
+        "de": "Hydra"
+      },
+      "effectSummary": {
+        "en": "Applies Trinity to Volcano Mortars with slower fire and amplified transfer.",
+        "de": "Wendet Trinität mit langsamerem Feuer und verstärkter Übertragung auf Volcano Mortars an."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "hydra-visual",
+        "seed": 78,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Hydra",
+          "de": "Abstraktes Emblem für Hydra"
+        }
+      },
+      "provenanceRef": "banner-hydra-source"
+    },
+    {
+      "id": "iced-target",
+      "sourceKey": "fusion:IcedTargetData:IcedTargetTitle",
+      "sortOrder": 78,
+      "classification": "fusion",
+      "name": {
+        "en": "Iced Target",
+        "de": "Eisiges Ziel"
+      },
+      "effectSummary": {
+        "en": "Slowed enemies receive additional spell damage.",
+        "de": "Verlangsamte Gegner erleiden zusätzlichen Zauberschaden."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "iced-target-visual",
+        "seed": 79,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Iced Target",
+          "de": "Abstraktes Emblem für Eisiges Ziel"
+        }
+      },
+      "provenanceRef": "banner-iced-target-source"
+    },
+    {
+      "id": "lightstorm",
+      "sourceKey": "fusion:LightburstData:LightburstTitle",
+      "sortOrder": 79,
+      "classification": "fusion",
+      "name": {
+        "en": "Lightstorm",
+        "de": "Lichtsturm"
+      },
+      "effectSummary": {
+        "en": "Lightning Surge can burst through targets, strongly scaling with Magical Charge.",
+        "de": "Blitzschwall kann Ziele durchbrechen und stark mit Magischer Ladung skalieren."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "lightstorm-visual",
+        "seed": 80,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Lightstorm",
+          "de": "Abstraktes Emblem für Lichtsturm"
+        }
+      },
+      "provenanceRef": "banner-lightstorm-source"
+    },
+    {
+      "id": "mystic-winds",
+      "sourceKey": "fusion:MysticWindsData:MysticWindsTitle",
+      "sortOrder": 80,
+      "classification": "fusion",
+      "name": {
+        "en": "Mystic Winds",
+        "de": "Mystische Winde"
+      },
+      "effectSummary": {
+        "en": "Transfers a share of Magical Charge damage into tornadoes.",
+        "de": "Überträgt einen Anteil des Schadens von Magischer Ladung auf Tornados."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "mystic-winds-visual",
+        "seed": 81,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Mystic Winds",
+          "de": "Abstraktes Emblem für Mystische Winde"
+        }
+      },
+      "provenanceRef": "banner-mystic-winds-source"
+    },
+    {
+      "id": "nightburst",
+      "sourceKey": "fusion:NightburstData:NightburstTitle",
+      "sortOrder": 81,
+      "classification": "fusion",
+      "name": {
+        "en": "Nightburst",
+        "de": "Nachtstoß"
+      },
+      "effectSummary": {
+        "en": "Volcano Mortar explosions apply an amplified weakness effect.",
+        "de": "Explosionen des Volcano Mortars wenden einen verstärkten Schwächeeffekt an."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "nightburst-visual",
+        "seed": 82,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Nightburst",
+          "de": "Abstraktes Emblem für Nachtstoß"
+        }
+      },
+      "provenanceRef": "banner-nightburst-source"
+    },
+    {
+      "id": "pact-of-dusk",
+      "sourceKey": "fusion:PactOfDuskData:PactOfDuskTitle",
+      "sortOrder": 82,
+      "classification": "fusion",
+      "name": {
+        "en": "Pact of Dusk",
+        "de": "Pakt der Dämmerung"
+      },
+      "effectSummary": {
+        "en": "Moves weakness to arrows and redirects Arrow damage bonuses to Shadow Towers.",
+        "de": "Verlagert Schwäche auf Pfeile und leitet Arrow-Schadensboni an Shadow Towers weiter."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "pact-of-dusk-visual",
+        "seed": 83,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Pact of Dusk",
+          "de": "Abstraktes Emblem für Pakt der Dämmerung"
+        }
+      },
+      "provenanceRef": "banner-pact-of-dusk-source"
+    },
+    {
+      "id": "precision-shots",
+      "sourceKey": "fusion:PrecisionShotsData:PrecisionShotsTitle",
+      "sortOrder": 83,
+      "classification": "fusion",
+      "name": {
+        "en": "Precision Shots",
+        "de": "Präzisionsschüsse"
+      },
+      "effectSummary": {
+        "en": "Scales Volcano Mortar damage with additive Arrow Tower damage banners.",
+        "de": "Skaliert Volcano-Mortar-Schaden mit additiven Schadensbannern des Arrow Towers."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "precision-shots-visual",
+        "seed": 84,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Precision Shots",
+          "de": "Abstraktes Emblem für Präzisionsschüsse"
+        }
+      },
+      "provenanceRef": "banner-precision-shots-source"
+    },
+    {
+      "id": "scorching",
+      "sourceKey": "fusion:ScorchingData:ScorchingTitle",
+      "sortOrder": 84,
+      "classification": "fusion",
+      "name": {
+        "en": "Scorching",
+        "de": "Versengung"
+      },
+      "effectSummary": {
+        "en": "Applies a share of Scraper's missing-health bonus to Runestone attacks.",
+        "de": "Wendet einen Anteil des Feger-Bonus gegen fehlendes Leben auf Runenangriffe an."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "scorching-visual",
+        "seed": 85,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Scorching",
+          "de": "Abstraktes Emblem für Versengung"
+        }
+      },
+      "provenanceRef": "banner-scorching-source"
+    },
+    {
+      "id": "shadow-tornado",
+      "sourceKey": "fusion:ShadowTornadoData:ShadowTornadoTitle",
+      "sortOrder": 85,
+      "classification": "fusion",
+      "name": {
+        "en": "Shadow Tornado",
+        "de": "Schatten-Tornado"
+      },
+      "effectSummary": {
+        "en": "Nearby Tornado Towers let Shadow Towers summon longer, stronger tornadoes.",
+        "de": "Nahe Tornado Towers lassen Shadow Towers längere, stärkere Tornados beschwören."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "shadow-tornado-visual",
+        "seed": 86,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Shadow Tornado",
+          "de": "Abstraktes Emblem für Schatten-Tornado"
+        }
+      },
+      "provenanceRef": "banner-shadow-tornado-source"
+    },
+    {
+      "id": "shockwave",
+      "sourceKey": "fusion:ShockWaveData:ShockWaveRogueTitle",
+      "sortOrder": 86,
+      "classification": "fusion",
+      "name": {
+        "en": "Shockwave",
+        "de": "Schockwelle"
+      },
+      "effectSummary": {
+        "en": "Critical Arc Tower hits can emit area shockwaves scaled by Wide Blast.",
+        "de": "Kritische Arc-Tower-Treffer können durch Großexplosion skalierte Flächenschockwellen auslösen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "shockwave-visual",
+        "seed": 87,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Shockwave",
+          "de": "Abstraktes Emblem für Schockwelle"
+        }
+      },
+      "provenanceRef": "banner-shockwave-source"
+    },
+    {
+      "id": "soulflame",
+      "sourceKey": "fusion:SoulflameData:SoulflameTitle",
+      "sortOrder": 87,
+      "classification": "fusion",
+      "name": {
+        "en": "Soulflame",
+        "de": "Seelenflamme"
+      },
+      "effectSummary": {
+        "en": "Makes weakness amplify burning damage more strongly.",
+        "de": "Lässt Schwäche den Brandschaden stärker erhöhen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "soulflame-visual",
+        "seed": 88,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Soulflame",
+          "de": "Abstraktes Emblem für Seelenflamme"
+        }
+      },
+      "provenanceRef": "banner-soulflame-source"
+    },
+    {
+      "id": "speedy-death",
+      "sourceKey": "fusion:SpeedyDeathData:SpeedyDeathTitle",
+      "sortOrder": 88,
+      "classification": "fusion",
+      "name": {
+        "en": "Speedy Death",
+        "de": "Schneller Tod"
+      },
+      "effectSummary": {
+        "en": "Focus Rune increases the damage growth granted by Icy Death.",
+        "de": "Fokusrune erhöht das von Eisiger Tod gewährte Schadenswachstum."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "speedy-death-visual",
+        "seed": 89,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Speedy Death",
+          "de": "Abstraktes Emblem für Schneller Tod"
+        }
+      },
+      "provenanceRef": "banner-speedy-death-source"
+    },
+    {
+      "id": "spinning-scythe",
+      "sourceKey": "fusion:SpinningScytheData:SpinningScytheTitle",
+      "sortOrder": 89,
+      "classification": "fusion",
+      "name": {
+        "en": "Spinning Scythe",
+        "de": "Wirbelnde Sense"
+      },
+      "effectSummary": {
+        "en": "Adjacent Chaos Reapers can create bleed-only scythes based on their damage.",
+        "de": "Angrenzende Chaos Reaper können reine Blutungssensen anhand ihres Schadens erzeugen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "spinning-scythe-visual",
+        "seed": 90,
+        "motif": "rune",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Spinning Scythe",
+          "de": "Abstraktes Emblem für Wirbelnde Sense"
+        }
+      },
+      "provenanceRef": "banner-spinning-scythe-source"
+    },
+    {
+      "id": "spiral-of-pain",
+      "sourceKey": "fusion:SpiralOfPainData:SpiralOfPainTitle",
+      "sortOrder": 90,
+      "classification": "fusion",
+      "name": {
+        "en": "Spiral of Pain",
+        "de": "Schmerzspirale"
+      },
+      "effectSummary": {
+        "en": "Tornadoes multiply their damage against weakened enemies.",
+        "de": "Tornados multiplizieren ihren Schaden gegen geschwächte Gegner."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "spiral-of-pain-visual",
+        "seed": 91,
+        "motif": "orbit",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Spiral of Pain",
+          "de": "Abstraktes Emblem für Schmerzspirale"
+        }
+      },
+      "provenanceRef": "banner-spiral-of-pain-source"
+    },
+    {
+      "id": "sweeper",
+      "sourceKey": "fusion:SweeperData:SweeperTitle",
+      "sortOrder": 91,
+      "classification": "fusion",
+      "name": {
+        "en": "Sweeper",
+        "de": "Feger"
+      },
+      "effectSummary": {
+        "en": "Applies a share of Scraper to Wrath Scattering projectiles.",
+        "de": "Wendet einen Anteil von Feger auf Projektile der Schicksalsstreuung an."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "sweeper-visual",
+        "seed": 92,
+        "motif": "burst",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Sweeper",
+          "de": "Abstraktes Emblem für Feger"
+        }
+      },
+      "provenanceRef": "banner-sweeper-source"
+    },
+    {
+      "id": "unchained-rage",
+      "sourceKey": "fusion:UnchainedRageData:UnchainedRageTitle",
+      "sortOrder": 92,
+      "classification": "fusion",
+      "name": {
+        "en": "Unchained Rage",
+        "de": "Ungezügelte Wut"
+      },
+      "effectSummary": {
+        "en": "Raven kills transfer capped Shadow overflow damage through Overdose.",
+        "de": "Raven-Kills übertragen begrenzten Shadow-Überschussschaden durch Exzess."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "unchained-rage-visual",
+        "seed": 93,
+        "motif": "weave",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Unchained Rage",
+          "de": "Abstraktes Emblem für Ungezügelte Wut"
+        }
+      },
+      "provenanceRef": "banner-unchained-rage-source"
+    },
+    {
+      "id": "venomous-bleed",
+      "sourceKey": "fusion:VenomousBleedData:VenomousBleedTitle",
+      "sortOrder": 93,
+      "classification": "fusion",
+      "name": {
+        "en": "Venomous Bleed",
+        "de": "Giftige Blutung"
+      },
+      "effectSummary": {
+        "en": "Bleeding from either tower also inflicts a special weakness.",
+        "de": "Blutung beider Türme verursacht zusätzlich eine besondere Schwäche."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "venomous-bleed-visual",
+        "seed": 94,
+        "motif": "blade",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Venomous Bleed",
+          "de": "Abstraktes Emblem für Giftige Blutung"
+        }
+      },
+      "provenanceRef": "banner-venomous-bleed-source"
+    },
+    {
+      "id": "dispersion",
+      "sourceKey": "generalist:DispersionData:DispersionTitle",
+      "sortOrder": 94,
+      "classification": "generalist",
+      "name": {
+        "en": "Dispersion",
+        "de": "Zerstreuung"
+      },
+      "effectSummary": {
+        "en": "Doubles banner choices while increasing tower and upgrade cost growth.",
+        "de": "Verdoppelt Bannerwahlen und erhöht dafür das Wachstum von Turm- und Upgradekosten."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "dispersion-visual",
+        "seed": 95,
+        "motif": "crown",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Dispersion",
+          "de": "Abstraktes Emblem für Zerstreuung"
+        }
+      },
+      "provenanceRef": "banner-dispersion-source"
+    },
+    {
+      "id": "multitude",
+      "sourceKey": "generalist:MultitudeData:MultitudeTitle",
+      "sortOrder": 95,
+      "classification": "generalist",
+      "name": {
+        "en": "Multitude",
+        "de": "Vielfältigkeit"
+      },
+      "effectSummary": {
+        "en": "Creates separate common-only banner choices per tower and disables new uniques and fusions.",
+        "de": "Erzeugt getrennte, gewöhnliche Bannerwahlen pro Turm und deaktiviert neue Einzigartige und Fusionen."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "multitude-visual",
+        "seed": 96,
+        "motif": "vortex",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Multitude",
+          "de": "Abstraktes Emblem für Vielfältigkeit"
+        }
+      },
+      "provenanceRef": "banner-multitude-source"
+    },
+    {
+      "id": "power-rise",
+      "sourceKey": "generalist:PowerRiseData:PowerRiseTitle",
+      "sortOrder": 96,
+      "classification": "generalist",
+      "name": {
+        "en": "Power Rise",
+        "de": "Machtzuwachs"
+      },
+      "effectSummary": {
+        "en": "Multiplies the damage of every tower.",
+        "de": "Multipliziert den Schaden aller Türme."
+      },
+      "visual": {
+        "kind": "css",
+        "assetId": "power-rise-visual",
+        "seed": 97,
+        "motif": "crest",
+        "authorship": "original",
+        "licenseReference": "Original CSS visual system in src/components/BannerVisual.vue",
+        "alt": {
+          "en": "Abstract emblem for Power Rise",
+          "de": "Abstraktes Emblem für Machtzuwachs"
+        }
+      },
+      "provenanceRef": "banner-power-rise-source"
+    }
+  ],
+  "eligibility": [
+    {
+      "towerId": "arc-tower",
+      "bannerId": "bloody-chain",
+      "provenanceRef": "eligible-arc-tower-bloody-chain"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "celestial-jumps",
+      "provenanceRef": "eligible-arc-tower-celestial-jumps"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "chain-crits",
+      "provenanceRef": "eligible-arc-tower-chain-crits"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "chain-echo",
+      "provenanceRef": "eligible-arc-tower-chain-echo"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "charged-arrows",
+      "provenanceRef": "eligible-arc-tower-charged-arrows"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "critical-bond",
+      "provenanceRef": "eligible-arc-tower-critical-bond"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "critical-breach",
+      "provenanceRef": "eligible-arc-tower-critical-breach"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "critical-nexus",
+      "provenanceRef": "eligible-arc-tower-critical-nexus"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "destructive-strike",
+      "provenanceRef": "eligible-arc-tower-destructive-strike"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-arc-tower-dispersion"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "iced-target",
+      "provenanceRef": "eligible-arc-tower-iced-target"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "lightning-surge",
+      "provenanceRef": "eligible-arc-tower-lightning-surge"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "lightstorm",
+      "provenanceRef": "eligible-arc-tower-lightstorm"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-arc-tower-multitude"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "opening-blitz",
+      "provenanceRef": "eligible-arc-tower-opening-blitz"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-arc-tower-power-rise"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "shockwave",
+      "provenanceRef": "eligible-arc-tower-shockwave"
+    },
+    {
+      "towerId": "arc-tower",
+      "bannerId": "thor-s-wrath",
+      "provenanceRef": "eligible-arc-tower-thor-s-wrath"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "barbed-arrows",
+      "provenanceRef": "eligible-arrow-tower-barbed-arrows"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "bloody-chain",
+      "provenanceRef": "eligible-arrow-tower-bloody-chain"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "bodkin-arrow",
+      "provenanceRef": "eligible-arrow-tower-bodkin-arrow"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "chaos-bolts",
+      "provenanceRef": "eligible-arrow-tower-chaos-bolts"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "charged-arrows",
+      "provenanceRef": "eligible-arrow-tower-charged-arrows"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "corpse-explosion-fusion",
+      "provenanceRef": "eligible-arrow-tower-corpse-explosion-fusion"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-arrow-tower-dispersion"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "fire-arrows",
+      "provenanceRef": "eligible-arrow-tower-fire-arrows"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "lucky-shot",
+      "provenanceRef": "eligible-arrow-tower-lucky-shot"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-arrow-tower-multitude"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "pact-of-dusk",
+      "provenanceRef": "eligible-arrow-tower-pact-of-dusk"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-arrow-tower-power-rise"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "precision-shots",
+      "provenanceRef": "eligible-arrow-tower-precision-shots"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "rapid-archer",
+      "provenanceRef": "eligible-arrow-tower-rapid-archer"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "skyfall-arrows",
+      "provenanceRef": "eligible-arrow-tower-skyfall-arrows"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "timberwind-mark",
+      "provenanceRef": "eligible-arrow-tower-timberwind-mark"
+    },
+    {
+      "towerId": "arrow-tower",
+      "bannerId": "venomous-bleed",
+      "provenanceRef": "eligible-arrow-tower-venomous-bleed"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "barrier-bane",
+      "provenanceRef": "eligible-chaos-reaper-barrier-bane"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "barrier-shatter",
+      "provenanceRef": "eligible-chaos-reaper-barrier-shatter"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "chaos-bolts",
+      "provenanceRef": "eligible-chaos-reaper-chaos-bolts"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "chaos-storm",
+      "provenanceRef": "eligible-chaos-reaper-chaos-storm"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "crimson-beak",
+      "provenanceRef": "eligible-chaos-reaper-crimson-beak"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "critical-bleed",
+      "provenanceRef": "eligible-chaos-reaper-critical-bleed"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "dark-worship",
+      "provenanceRef": "eligible-chaos-reaper-dark-worship"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "deadly-presence",
+      "provenanceRef": "eligible-chaos-reaper-deadly-presence"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-chaos-reaper-dispersion"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "double-nova",
+      "provenanceRef": "eligible-chaos-reaper-double-nova"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "double-strike",
+      "provenanceRef": "eligible-chaos-reaper-double-strike"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "frost-scythe",
+      "provenanceRef": "eligible-chaos-reaper-frost-scythe"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-chaos-reaper-multitude"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-chaos-reaper-power-rise"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "spinning-scythe",
+      "provenanceRef": "eligible-chaos-reaper-spinning-scythe"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "venomous-bleed",
+      "provenanceRef": "eligible-chaos-reaper-venomous-bleed"
+    },
+    {
+      "towerId": "chaos-reaper",
+      "bannerId": "wings-of-chaos",
+      "provenanceRef": "eligible-chaos-reaper-wings-of-chaos"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "chill-explosion",
+      "provenanceRef": "eligible-frost-tower-chill-explosion"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "clinking-mastery",
+      "provenanceRef": "eligible-frost-tower-clinking-mastery"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "cold-snap",
+      "provenanceRef": "eligible-frost-tower-cold-snap"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "crippling-pain",
+      "provenanceRef": "eligible-frost-tower-crippling-pain"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "critical-breach",
+      "provenanceRef": "eligible-frost-tower-critical-breach"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-frost-tower-dispersion"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "doom-cold",
+      "provenanceRef": "eligible-frost-tower-doom-cold"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "double-nova",
+      "provenanceRef": "eligible-frost-tower-double-nova"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "frost-magician",
+      "provenanceRef": "eligible-frost-tower-frost-magician"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "frost-scythe",
+      "provenanceRef": "eligible-frost-tower-frost-scythe"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "glacial-nova",
+      "provenanceRef": "eligible-frost-tower-glacial-nova"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "iced-target",
+      "provenanceRef": "eligible-frost-tower-iced-target"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "icy-death",
+      "provenanceRef": "eligible-frost-tower-icy-death"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-frost-tower-multitude"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "painful-cold",
+      "provenanceRef": "eligible-frost-tower-painful-cold"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-frost-tower-power-rise"
+    },
+    {
+      "towerId": "frost-tower",
+      "bannerId": "speedy-death",
+      "provenanceRef": "eligible-frost-tower-speedy-death"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "clinking-mastery",
+      "provenanceRef": "eligible-raven-tower-clinking-mastery"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "crimson-beak",
+      "provenanceRef": "eligible-raven-tower-crimson-beak"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "critical-impact",
+      "provenanceRef": "eligible-raven-tower-critical-impact"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "damnable-weak",
+      "provenanceRef": "eligible-raven-tower-damnable-weak"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-raven-tower-dispersion"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "doom-blast",
+      "provenanceRef": "eligible-raven-tower-doom-blast"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "doom-cold",
+      "provenanceRef": "eligible-raven-tower-doom-cold"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "doom-scattering",
+      "provenanceRef": "eligible-raven-tower-doom-scattering"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "ghost-raven",
+      "provenanceRef": "eligible-raven-tower-ghost-raven"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "mastery",
+      "provenanceRef": "eligible-raven-tower-mastery"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-raven-tower-multitude"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "omnipotence",
+      "provenanceRef": "eligible-raven-tower-omnipotence"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-raven-tower-power-rise"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "sweeper",
+      "provenanceRef": "eligible-raven-tower-sweeper"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "twin-feathers",
+      "provenanceRef": "eligible-raven-tower-twin-feathers"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "unchained-rage",
+      "provenanceRef": "eligible-raven-tower-unchained-rage"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "wings-of-chaos",
+      "provenanceRef": "eligible-raven-tower-wings-of-chaos"
+    },
+    {
+      "towerId": "raven-tower",
+      "bannerId": "wrath-scattering",
+      "provenanceRef": "eligible-raven-tower-wrath-scattering"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "branding",
+      "provenanceRef": "eligible-runestone-tower-branding"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "celestial-jumps",
+      "provenanceRef": "eligible-runestone-tower-celestial-jumps"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "crippling-pain",
+      "provenanceRef": "eligible-runestone-tower-crippling-pain"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-runestone-tower-dispersion"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "focus-rune",
+      "provenanceRef": "eligible-runestone-tower-focus-rune"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "hydra",
+      "provenanceRef": "eligible-runestone-tower-hydra"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "light-pillar",
+      "provenanceRef": "eligible-runestone-tower-light-pillar"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "lightstorm",
+      "provenanceRef": "eligible-runestone-tower-lightstorm"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "magical-charge",
+      "provenanceRef": "eligible-runestone-tower-magical-charge"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-runestone-tower-multitude"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "mystic-winds",
+      "provenanceRef": "eligible-runestone-tower-mystic-winds"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-runestone-tower-power-rise"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "prism",
+      "provenanceRef": "eligible-runestone-tower-prism"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "runic-fire-aura",
+      "provenanceRef": "eligible-runestone-tower-runic-fire-aura"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "scorching",
+      "provenanceRef": "eligible-runestone-tower-scorching"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "speedy-death",
+      "provenanceRef": "eligible-runestone-tower-speedy-death"
+    },
+    {
+      "towerId": "runestone-tower",
+      "bannerId": "trinity",
+      "provenanceRef": "eligible-runestone-tower-trinity"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "corpse-explosion-fusion",
+      "provenanceRef": "eligible-shadow-tower-corpse-explosion-fusion"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "corpse-explosion-tower-specific",
+      "provenanceRef": "eligible-shadow-tower-corpse-explosion-tower-specific"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "damnable-weak",
+      "provenanceRef": "eligible-shadow-tower-damnable-weak"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "darkness",
+      "provenanceRef": "eligible-shadow-tower-darkness"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-shadow-tower-dispersion"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "insanity",
+      "provenanceRef": "eligible-shadow-tower-insanity"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-shadow-tower-multitude"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "nightburst",
+      "provenanceRef": "eligible-shadow-tower-nightburst"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "overdose",
+      "provenanceRef": "eligible-shadow-tower-overdose"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "pact-of-dusk",
+      "provenanceRef": "eligible-shadow-tower-pact-of-dusk"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-shadow-tower-power-rise"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "rapture",
+      "provenanceRef": "eligible-shadow-tower-rapture"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "ring-of-death",
+      "provenanceRef": "eligible-shadow-tower-ring-of-death"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "shadow-tornado",
+      "provenanceRef": "eligible-shadow-tower-shadow-tornado"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "soulflame",
+      "provenanceRef": "eligible-shadow-tower-soulflame"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "spiral-of-pain",
+      "provenanceRef": "eligible-shadow-tower-spiral-of-pain"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "unchained-rage",
+      "provenanceRef": "eligible-shadow-tower-unchained-rage"
+    },
+    {
+      "towerId": "shadow-tower",
+      "bannerId": "vulnerability",
+      "provenanceRef": "eligible-shadow-tower-vulnerability"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "barrier-bane",
+      "provenanceRef": "eligible-tornado-tower-barrier-bane"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "collapse",
+      "provenanceRef": "eligible-tornado-tower-collapse"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "critical-impact",
+      "provenanceRef": "eligible-tornado-tower-critical-impact"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-tornado-tower-dispersion"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "doom-scattering",
+      "provenanceRef": "eligible-tornado-tower-doom-scattering"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "earthquake",
+      "provenanceRef": "eligible-tornado-tower-earthquake"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-tornado-tower-multitude"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "mystic-winds",
+      "provenanceRef": "eligible-tornado-tower-mystic-winds"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-tornado-tower-power-rise"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "scorching",
+      "provenanceRef": "eligible-tornado-tower-scorching"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "scraper",
+      "provenanceRef": "eligible-tornado-tower-scraper"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "shadow-tornado",
+      "provenanceRef": "eligible-tornado-tower-shadow-tornado"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "spinning-scythe",
+      "provenanceRef": "eligible-tornado-tower-spinning-scythe"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "spiral-of-pain",
+      "provenanceRef": "eligible-tornado-tower-spiral-of-pain"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "squall",
+      "provenanceRef": "eligible-tornado-tower-squall"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "stormbringer",
+      "provenanceRef": "eligible-tornado-tower-stormbringer"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "sweeper",
+      "provenanceRef": "eligible-tornado-tower-sweeper"
+    },
+    {
+      "towerId": "tornado-tower",
+      "bannerId": "tempest-stopper",
+      "provenanceRef": "eligible-tornado-tower-tempest-stopper"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "branding",
+      "provenanceRef": "eligible-volcano-mortar-branding"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "crescendo-blast",
+      "provenanceRef": "eligible-volcano-mortar-crescendo-blast"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "destructive-strike",
+      "provenanceRef": "eligible-volcano-mortar-destructive-strike"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "dispersion",
+      "provenanceRef": "eligible-volcano-mortar-dispersion"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "fire-arrows",
+      "provenanceRef": "eligible-volcano-mortar-fire-arrows"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "hydra",
+      "provenanceRef": "eligible-volcano-mortar-hydra"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "magma-field",
+      "provenanceRef": "eligible-volcano-mortar-magma-field"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "multitude",
+      "provenanceRef": "eligible-volcano-mortar-multitude"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "nightburst",
+      "provenanceRef": "eligible-volcano-mortar-nightburst"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "outreach-first",
+      "provenanceRef": "eligible-volcano-mortar-outreach-first"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "overheating",
+      "provenanceRef": "eligible-volcano-mortar-overheating"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "power-rise",
+      "provenanceRef": "eligible-volcano-mortar-power-rise"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "precision-shots",
+      "provenanceRef": "eligible-volcano-mortar-precision-shots"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "shockwave",
+      "provenanceRef": "eligible-volcano-mortar-shockwave"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "soulflame",
+      "provenanceRef": "eligible-volcano-mortar-soulflame"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "supernova",
+      "provenanceRef": "eligible-volcano-mortar-supernova"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "volcanic-eruption",
+      "provenanceRef": "eligible-volcano-mortar-volcanic-eruption"
+    },
+    {
+      "towerId": "volcano-mortar",
+      "bannerId": "wide-blast",
+      "provenanceRef": "eligible-volcano-mortar-wide-blast"
+    }
+  ]
+}

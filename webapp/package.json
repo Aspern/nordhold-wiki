@@ -1,0 +1,57 @@
+{
+  "name": "nordhold-wiki",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25.0.0"
+  },
+  "packageManager": "npm@11.6.2",
+  "scripts": {
+    "dev": "vite",
+    "reports:prepare": "node -e \"require('node:fs').mkdirSync('reports',{recursive:true})\"",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
+    "lint": "node --experimental-strip-types ./node_modules/eslint/bin/eslint.js --flag unstable_native_nodejs_ts_config .",
+    "lint:report": "npm run reports:prepare --silent && node --experimental-strip-types ./node_modules/eslint/bin/eslint.js --flag unstable_native_nodejs_ts_config . --format json --output-file reports/eslint.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:ci": "npm run reports:prepare --silent && vitest run --coverage --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml",
+    "audit:report": "npm run reports:prepare --silent && npm audit --json --audit-level=high > reports/npm-audit.json",
+    "content:contracts": "node scripts/check-contract-sync.ts",
+    "content:validate": "node scripts/validate-content.ts",
+    "content:normalize": "node scripts/normalize-game-data.ts",
+    "content:checklist": "node scripts/generate-content-checklist.ts",
+    "release:generate": "node scripts/generate-release-metadata.ts",
+    "bundle:validate": "node scripts/validate-bundle.ts",
+    "build:deterministic": "node scripts/validate-deterministic-build.ts",
+    "workflow:validate": "node scripts/validate-workflow.ts",
+    "verify:release": "node scripts/verify-release.ts",
+    "build": "vite build",
+    "validate": "npm run reports:prepare --silent && npm run typecheck && npm run lint:report && npm run format:check && npm run content:contracts && npm run content:validate && npm run test:ci && npm run audit:report",
+    "validate:all": "npm run validate && npm run workflow:validate && npm run build:deterministic && npm run bundle:validate"
+  },
+  "dependencies": {
+    "vue": "3.5.42",
+    "vue-i18n": "11.4.10",
+    "vue-router": "4.6.4",
+    "vuetify": "4.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.13.3",
+    "@vitejs/plugin-vue": "6.0.8",
+    "@vitest/coverage-v8": "5.0.0",
+    "ajv": "8.20.0",
+    "eslint": "10.10.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-vue": "10.10.0",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.69.0",
+    "vite": "8.2.2",
+    "vite-plugin-vuetify": "2.1.3",
+    "vitest": "5.0.0",
+    "vue-tsc": "3.3.11"
+  }
+}
