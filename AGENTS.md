@@ -208,6 +208,22 @@ Do not commit copied game assets, text, or other third-party material unless its
 use is authorized and attribution requirements are satisfied. Prefer original
 summaries and independently created assets.
 
+## Repository Skills
+
+### Nordhold Game Data Extraction
+
+Use the `$nordhold-game-data` skill when a task requires facts from a local
+Nordhold Steam installation, for example:
+
+- inventorying tower, ability, banner, or localization records;
+- refreshing extracted facts after a Steam build update;
+- collecting source evidence before creating or correcting wiki JSON content.
+
+The skill is located at `.agents/skills/nordhold-game-data/SKILL.md` and includes
+a reusable read-only extractor. It does not authorize dependency installation,
+publication of copyrighted game assets or bulk text, or modification of the game
+installation. Follow its approval, provenance, and validation requirements.
+
 ## No Database
 
 The project intentionally has no database. Agents MUST NOT introduce database
