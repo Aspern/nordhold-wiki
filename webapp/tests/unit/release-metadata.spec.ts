@@ -3,7 +3,11 @@ import { describe, expect, it, vi } from "vitest";
 import packageManifest from "../../package.json";
 import { formatBuildDate } from "../../src/app/headerModel.ts";
 import { releaseMetadata } from "../../src/generated/release.ts";
-import { ReleaseMetadataError, validateReleaseMetadata } from "../../src/types/release.ts";
+import {
+  extractReleaseMetadata,
+  ReleaseMetadataError,
+  validateReleaseMetadata,
+} from "../../src/types/release.ts";
 
 describe("release metadata", () => {
   it("requires the package version, an exact UTC date, and a full lowercase SHA", () => {
@@ -26,6 +30,17 @@ describe("release metadata", () => {
     expect(() => validateReleaseMetadata({ ...releaseMetadata, generatedAt: "runtime" })).toThrow(
       ReleaseMetadataError,
     );
+  });
+
+  it("extracts strict release metadata from a larger bundle manifest", () => {
+    expect(
+      extractReleaseMetadata({
+        ...releaseMetadata,
+        schemaVersion: "1.0.0",
+        validTowerRoute: "/towers/arc-tower",
+        files: [],
+      }),
+    ).toEqual(releaseMetadata);
   });
 
   it("formats the immutable record without consulting the client clock", () => {
