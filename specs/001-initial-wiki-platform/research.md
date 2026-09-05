@@ -263,6 +263,13 @@ repository-scoped plan/apply roles and policies. A bootstrap plan must stop if
 the provider is absent or incompatible and must never propose another provider
 with the same URL.
 
+The existing GitHub organization OIDC subject template augments repository
+names with the stable numeric owner and repository IDs. Bootstrap therefore
+accepts those reviewed non-secret IDs separately and builds the exact customized
+pull-request, `main`, and `production` environment subjects. This preserves the
+account's established anti-renaming control without broadening either role to an
+organization-wide wildcard.
+
 Source: [AWS CreateOpenIDConnectProvider API](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html),
 which defines the provider URL as unique within an AWS account.
 

@@ -1,6 +1,8 @@
 locals {
-  bootstrap_state_arn  = "${aws_s3_bucket.terraform_state.arn}/${var.bootstrap_state_key}"
-  production_state_arn = "${aws_s3_bucket.terraform_state.arn}/${var.production_state_key}"
+  bootstrap_state_arn       = "${aws_s3_bucket.terraform_state.arn}/${var.bootstrap_state_key}"
+  production_state_arn      = "${aws_s3_bucket.terraform_state.arn}/${var.production_state_key}"
+  github_repository_parts   = split("/", var.github_repository)
+  github_oidc_repository_id = "${local.github_repository_parts[0]}@${var.github_repository_owner_id}/${local.github_repository_parts[1]}@${var.github_repository_id}"
   state_object_arns = [
     local.bootstrap_state_arn,
     "${local.bootstrap_state_arn}.tflock",
@@ -33,8 +35,8 @@ data "aws_iam_policy_document" "plan_assume_role" {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:${var.github_repository}:pull_request",
-        "repo:${var.github_repository}:ref:refs/heads/main",
+        "repo:${local.github_oidc_repository_id}:pull_request",
+        "repo:${local.github_oidc_repository_id}:ref:refs/heads/main",
       ]
     }
   }
@@ -59,7 +61,7 @@ data "aws_iam_policy_document" "apply_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_repository}:environment:production"]
+      values   = ["repo:${local.github_oidc_repository_id}:environment:production"]
     }
   }
 }

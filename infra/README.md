@@ -55,11 +55,19 @@ unexpected audience; do not create a second provider from this bootstrap root.
    reviewed non-secret inputs:
 
    ```hcl
-   application_bucket_name = "GLOBALLY_UNIQUE_APPLICATION_BUCKET"
-   cost_owner         = "REVIEWED_COST_OWNER"
-   github_repository  = "OWNER/REPOSITORY"
-   state_bucket_name  = "GLOBALLY_UNIQUE_STATE_BUCKET"
+   application_bucket_name   = "GLOBALLY_UNIQUE_APPLICATION_BUCKET"
+   cost_owner                = "REVIEWED_COST_OWNER"
+   github_repository         = "OWNER/REPOSITORY"
+   github_repository_owner_id = "NUMERIC_OWNER_ID"
+   github_repository_id       = "NUMERIC_REPOSITORY_ID"
+   state_bucket_name          = "GLOBALLY_UNIQUE_STATE_BUCKET"
    ```
+
+   The numeric IDs must come from the reviewed GitHub repository metadata. They
+   are required because the existing organization OIDC subject template binds
+   repository names to their immutable owner and repository IDs. The resulting
+   trust subjects remain scoped to this repository's pull requests, `main`, and
+   protected `production` environment.
 
 2. Confirm the authenticated account and planned regions before continuing:
 
@@ -72,17 +80,30 @@ unexpected audience; do not create a second provider from this bootstrap root.
    in `us-east-1`. Stop if the account or identity differs from the approved
    target.
 
-3. Initialize the bootstrap root locally, save a plan, and inspect every action.
-   The plan must read the existing GitHub OIDC provider and must contain no
-   provider create, update, replacement, or deletion. Obtain approval
-   immediately before apply:
+3. Copy the bootstrap root into an ignored local working directory without
+   `backend.tf`, initialize its implicit local backend, save a plan, and inspect
+   every action. Omitting the S3 backend block is required only because the
+   state bucket does not exist yet. The plan must read the existing GitHub OIDC
+   provider and must contain no provider create, update, replacement, or
+   deletion. Obtain approval immediately before apply:
 
    ```powershell
-   terraform -chdir=.\infra\bootstrap init -backend=false
-   terraform -chdir=.\infra\bootstrap plan -out=bootstrap.tfplan
-   terraform -chdir=.\infra\bootstrap show -no-color bootstrap.tfplan
-   terraform -chdir=.\infra\bootstrap apply bootstrap.tfplan
-   terraform -chdir=.\infra\bootstrap output
+   $tools = New-Item -ItemType Directory -Force .\.tools
+   $bootstrapSource = (Resolve-Path .\infra\bootstrap).Path
+   $bootstrapWork = Join-Path $tools.FullName 'bootstrap-local'
+   if (Test-Path $bootstrapWork) { throw 'Reviewed bootstrap working directory already exists.' }
+   New-Item -ItemType Directory $bootstrapWork | Out-Null
+   Get-ChildItem $bootstrapSource -Filter '*.tf' -File |
+     Where-Object Name -ne 'backend.tf' |
+     Copy-Item -Destination $bootstrapWork
+   Copy-Item "$bootstrapSource\.terraform.lock.hcl" $bootstrapWork
+   Copy-Item "$bootstrapSource\bootstrap.auto.tfvars" $bootstrapWork
+
+   terraform -chdir=$bootstrapWork init -lockfile=readonly
+   terraform -chdir=$bootstrapWork plan -out=bootstrap.tfplan
+   terraform -chdir=$bootstrapWork show -no-color bootstrap.tfplan
+   terraform -chdir=$bootstrapWork apply bootstrap.tfplan
+   terraform -chdir=$bootstrapWork output
    ```
 
 4. Create an ignored `infra/bootstrap/backend.hcl` from the non-secret outputs:
@@ -93,13 +114,22 @@ unexpected audience; do not create a second provider from this bootstrap root.
    region = "eu-central-1"
    ```
 
-   Review the exact bucket and key, then migrate the local state and verify the
-   native lockfile backend:
+   Review the exact bucket and key, add the reviewed S3 backend block to the
+   local working copy, then migrate its state and verify that both the working
+   copy and repository root read the same native-lockfile backend:
 
    ```powershell
-   terraform -chdir=.\infra\bootstrap init -migrate-state -backend-config=backend.hcl
+   Copy-Item .\infra\bootstrap\backend.tf $bootstrapWork
+   $backendConfig = (Resolve-Path .\infra\bootstrap\backend.hcl).Path
+   terraform -chdir=$bootstrapWork init -migrate-state -force-copy -backend-config=$backendConfig
+   terraform -chdir=$bootstrapWork state pull | Out-Null
+   terraform -chdir=.\infra\bootstrap init -reconfigure -backend-config=backend.hcl
    terraform -chdir=.\infra\bootstrap state pull | Out-Null
    ```
+
+   Keep the ignored working directory protected until the remote state lineage,
+   serial, encryption, versioning, and public-access block are verified. Never
+   stage its local state backup or plan.
 
 5. At one.com, add every name/type/value from
    `certificate_validation_records`. Keep those CNAME records permanently so ACM

@@ -83,3 +83,23 @@ variable "github_repository" {
     error_message = "github_repository must use owner/repository form."
   }
 }
+
+variable "github_repository_owner_id" {
+  description = "Stable numeric GitHub owner ID used by the organization OIDC subject template."
+  type        = string
+
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_repository_owner_id))
+    error_message = "github_repository_owner_id must be a numeric GitHub owner ID."
+  }
+}
+
+variable "github_repository_id" {
+  description = "Stable numeric GitHub repository ID used by the organization OIDC subject template."
+  type        = string
+
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_repository_id))
+    error_message = "github_repository_id must be a numeric GitHub repository ID."
+  }
+}
