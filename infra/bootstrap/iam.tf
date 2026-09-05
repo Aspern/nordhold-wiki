@@ -142,6 +142,7 @@ data "aws_iam_policy_document" "plan_read" {
     effect = "Allow"
     actions = [
       "acm:DescribeCertificate",
+      "acm:ListCertificates",
       "acm:ListTagsForCertificate",
       "cloudfront:Get*",
     ]
