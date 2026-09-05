@@ -313,3 +313,30 @@ release `0.1.0`, the integrated commit SHA, HTTPS root, redirect, and direct
 tower route against the public domain. T092 and T093 remain open until the
 corrected smoke revision is reviewed, integrated, and passes the complete main
 workflow.
+
+### Final production verification
+
+The smoke-check correction was human-reviewed and integrated into `main` as
+commit `579c4da1c0ed99669679bafffcf1b893c262c908`. The project owner approved
+both protected production jobs in GitHub Actions run `33990448845`. All seven
+exact jobs passed in order: `infra:validate`, `app:validate`, `app:build`,
+`infra:plan`, `infra:apply`, `app:deploy`, and `infra:verify`.
+
+The four retained trace artifacts are unexpired and have GitHub-recorded
+SHA-256 digests: Terraform validation, application validation, the immutable
+wiki bundle, and the fresh production plan. The plan's internal checksum and
+metadata matched the integrated commit and `production` workspace; it reported
+no changes and contained 0 create, 0 update, and 0 delete actions. The protected
+apply job promoted that exact plan before the deployment job published the
+exact retained bundle.
+
+Post-release AWS reads confirmed 15 origin objects, revalidating application
+shell metadata, immutable one-year fingerprinted-asset metadata, and a completed
+targeted CloudFront invalidation. The public `release.json` reports version
+`0.1.0`, build date `2026-09-05`, and the exact integrated commit SHA. The CI
+smoke log records successful verification of that release over HTTPS, including
+the root redirect contract and direct tower route. Independent requests to the
+root and `/towers/arc-tower` both returned HTTP 200.
+
+No unresolved production issue remains from the initial release. T092 and T093
+are complete.
