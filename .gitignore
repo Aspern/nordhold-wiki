@@ -1,0 +1,35 @@
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Logs, environment files, and local secrets
+*.log
+.env
+.env.*
+!.env.example
+
+# Web application dependencies and build output
+node_modules/
+webapp/node_modules/
+dist/
+webapp/dist/
+build/
+webapp/build/
+coverage/
+webapp/coverage/
+
+# Terraform working files, plans, variables, and local state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!*.tfvars.example
+crash.log
+crash.*.log
+infra/**/backend.hcl
+!infra/**/backend.hcl.example
