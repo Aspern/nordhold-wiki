@@ -236,6 +236,12 @@ commit, contained the explicit Terraform `No changes` result, and had 0 create,
 0 update, and 0 delete actions. This satisfies the technical post-bootstrap
 plan gate in T091; human pull-request review and integration remain required.
 
+The final review-head run `33988012209` also passed all four pull-request jobs.
+Its retained production plan had a matching checksum and metadata, reported no
+changes, and contained 0 create, 0 update, and 0 delete actions. The project
+owner then completed the human review and squash-merged pull request 1 into
+`main` as commit `372e5a290cbc44c64b99968cadcf794e39b04965`, completing T091.
+
 The project owner added the separate one.com application CNAME for
 `nordhold.asperntallow.de`. Both authoritative one.com name servers and the
 public resolver subsequently returned `d195tdpz6cudel.cloudfront.net`. An HTTPS
@@ -243,6 +249,31 @@ request through the public hostname completed TLS negotiation and returned the
 expected HTTP 403 from the intentionally empty distribution. This completed the
 approved no-publication bootstrap boundary in T090.
 
-No application bundle has been published, and no CloudFront invalidation or
-deployed smoke check has run. Human PR integration and the verified `main`
-release required by T091-T093 remain outstanding.
+### First production release attempt and remediation
+
+The project owner approved the protected `production` environment for GitHub
+Actions run `33988197088`. Both validation jobs, `app:build`, `infra:plan`, and
+`infra:apply` passed. `app:deploy` downloaded and verified the exact bundle,
+assumed the apply role, and initialized the production backend successfully,
+but then failed before publication. The workflow redirected
+`terraform -chdir=infra/production output -json` to
+`../../production-outputs.json`; shell redirection is relative to the runner's
+current directory rather than Terraform's `-chdir`, while the next `jq` command
+read `production-outputs.json` from the repository root.
+
+The workflow now writes the Terraform output to the repository-local
+`production-outputs.json` consumed by the following commands. The existing
+workflow policy validator requires this exact path and normalizes CRLF input so
+the regression check also runs locally on Windows. The new assertion failed
+against the original workflow with only the missing-path finding and passed
+after the workflow correction. The complete application validation passed with
+39 functional unit tests, dependency audit, type checking, ESLint, Prettier,
+content contracts, content validation, deterministic build, bundle validation,
+and workflow policy validation. Both Terraform roots also validated.
+
+The failed release never reached either S3 synchronization command or the
+CloudFront invalidation command. A post-failure AWS read confirmed zero objects
+in the application bucket and zero invalidations. No application bundle has
+been published, and the smoke-check job was skipped. T092 and T093 remain open
+until the corrected revision passes review, integration, protected deployment,
+and public release verification.

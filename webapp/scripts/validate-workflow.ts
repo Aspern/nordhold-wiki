@@ -39,10 +39,9 @@ function jobBlock(workflow: string, jobId: string): string {
 
 async function main(): Promise<void> {
   const webappRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
-  const workflow = await readFile(
-    resolve(webappRoot, "../.github/workflows/wiki-platform.yml"),
-    "utf8",
-  );
+  const workflow = (
+    await readFile(resolve(webappRoot, "../.github/workflows/wiki-platform.yml"), "utf8")
+  ).replace(/\r\n?/gu, "\n");
   const issues: string[] = [];
   for (const name of requiredJobNames) {
     if (occurrences(workflow, `name: ${name}`) !== 1) {
@@ -68,6 +67,7 @@ async function main(): Promise<void> {
     "environment: production",
     "github.ref == 'refs/heads/main'",
     "terraform -chdir=infra/production apply -auto-approve production.tfplan",
+    "terraform -chdir=infra/production output -json > production-outputs.json",
     "npm audit --json --audit-level=high",
     "npm run bundle:validate",
     "node webapp/scripts/verify-release.ts",
