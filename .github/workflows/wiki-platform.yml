@@ -294,7 +294,7 @@ jobs:
             -backend-config="bucket=${{ vars.AWS_STATE_BUCKET }}" \
             -backend-config="key=${{ vars.AWS_PRODUCTION_STATE_KEY }}" \
             -backend-config="region=${{ vars.AWS_REGION }}"
-          terraform -chdir=infra/production output -json > ../../production-outputs.json
+          terraform -chdir=infra/production output -json > production-outputs.json
           bucket="$(jq -r .application_bucket_name.value production-outputs.json)"
           distribution="$(jq -r .cloudfront_distribution_id.value production-outputs.json)"
           test "$bucket" = "${{ vars.AWS_APPLICATION_BUCKET }}"
