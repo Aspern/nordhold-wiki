@@ -226,6 +226,16 @@ were added, 1 changed, and 0 destroyed. A fresh bootstrap plan then reported no
 changes, and the AWS policy simulator returned `allowed` for both actions on the
 scoped production resources.
 
+The corrected revision was exercised by GitHub Actions run `33987884604`.
+`infra:validate`, `app:validate`, `app:build`, and `infra:plan` all passed, while
+the three production-only jobs were skipped as required for a pull request. The
+downloaded artifact
+`production-plan-f20ae0ec2b17e25d416834b6f1e89a32d5f42448` matched its retained
+SHA-256 checksum, declared the `production` workspace and matching workflow
+commit, contained the explicit Terraform `No changes` result, and had 0 create,
+0 update, and 0 delete actions. This satisfies the technical post-bootstrap
+plan gate in T091; human pull-request review and integration remain required.
+
 The project owner added the separate one.com application CNAME for
 `nordhold.asperntallow.de`. Both authoritative one.com name servers and the
 public resolver subsequently returned `d195tdpz6cudel.cloudfront.net`. An HTTPS
@@ -234,6 +244,5 @@ expected HTTP 403 from the intentionally empty distribution. This completed the
 approved no-publication bootstrap boundary in T090.
 
 No application bundle has been published, and no CloudFront invalidation or
-deployed smoke check has run. A fresh post-bootstrap pull-request plan, human PR
-integration, and the verified `main` release required by T091-T093 remain
-outstanding.
+deployed smoke check has run. Human PR integration and the verified `main`
+release required by T091-T093 remain outstanding.
