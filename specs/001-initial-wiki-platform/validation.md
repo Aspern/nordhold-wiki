@@ -139,34 +139,55 @@ Routine component, browser E2E, visual-regression, accessibility, performance,
 broad UX, Terraform mock, and live-AWS test suites were intentionally not added,
 matching the accepted test scope.
 
-## Deferred Operational Validation
+## Operational Bootstrap and Pull-Request Plan Validation
 
-### Shared GitHub OIDC prerequisite review
+### Shared bootstrap evidence
 
 On 2026-09-05, the target account was inspected with the approved short-lived
-operator session before regenerating the local bootstrap plan. Exactly one
-GitHub Actions OIDC provider was found for
-`token.actions.githubusercontent.com`; its client ID list includes
-`sts.amazonaws.com`.
+operator session. Exactly one GitHub Actions OIDC provider was found for
+`token.actions.githubusercontent.com`, and its client ID list includes
+`sts.amazonaws.com`. The approved bootstrap plan was generated with Terraform
+1.16.1 and the locked HashiCorp AWS provider 6.63.0 from an ignored backend-free
+working copy. It contained 12 creates, 0 updates, 0 destroys, one read of the
+existing provider, and no managed OIDC-provider action.
 
-The revised bootstrap configuration passed Terraform 1.16.1 formatting,
-backend-disabled initialization with the locked HashiCorp AWS provider 6.63.0,
-and `terraform validate`. Because the future state bucket does not exist yet, a
-saved bootstrap plan was generated from a temporary backend-free copy of the
-same reviewed source and ignored local variable values. The plan reported 12
-creates, 0 updates, and 0 destroys. It contained one read of
-`data.aws_iam_openid_connect_provider.github` and zero managed
-`aws_iam_openid_connect_provider` changes.
+After explicit approval, the exact bootstrap plan created the Nordhold state
+bucket, repository-scoped plan/apply roles and policies, and ACM certificate
+request. The state was migrated to its reviewed S3 key. Remote state reads from
+the working copy and repository root had matching lineage and serial; S3
+versioning, AES-256 encryption, and all four public-access-block controls were
+verified. Every post-migration bootstrap plan reported no changes.
 
-The saved plan and local variable file remain ignored. No Terraform apply,
-state migration, import, AWS resource mutation, DNS edit, application
-publication, or CloudFront invalidation was performed.
+The project owner added the ACM CNAME at one.com. Both authoritative one.com
+name servers and two independent public resolvers returned the exact target,
+and ACM subsequently reported `ISSUED`. All nine required non-secret GitHub
+repository variables were configured and compared with the current Terraform
+outputs and reviewed local inputs, including `BOOTSTRAP_COMPLETE=true`. Their
+account-specific values are not recorded in the repository.
 
-Tasks T090-T093 remain deferred by the lifecycle gate. Only the local bootstrap
-plan documented above has run; no bootstrap apply, state migration, production
-plan/apply, ACM validation, one.com DNS edit, protected-environment setup,
-application publication, CloudFront invalidation, or deployed smoke test has
-run. Those tasks require completed convergence, human review of the draft pull
-request and exact plans, fresh explicit approval for AWS/DNS mutation, human
-integration to `main`, and the protected production approval described by the
-accepted artifacts.
+### Pull-request plan evidence
+
+The first enabled PR plan exposed the organization's customized OIDC subject,
+which binds repository names to immutable numeric owner/repository IDs. The
+bootstrap source and both Nordhold role trust policies were updated in-place
+after explicit approval without changing permissions or managing the shared
+provider. Two later PR attempts identified the exact `acm:ListCertificates` and
+`acm:GetCertificate` calls required by the Terraform certificate data source;
+each read-only permission was added through a separately reviewed and approved
+one-policy Terraform plan. Every resulting bootstrap follow-up plan was empty.
+
+GitHub Actions run `33985723889` then completed successfully for the current PR
+revision. `infra:validate`, `app:validate`, `app:build`, and `infra:plan` passed;
+`infra:apply`, `app:deploy`, and `infra:verify` were skipped as required for a
+pull request. The downloaded production-plan artifact matched its workflow
+merge SHA and workspace metadata, and its binary SHA-256 matched the retained
+checksum. The reviewed plan contains 11 creates, 0 updates, and 0 destroys: the
+private application bucket and controls plus the CloudFront OAC, function,
+policies, and distribution.
+
+No production plan has been applied, no application bundle has been published,
+and no CloudFront invalidation or deployed smoke check has run. The protected
+`production` environment, initial empty production apply, CloudFront one.com
+CNAME, human PR integration, and verified `main` release remain outstanding.
+Tasks T090-T093 therefore remain open until their complete lifecycle gates are
+satisfied.
