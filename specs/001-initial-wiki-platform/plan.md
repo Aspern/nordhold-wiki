@@ -17,9 +17,11 @@ rebuilding the promoted application artifact. The first production run remains
 disabled until implementation convergence, full validation, draft pull-request
 review, and human integration of the accepted revision into `main` are complete.
 A separately approved one-time bootstrap may run outside CI from the reviewed
-feature revision before merge to establish the state, OIDC, certificate, initial
-delivery-resource, and DNS prerequisites required by the first CI plan; it does
-not publish the wiki application.
+feature revision before merge to establish state, repository-specific OIDC
+roles, certificate, initial delivery-resource, and DNS prerequisites required by
+the first CI plan. It reads the existing account-wide GitHub OIDC provider by
+its canonical URL, does not manage that shared provider, and does not publish the
+wiki application.
 
 ## Technical Context
 
@@ -50,7 +52,7 @@ not publish the wiki application.
 | Specification-driven scope fidelity    | PASS                          | The accepted specification and its recorded clarifications are the sole source of product scope.                                                                                                                                                                                             |
 | Static content integrity               | PASS                          | The design uses checked-in JSON, explicit schemas, stable identifiers, deterministic normalization, cross-reference checks, and provenance without a runtime data service.                                                                                                                   |
 | Testable and accessible experience     | PASS                          | Functional domain logic receives unit coverage; schema/content validation and static checks remain automated quality gates; semantic structure, keyboard operation, focus visibility, contrast, labels, responsive layouts, and visual direction receive documented human acceptance review. |
-| Secure static delivery                 | PASS                          | Static assets are delivered through CloudFront from a private S3 origin using OAC; Terraform owns infrastructure; OIDC replaces long-lived CI credentials.                                                                                                                                   |
+| Secure static delivery                 | PASS                          | Static assets are delivered through CloudFront from a private S3 origin using OAC; Terraform owns Nordhold infrastructure; repository-specific roles reference the separately managed account-wide OIDC provider and replace long-lived CI credentials.                                                                                                   |
 | Simplicity and explicit change control | PASS                          | The solution remains two top-level modules, uses no backend, and limits AWS services to the static-delivery and deployment needs in the specification.                                                                                                                                       |
 | Dependency approval                    | PASS WITH IMPLEMENTATION GATE | Dependencies are evaluated in `research.md`; none may be installed or committed until the human explicitly approves the proposed set.                                                                                                                                                        |
 | AWS mutation approval                  | PASS WITH IMPLEMENTATION GATE | Terraform source may be prepared without approval. The one-time out-of-CI bootstrap and every later shared plan/apply or DNS change require explicit approval; bootstrap publishes no wiki release and recurring changes use the protected `main` workflow.                                  |

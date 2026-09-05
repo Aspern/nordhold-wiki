@@ -137,10 +137,32 @@ matching the accepted test scope.
 
 ## Deferred Operational Validation
 
-Tasks T090-T093 remain deferred by the lifecycle gate. No bootstrap plan/apply,
-state migration, ACM validation, one.com DNS edit, protected-environment setup,
-production infrastructure apply, application publication, CloudFront
-invalidation, or deployed smoke test has run. Those tasks require completed
-convergence, human review of the draft pull request and exact plans, fresh
-explicit approval for AWS/DNS mutation, human integration to `main`, and the
-protected production approval described by the accepted artifacts.
+### Shared GitHub OIDC prerequisite review
+
+On 2026-09-05, the target account was inspected with the approved short-lived
+operator session before regenerating the local bootstrap plan. Exactly one
+GitHub Actions OIDC provider was found for
+`token.actions.githubusercontent.com`; its client ID list includes
+`sts.amazonaws.com`.
+
+The revised bootstrap configuration passed Terraform 1.16.1 formatting,
+backend-disabled initialization with the locked HashiCorp AWS provider 6.63.0,
+and `terraform validate`. Because the future state bucket does not exist yet, a
+saved bootstrap plan was generated from a temporary backend-free copy of the
+same reviewed source and ignored local variable values. The plan reported 12
+creates, 0 updates, and 0 destroys. It contained one read of
+`data.aws_iam_openid_connect_provider.github` and zero managed
+`aws_iam_openid_connect_provider` changes.
+
+The saved plan and local variable file remain ignored. No Terraform apply,
+state migration, import, AWS resource mutation, DNS edit, application
+publication, or CloudFront invalidation was performed.
+
+Tasks T090-T093 remain deferred by the lifecycle gate. Only the local bootstrap
+plan documented above has run; no bootstrap apply, state migration, production
+plan/apply, ACM validation, one.com DNS edit, protected-environment setup,
+application publication, CloudFront invalidation, or deployed smoke test has
+run. Those tasks require completed convergence, human review of the draft pull
+request and exact plans, fresh explicit approval for AWS/DNS mutation, human
+integration to `main`, and the protected production approval described by the
+accepted artifacts.

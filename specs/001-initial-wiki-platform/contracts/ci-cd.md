@@ -176,9 +176,10 @@ beyond the small release record.
 
 No secret or account-specific value appears in source, bundles, artifacts meant
 for the public, or Terraform defaults. The explicitly approved one-time
-out-of-CI bootstrap supplies:
+out-of-CI bootstrap uses the compatible account-wide GitHub OIDC provider and
+supplies:
 
-- GitHub OIDC provider and separate plan/apply roles;
+- separate Nordhold plan/apply roles that trust the existing provider;
 - repository/environment variables for region, role ARNs, remote-state bucket
   and key, and non-secret project/environment values;
 - a protected `production` environment restricted to `main` with required

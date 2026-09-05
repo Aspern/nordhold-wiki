@@ -8,8 +8,10 @@ apply, state migration, recovery operation, or DNS edit.
 
 ## Architecture and Boundaries
 
-- `bootstrap/` owns the encrypted versioned state bucket, GitHub OIDC provider,
-  separate plan/apply roles, and the ACM certificate request in `us-east-1`.
+- `bootstrap/` owns the encrypted versioned state bucket, Nordhold-specific
+  plan/apply roles, and the ACM certificate request in `us-east-1`. It discovers
+  the existing account-wide GitHub OIDC provider by its canonical URL and does
+  not create, modify, or destroy that shared provider.
 - `production/` owns the private versioned S3 application origin, CloudFront OAC,
   distribution, route function, cache policies, and security headers.
 - one.com remains authoritative for `asperntallow.de`. A human creates the ACM
@@ -43,6 +45,12 @@ This procedure is blocked until implementation convergence, complete local
 validation, draft pull-request review, and explicit approval of the exact AWS
 account and plans. It must not upload a wiki bundle.
 
+The target account must already contain exactly one GitHub Actions OIDC provider
+for `https://token.actions.githubusercontent.com`, and its client IDs must
+include `sts.amazonaws.com`. The provider is an account-level prerequisite
+managed outside this repository. Stop if it is absent, duplicated, or has an
+unexpected audience; do not create a second provider from this bootstrap root.
+
 1. Create an ignored `infra/bootstrap/bootstrap.auto.tfvars` with only the
    reviewed non-secret inputs:
 
@@ -64,8 +72,10 @@ account and plans. It must not upload a wiki bundle.
    in `us-east-1`. Stop if the account or identity differs from the approved
    target.
 
-3. Initialize the bootstrap root locally, save a plan, inspect every action, and
-   obtain approval immediately before apply:
+3. Initialize the bootstrap root locally, save a plan, and inspect every action.
+   The plan must read the existing GitHub OIDC provider and must contain no
+   provider create, update, replacement, or deletion. Obtain approval
+   immediately before apply:
 
    ```powershell
    terraform -chdir=.\infra\bootstrap init -backend=false

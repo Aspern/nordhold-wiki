@@ -144,9 +144,11 @@ resolved state location. Bootstrap must not upload or publish the wiki bundle.
 
 The planned sequence is:
 
-1. Apply `infra/bootstrap/` to create the encrypted, versioned remote-state
-   bucket in `eu-central-1`, scoped GitHub OIDC roles, and ACM certificate request
-   in `us-east-1`.
+1. Verify the account already contains exactly one compatible GitHub Actions
+   OIDC provider, then apply `infra/bootstrap/` to create the encrypted,
+   versioned remote-state bucket in `eu-central-1`, Nordhold-scoped OIDC roles,
+   and the ACM certificate request in `us-east-1`. The plan must not create,
+   modify, replace, or delete the shared provider.
 2. Migrate the bootstrap state into its reviewed remote key and verify locking,
    recovery, and access. Never commit state or backend account values.
 3. Configure protected GitHub variables and the `production` environment,

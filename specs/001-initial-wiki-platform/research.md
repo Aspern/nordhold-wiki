@@ -256,6 +256,16 @@ introduced because HashiCorp marks it deprecated. Backend account-specific
 values and the issued certificate ARN are passed through protected partial
 configuration, never committed.
 
+The bootstrap resolves the account's existing GitHub Actions OIDC provider by
+the canonical `https://token.actions.githubusercontent.com` URL. The provider is
+created once and managed outside Nordhold; this root owns only Nordhold's
+repository-scoped plan/apply roles and policies. A bootstrap plan must stop if
+the provider is absent or incompatible and must never propose another provider
+with the same URL.
+
+Source: [AWS CreateOpenIDConnectProvider API](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html),
+which defines the provider URL as unique within an AWS account.
+
 The state bucket uses S3-managed encryption, public-access blocking, versioning,
 TLS-only access, and separate `bootstrap/terraform.tfstate` and
 `production/terraform.tfstate` keys with native `.tflock` objects. State recovery
