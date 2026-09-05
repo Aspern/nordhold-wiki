@@ -21,15 +21,29 @@ build/
 webapp/build/
 coverage/
 webapp/coverage/
+reports/
+webapp/reports/
+webapp/.tmp/
+webapp/tmp/
+webapp/data/raw/
+webapp/src/content/raw/
 
 # Terraform working files, plans, variables, and local state
 **/.terraform/
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfplan.json
 *.tfvars
 !*.tfvars.example
 crash.log
 crash.*.log
 infra/**/backend.hcl
 !infra/**/backend.hcl.example
+
+# Generated local tooling and extraction environments
+.tools/
+.venv/
+venv/
+__pycache__/
+*.py[cod]

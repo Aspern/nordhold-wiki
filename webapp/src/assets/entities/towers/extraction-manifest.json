@@ -1,0 +1,100 @@
+{
+  "steamAppId": "3028310",
+  "steamBuildId": "23261523",
+  "unityVersion": "2023.1.22f1",
+  "UnityPy": "1.25.3",
+  "publicationAuthorized": true,
+  "authorizationReference": "Project-owner approval recorded in the user instruction dated 2026-09-05 for the nine required Nordhold tower sprites to be used in this webapp.",
+  "files": [
+    {
+      "towerId": "arc-tower",
+      "spriteName": "Arc Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "397",
+      "width": 30,
+      "height": 32,
+      "sha256": "4a020c30d81fdbd7d290d3c0c3e0b61501b4e1090b7435939b80024b2a944238",
+      "localOnly": false
+    },
+    {
+      "towerId": "arrow-tower",
+      "spriteName": "Arrow Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "458",
+      "width": 44,
+      "height": 25,
+      "sha256": "05f58aa6b029f4d32b56b6e468c70fe5326efda34fa9fd51205d66b4e95fb244",
+      "localOnly": false
+    },
+    {
+      "towerId": "frost-tower",
+      "spriteName": "Frost Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "515",
+      "width": 32,
+      "height": 33,
+      "sha256": "87846a715b5802effa055f16222a8a0cfc6f4ea861ac67046678cc899ea474ab",
+      "localOnly": false
+    },
+    {
+      "towerId": "volcano-mortar",
+      "spriteName": "Volcano Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "472",
+      "width": 40,
+      "height": 29,
+      "sha256": "2dafd5db4964a8a55405c781b905f800c5ce5dda00fc8b623cb08741fb60d069",
+      "localOnly": false
+    },
+    {
+      "towerId": "shadow-tower",
+      "spriteName": "Shadow Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "400",
+      "width": 32,
+      "height": 31,
+      "sha256": "8114aa7e9e29a10160266c955ddb5ea76248a649f25e8be6c72b520f8ab494f2",
+      "localOnly": false
+    },
+    {
+      "towerId": "runestone-tower",
+      "spriteName": "Runestone Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "464",
+      "width": 46,
+      "height": 27,
+      "sha256": "95682252a3daccc58c6b02fa289647456d48bdf33106aadea90fe959293d9922",
+      "localOnly": false
+    },
+    {
+      "towerId": "tornado-tower",
+      "spriteName": "Tornado Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "507",
+      "width": 28,
+      "height": 34,
+      "sha256": "610aaae2c112c934f91b32aa9a3d84b40fe03013d752fdd9384296318cf46b8b",
+      "localOnly": false
+    },
+    {
+      "towerId": "raven-tower",
+      "spriteName": "Raven Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "503",
+      "width": 37,
+      "height": 28,
+      "sha256": "cc78c543e68b2ad99447f37a092c5b229af6f932a82947019767c01cee8e03b3",
+      "localOnly": false
+    },
+    {
+      "towerId": "chaos-reaper",
+      "spriteName": "Chaos Reaper Tower",
+      "sourceAsset": "NordHold_Data/sharedassets0.assets",
+      "spritePathId": "380",
+      "width": 55,
+      "height": 55,
+      "sha256": "2a6caaf47609398fd88311f35adc0404d8fb206111e6540e648af1203ce791d8",
+      "localOnly": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+coverage/
+dist/
+node_modules/
+reports/
+src/generated/
+src/content/*.json
+src/content/schemas/*.json
+package-lock.json

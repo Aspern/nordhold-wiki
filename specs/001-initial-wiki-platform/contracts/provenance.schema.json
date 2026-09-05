@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nordhold.asperntallow.de/contracts/provenance.schema.json",
+  "title": "Nordhold Wiki Provenance Dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "datasetId", "game", "extraction", "records"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "datasetId": { "$ref": "#/$defs/stableId" },
+    "game": { "$ref": "#/$defs/game" },
+    "extraction": { "$ref": "#/$defs/extraction" },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/provenanceRecord" }
+    }
+  },
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "semanticVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "game": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["steamAppId", "buildId", "unityVersion"],
+      "properties": {
+        "steamAppId": { "const": "3028310" },
+        "buildId": { "type": "string", "pattern": "^[0-9]+$" },
+        "unityVersion": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+[A-Za-z0-9.-]*$"
+        }
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extractor",
+        "extractorVersion",
+        "pythonVersion",
+        "dependencies",
+        "generatedAt",
+        "parseErrors",
+        "uncertainties"
+      ],
+      "properties": {
+        "extractor": {
+          "const": ".agents/skills/nordhold-game-data/scripts/extract_game_data.py"
+        },
+        "extractorVersion": { "$ref": "#/$defs/semanticVersion" },
+        "pythonVersion": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?$"
+        },
+        "dependencies": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$" },
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        },
+        "generatedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?Z$"
+        },
+        "parseErrors": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "uncertainties": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "provenanceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "entityType",
+        "entityId",
+        "evidence",
+        "sources",
+        "localizationLanguages",
+        "notes"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/stableId" },
+        "entityType": {
+          "type": "string",
+          "enum": ["tower", "banner", "eligibility"]
+        },
+        "entityId": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "evidence": {
+          "type": "string",
+          "enum": ["direct-record", "runtime-reference", "localized-record"]
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/sourceRecord" }
+        },
+        "localizationLanguages": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["en", "de"] },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+        }
+      }
+    },
+    "sourceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceAsset", "objectPathId", "internalKey"],
+      "properties": {
+        "sourceAsset": {
+          "type": "string",
+          "enum": [
+            "NordHold_Data/resources.assets",
+            "NordHold_Data/level2"
+          ]
+        },
+        "objectPathId": {
+          "type": "string",
+          "pattern": "^-?[0-9]+$"
+        },
+        "internalKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      }
+    }
+  }
+}
