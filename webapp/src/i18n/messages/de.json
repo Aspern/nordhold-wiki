@@ -36,6 +36,12 @@
   "navigation": {
     "backToTowers": "Zurück zu allen Türmen"
   },
+  "rarity": {
+    "common": "Normal",
+    "key": "Seltenheitsfarben",
+    "legendary": "Legendär",
+    "rare": "Selten"
+  },
   "notFound": {
     "body": "Diese Seite oder dieser Turm existiert nicht in den aktuellen Wiki-Daten.",
     "title": "Hier wurde nichts gefunden"

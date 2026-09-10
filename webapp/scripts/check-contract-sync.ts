@@ -1,10 +1,17 @@
-import { readdir, readFile } from "node:fs/promises";
+import { access, readdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "../..");
-const contractDirectory = resolve(repositoryRoot, "specs/001-initial-wiki-platform/contracts");
+const baselineContractDirectory = resolve(
+  repositoryRoot,
+  "specs/001-initial-wiki-platform/contracts",
+);
+const featureContractDirectory = resolve(
+  repositoryRoot,
+  "specs/002-banner-effect-details/contracts",
+);
 const schemaDirectory = resolve(scriptDirectory, "../src/content/schemas");
 
 async function schemaNames(directory: string): Promise<string[]> {
@@ -14,7 +21,12 @@ async function schemaNames(directory: string): Promise<string[]> {
 }
 
 export async function findContractDrift(): Promise<string[]> {
-  const sourceNames = await schemaNames(contractDirectory);
+  const sourceNames = [
+    ...new Set([
+      ...(await schemaNames(baselineContractDirectory)),
+      ...(await schemaNames(featureContractDirectory)),
+    ]),
+  ].sort((left, right) => left.localeCompare(right, "en"));
   const applicationNames = await schemaNames(schemaDirectory);
   const issues: string[] = [];
 
@@ -29,8 +41,15 @@ export async function findContractDrift(): Promise<string[]> {
       continue;
     }
 
+    const featureContract = resolve(featureContractDirectory, name);
+    const featureContractExists = await access(featureContract)
+      .then(() => true)
+      .catch(() => false);
+    const sourcePath = featureContractExists
+      ? featureContract
+      : resolve(baselineContractDirectory, name);
     const [source, application] = await Promise.all([
-      readFile(resolve(contractDirectory, name)),
+      readFile(sourcePath),
       readFile(resolve(schemaDirectory, name)),
     ]);
 

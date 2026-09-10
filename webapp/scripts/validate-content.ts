@@ -320,7 +320,11 @@ function validateStableIdMap(bundle: ContentBundle, errors: ValidationIssue[]): 
 }
 
 function containsMarkup(value: string): boolean {
-  return /<\/?[a-z][^>]*>/iu.test(value) || /javascript\s*:/iu.test(value);
+  return (
+    /<\/?[a-z][^>]*>/iu.test(value) ||
+    /\[[A-Za-z0-9]+\]/u.test(value) ||
+    /javascript\s*:/iu.test(value)
+  );
 }
 
 function validateLocalizedText(
@@ -347,11 +351,18 @@ function validateLocalizedText(
           message: `German alternative text for '${entity.id}' is unavailable; English fallback will be used.`,
         });
       }
+      const effectTextValues =
+        "effectSummary" in entity
+          ? [entity.effectSummary.en, entity.effectSummary.de]
+          : [
+              entity.effectDescription.en,
+              entity.effectDescription.de,
+              ...entity.effectValues.flatMap((effect) => [effect.label.en, effect.label.de]),
+            ];
       const textValues = [
         entity.name.en,
         entity.name.de,
-        entity.effectSummary.en,
-        entity.effectSummary.de,
+        ...effectTextValues,
         entity.visual.alt.en,
         entity.visual.alt.de,
       ].filter((value): value is string => value !== undefined);

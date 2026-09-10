@@ -15,6 +15,7 @@ describe("release metadata", () => {
       releaseMetadata,
     );
     expect(releaseMetadata.version).toBe(packageManifest.version);
+    expect(packageManifest.version).toBe("1.0.0");
     expect(() =>
       validateReleaseMetadata(
         { version: "0.2.0", buildDate: "2026-02-30", commitSha: "ABC" },

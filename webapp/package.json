@@ -1,6 +1,6 @@
 {
   "name": "nordhold-wiki",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -19,6 +19,7 @@
     "test:ci": "npm run reports:prepare --silent && vitest run --coverage --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml",
     "audit:report": "npm run reports:prepare --silent && npm audit --json --audit-level=high > reports/npm-audit.json",
     "content:contracts": "node scripts/check-contract-sync.ts",
+    "content:generate": "node scripts/generate-initial-content.ts",
     "content:validate": "node scripts/validate-content.ts",
     "content:normalize": "node scripts/normalize-game-data.ts",
     "content:checklist": "node scripts/generate-content-checklist.ts",

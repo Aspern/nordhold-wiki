@@ -1,11 +1,6 @@
+import type { CssVisual, ImageVisual, StableIdMap } from "../../src/types/content.ts";
 import type {
-  CssVisual,
-  EntityVisual,
-  ImageVisual,
-  RequiredLocalizedText,
-  StableIdMap,
-} from "../../src/types/content.ts";
-import type {
+  EditorialRecord,
   NormalizationDecisions,
   NormalizationEditorial,
   RawExtraction,
@@ -161,15 +156,23 @@ function cssVisual(id: string, seed: number): CssVisual {
   };
 }
 
-function editorialEntry(
-  id: string,
-  kind: "towers" | "banners",
-  hex: string,
-): { readonly effectSummary: RequiredLocalizedText; readonly visual: EntityVisual } {
-  return {
-    effectSummary: { en: `English summary for ${id}.`, de: `Deutsche Zusammenfassung für ${id}.` },
-    visual: kind === "towers" ? imageVisual(id, hex) : cssVisual(id, Number.parseInt(hex, 16)),
-  };
+function editorialEntry(id: string, kind: "towers" | "banners", hex: string): EditorialRecord {
+  return kind === "towers"
+    ? {
+        effectSummary: {
+          en: `English summary for ${id}.`,
+          de: `Deutsche Zusammenfassung für ${id}.`,
+        },
+        visual: imageVisual(id, hex),
+      }
+    : {
+        effectDescription: {
+          en: `English description for ${id}.`,
+          de: `Deutsche Beschreibung für ${id}.`,
+        },
+        effectValues: [],
+        visual: cssVisual(id, Number.parseInt(hex, 16)),
+      };
 }
 
 export const editorial: NormalizationEditorial = {

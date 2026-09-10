@@ -6,7 +6,7 @@ import type {
   Tower,
 } from "../types/content.ts";
 
-const UNSAFE_TEXT = /<[^>]*>|(?:javascript|data):/iu;
+const UNSAFE_TEXT = /<[^>]*>|\[[A-Za-z0-9]+\]|(?:javascript|data):/iu;
 
 export class ContentRepositoryError extends Error {
   public readonly issues: readonly string[];
@@ -76,16 +76,17 @@ function validateVisibleText(
 }
 
 function validateEntityText(entity: Tower | Banner, issues: string[]): void {
+  const effectText =
+    "effectSummary" in entity
+      ? [entity.effectSummary.en, entity.effectSummary.de]
+      : [
+          entity.effectDescription.en,
+          entity.effectDescription.de,
+          ...entity.effectValues.flatMap((effect) => [effect.label.en, effect.label.de]),
+        ];
   validateVisibleText(
     `Entity '${entity.id}'`,
-    [
-      entity.name.en,
-      entity.name.de,
-      entity.effectSummary.en,
-      entity.effectSummary.de,
-      entity.visual.alt.en,
-      entity.visual.alt.de,
-    ],
+    [entity.name.en, entity.name.de, ...effectText, entity.visual.alt.en, entity.visual.alt.de],
     issues,
   );
 }
@@ -134,6 +135,21 @@ function validateBundle(bundle: ContentBundle): readonly string[] {
     }
     if (banner.classification !== "tower-specific" && banner.towerAffinityId !== undefined) {
       issues.push(`Non-tower-specific banner '${banner.id}' declares a tower affinity.`);
+    }
+    const sourceKeys = new Set<string>();
+    for (const effect of banner.effectValues) {
+      if (sourceKeys.has(effect.sourceKey)) {
+        issues.push(`Banner '${banner.id}' contains duplicate effect '${effect.sourceKey}'.`);
+      }
+      sourceKeys.add(effect.sourceKey);
+      if (
+        effect.format.restriction !== null &&
+        effect.format.restriction.minimum > effect.format.restriction.maximum
+      ) {
+        issues.push(
+          `Banner '${banner.id}' effect '${effect.sourceKey}' has an invalid restriction.`,
+        );
+      }
     }
   }
   for (const eligibility of bundle.content.eligibility) {

@@ -60,6 +60,46 @@ export interface Tower {
   readonly provenanceRef: string;
 }
 
+export const bannerEffectPrefixes = ["none", "plus", "plus-or-minus"] as const;
+export type BannerEffectPrefix = (typeof bannerEffectPrefixes)[number];
+
+export const bannerEffectSuffixes = ["none", "percent", "seconds", "multiplier"] as const;
+export type BannerEffectSuffix = (typeof bannerEffectSuffixes)[number];
+
+export interface BannerEffectRestriction {
+  readonly minimum: number;
+  readonly maximum: number;
+}
+
+export interface BannerEffectFormat {
+  readonly prefix: BannerEffectPrefix;
+  readonly suffix: BannerEffectSuffix;
+  readonly hideEqualValues: boolean;
+  readonly restriction: BannerEffectRestriction | null;
+}
+
+export interface BannerRarityValues {
+  readonly common: number;
+  readonly rare: number;
+  readonly legendary: number;
+}
+
+interface BannerEffectValueBase {
+  readonly sourceKey: string;
+  readonly label: RequiredLocalizedText;
+  readonly format: BannerEffectFormat;
+}
+
+export interface BannerRarityEffectValue extends BannerEffectValueBase {
+  readonly values: BannerRarityValues;
+}
+
+export interface BannerFixedEffectValue extends BannerEffectValueBase {
+  readonly value: number;
+}
+
+export type BannerEffectValue = BannerRarityEffectValue | BannerFixedEffectValue;
+
 export interface Banner {
   readonly id: string;
   readonly sourceKey: string;
@@ -67,7 +107,8 @@ export interface Banner {
   readonly classification: BannerClassification;
   readonly towerAffinityId?: string;
   readonly name: LocalizedText;
-  readonly effectSummary: RequiredLocalizedText;
+  readonly effectDescription: RequiredLocalizedText;
+  readonly effectValues: readonly BannerEffectValue[];
   readonly visual: CssVisual;
   readonly provenanceRef: string;
 }

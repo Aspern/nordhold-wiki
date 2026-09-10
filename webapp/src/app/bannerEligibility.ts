@@ -1,4 +1,5 @@
 import type { ContentRepository } from "../content/contentRepository.ts";
+import { localizeBannerEffectValue, type LocalizedBannerEffectValue } from "./bannerEffects.ts";
 import { localizeRequiredText, localizeText } from "../i18n/localizeContent.ts";
 import type { BannerClassification, CssVisual, SupportedLocale } from "../types/content.ts";
 
@@ -20,7 +21,8 @@ export interface LocalizedFusionTower {
 export interface LocalizedBannerItem {
   readonly id: string;
   readonly name: string;
-  readonly summary: string;
+  readonly description: string;
+  readonly effectValues: readonly LocalizedBannerEffectValue[];
   readonly classification: BannerClassification;
   readonly visual: CssVisual;
   readonly visualAlt: string;
@@ -87,7 +89,8 @@ export function createTowerDetailModel(
     .map((banner) => ({
       id: banner.id,
       name: localizeText(banner.name, locale),
-      summary: localizeRequiredText(banner.effectSummary, locale),
+      description: localizeRequiredText(banner.effectDescription, locale),
+      effectValues: banner.effectValues.map((effect) => localizeBannerEffectValue(effect, locale)),
       classification: banner.classification,
       visual: banner.visual,
       visualAlt: localizeText(banner.visual.alt, locale),
