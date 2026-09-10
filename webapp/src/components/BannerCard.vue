@@ -48,7 +48,31 @@ function fusionDescription(): string {
         </div>
       </div>
     </v-card-item>
-    <v-card-text class="banner-card__summary">{{ item.summary }}</v-card-text>
+    <v-card-text class="banner-card__body">
+      <p class="banner-card__description">{{ item.description }}</p>
+      <dl v-if="item.effectValues.length > 0" class="banner-card__effects">
+        <div
+          v-for="effect in item.effectValues"
+          :key="effect.sourceKey"
+          class="banner-card__effect"
+        >
+          <dt>{{ effect.label }}</dt>
+          <dd class="banner-card__effect-values" :aria-label="effect.accessibleLabel">
+            <span v-if="effect.kind === 'fixed'" aria-hidden="true">{{ effect.valueText }}</span>
+            <template v-else v-for="(value, index) in effect.rarityValues" :key="value.rarity">
+              <span v-if="index > 0" aria-hidden="true">/</span>
+              <span
+                class="banner-card__rarity-value"
+                :class="`banner-card__rarity-value--${value.rarity}`"
+                aria-hidden="true"
+              >
+                {{ value.text }}
+              </span>
+            </template>
+          </dd>
+        </div>
+      </dl>
+    </v-card-text>
   </v-card>
 </template>
 
@@ -116,7 +140,58 @@ function fusionDescription(): string {
   transform: scale(var(--wiki-tower-combination-image-scale));
 }
 
-.banner-card__summary {
+.banner-card__body {
   color: var(--wiki-color-ink-muted);
+}
+
+.banner-card__description {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.banner-card__effects {
+  display: grid;
+  gap: var(--wiki-space-2);
+  margin: var(--wiki-space-4) 0 0;
+}
+
+.banner-card__effect {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--wiki-space-1) var(--wiki-space-3);
+}
+
+.banner-card__effect dt {
+  min-width: 0;
+  color: var(--wiki-color-ink);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.banner-card__effect dd {
+  margin: 0;
+}
+
+.banner-card__effect-values {
+  flex: none;
+  color: var(--wiki-color-ink-muted);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.banner-card__rarity-value--common {
+  color: var(--wiki-color-rarity-common);
+}
+
+.banner-card__rarity-value--rare {
+  color: var(--wiki-color-rarity-rare);
+}
+
+.banner-card__rarity-value--legendary {
+  color: var(--wiki-color-rarity-legendary);
 }
 </style>

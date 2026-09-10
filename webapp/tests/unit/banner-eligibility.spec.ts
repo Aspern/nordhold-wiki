@@ -44,6 +44,37 @@ describe("banner eligibility", () => {
       },
     ]);
     expect(detail.groups[0]?.items[0]?.fusionTowers).toEqual([]);
+    expect(detail.groups[0]?.items[0]).toMatchObject({
+      description: "Strengthens arc effects.",
+      effectValues: [
+        {
+          kind: "rarity",
+          sourceKey: "ArcDamage",
+          label: "Damage",
+          rarityValues: [
+            { rarity: "common", text: "+2%" },
+            { rarity: "rare", text: "+6%" },
+            { rarity: "legendary", text: "+10%" },
+          ],
+          accessibleLabel: "Damage: Common +2%, Rare +6%, Legendary +10%",
+        },
+      ],
+    });
+    expect(
+      detail.groups
+        .find((group) => group.classification === "generalist")
+        ?.items.find((item) => item.id === "steady-hands"),
+    ).toMatchObject({
+      effectValues: [
+        {
+          kind: "fixed",
+          sourceKey: "ReliableOutput",
+          label: "Reliable output",
+          valueText: "+5%",
+          accessibleLabel: "Reliable output: +5%",
+        },
+      ],
+    });
   });
 
   it("does not leak a tower-specific banner into another tower", () => {

@@ -265,10 +265,48 @@
         "en": "Barrier Shatter",
         "de": "Durchbruch"
       },
-      "effectSummary": {
-        "en": "Boosts Chaos Reaper damage against health and barriers.",
-        "de": "Steigert den Schaden des Chaos Reapers gegen Leben und Barrieren."
+      "effectDescription": {
+        "en": "Increases the Damage and Barrier Damage of all Chaos Reapers.",
+        "de": "Erhöht den Schaden und den Barrierschaden aller Chaos Reaper."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BarrierBreakerDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 20,
+            "rare": 30,
+            "legendary": 50
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BarrierBreakerBarrierDamage",
+          "label": {
+            "en": "Barrier Damage",
+            "de": "Barriere-Schaden"
+          },
+          "values": {
+            "common": 60,
+            "rare": 90,
+            "legendary": 150
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "barrier-shatter-visual",
@@ -293,10 +331,30 @@
         "en": "Critical Bleed",
         "de": "Kritische Blutung"
       },
-      "effectSummary": {
-        "en": "Converts part of Chaos Reaper critical damage into bleeding stacks.",
-        "de": "Wandelt einen Teil des kritischen Chaos-Reaper-Schadens in Blutungsstapel um."
+      "effectDescription": {
+        "en": "Critical hits from a Chaos Reaper apply a portion of their Damage as Bleeding stacks.",
+        "de": "Kritische Treffer eines Chaos Reapers wenden einen Teil ihres Schadens als Blutung-Stapel an."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BleedCritsBleedShare",
+          "label": {
+            "en": "Bleed Share",
+            "de": "Blutungsanteil"
+          },
+          "values": {
+            "common": 15,
+            "rare": 20,
+            "legendary": 35
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "critical-bleed-visual",
@@ -321,10 +379,30 @@
         "en": "Bodkin Arrow",
         "de": "Bodkin-Pfeile"
       },
-      "effectSummary": {
-        "en": "Raises the Arrow Tower's firing speed.",
-        "de": "Erhöht die Feuerrate des Arrow Towers."
+      "effectDescription": {
+        "en": "Increases the Fire Rate for your Arrow Towers.",
+        "de": "Erhöht die Feuerrate aller Arrow Tower."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseFireRate",
+          "label": {
+            "en": "Fire Rate",
+            "de": "Feuerrate"
+          },
+          "values": {
+            "common": 27,
+            "rare": 36,
+            "legendary": 63
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "bodkin-arrow-visual",
@@ -349,10 +427,30 @@
         "en": "Chain Crits",
         "de": "Kettenkrits"
       },
-      "effectSummary": {
-        "en": "Each critical hit builds additional critical chance.",
-        "de": "Jeder kritische Treffer baut zusätzliche kritische Chance auf."
+      "effectDescription": {
+        "en": "Each Arc Tower critical hit (not from Jumps) slightly increases this tower's individual future Crit Chance.",
+        "de": "Jeder kritische Treffer eines Arc Towers (nicht durch Sprünge) erhöht leicht die individuelle zukünftige krit. Chance dieses Turms."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseCritChance",
+          "label": {
+            "en": "Crit Chance",
+            "de": "Krit. Chance"
+          },
+          "values": {
+            "common": 18,
+            "rare": 24,
+            "legendary": 42
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "chain-crits-visual",
@@ -377,10 +475,26 @@
         "en": "Chaos Storm",
         "de": "Chaossturm"
       },
-      "effectSummary": {
-        "en": "Periodically releases multiple barrier-burning strikes around the target.",
-        "de": "Entfesselt regelmäßig mehrere barriereverbrennende Schläge im Zielgebiet."
+      "effectDescription": {
+        "en": "Every 3th strike unleashes multiple BARRIER BURN in the target area.",
+        "de": "Jeder 3. Hieb entfesselt mehrfachen BARRIERENBRAND im Zielgebiet."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ChaosStormAmount",
+          "label": {
+            "en": "Amount",
+            "de": "Menge"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 3
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "chaos-storm-visual",
@@ -404,10 +518,33 @@
         "en": "Chill Explosion",
         "de": "Gefrierknall"
       },
-      "effectSummary": {
-        "en": "Lets Frost Tower attacks occasionally freeze their targets.",
-        "de": "Lässt Angriffe des Frost Towers gelegentlich Ziele einfrieren."
+      "effectDescription": {
+        "en": "Each attack of a Frost Tower carries a chance to freeze.",
+        "de": "Jeder Angriff eines Frost Towers hat die Chance, einzufrieren."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ChillExplosionChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 30
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "chill-explosion-visual",
@@ -432,10 +569,51 @@
         "en": "Cold Snap",
         "de": "Kälteeinbruch"
       },
-      "effectSummary": {
-        "en": "Strengthens and extends the Frost Tower's slowing effect.",
-        "de": "Verstärkt und verlängert den Verlangsamungseffekt des Frost Towers."
+      "effectDescription": {
+        "en": "Increases the Slow Effect of the Frost Tower.",
+        "de": "Erhöht den Verlangsamungseffekt des Frost Towers."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ColdSnapSlow",
+          "label": {
+            "en": "Effect",
+            "de": "Effekt"
+          },
+          "values": {
+            "common": 2.1,
+            "rare": 2.8,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 50
+            }
+          }
+        },
+        {
+          "sourceKey": "ColdSnapSlowDuration",
+          "label": {
+            "en": "Duration",
+            "de": "Dauer"
+          },
+          "values": {
+            "common": 0.7,
+            "rare": 0.9,
+            "legendary": 1.6
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "cold-snap-visual",
@@ -460,10 +638,54 @@
         "en": "Collapse",
         "de": "Einsturz"
       },
-      "effectSummary": {
-        "en": "Provides stone each wave and improves Tornado Tower critical chance.",
-        "de": "Gewährt pro Welle Stein und erhöht die kritische Chance des Tornado Towers."
+      "effectDescription": {
+        "en": "Tornado Towers gain stone each wave and strike with increased Crit Chance.",
+        "de": "Tornado Tower erhalten mit jeder Welle Stein und greifen mit erhöhter Kritischer Trefferchance an."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CollapsStoneProduction",
+          "label": {
+            "en": "Stone Production",
+            "de": "Stein-Produktion"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 25
+            }
+          }
+        },
+        {
+          "sourceKey": "CollapsCritChance",
+          "label": {
+            "en": "Crit Chance",
+            "de": "Krit-Chance"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 25
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "collapse-visual",
@@ -488,10 +710,11 @@
         "en": "Corpse Explosion",
         "de": "Leichenexplosion"
       },
-      "effectSummary": {
-        "en": "Gives Shadow Tower kills a chance to detonate the victim for area damage.",
-        "de": "Gibt Shadow-Tower-Kills eine Chance, das Opfer für Flächenschaden explodieren zu lassen."
+      "effectDescription": {
+        "en": "Enemies killed by the Shadow Tower can trigger an explosion that transfers the Bleed Stacks of the killed enemy with a certain probability.",
+        "de": "Von Shadow Towern getötete Gegner können eine Explosion auslösen, die mit einer bestimmten Wahrscheinlichkeit die Blutungsstapel des getöteten Gegners überträgt."
       },
+      "effectValues": [],
       "visual": {
         "kind": "css",
         "assetId": "corpse-explosion-tower-specific-visual",
@@ -516,10 +739,48 @@
         "en": "Crescendo Blast",
         "de": "Crescendo"
       },
-      "effectSummary": {
-        "en": "Trades normal blast size for a greatly enlarged fourth explosion.",
-        "de": "Tauscht normale Explosionsgröße gegen eine stark vergrößerte vierte Explosion."
+      "effectDescription": {
+        "en": "Reduces the Area of Effect of the Volcano Mortar in general. Every 4th shot is much larger.",
+        "de": "Reduziert generell den Wirkungsbereich des Volcano Mortars. Jeder 4. Schuss ist viel größer."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseAOE",
+          "label": {
+            "en": "Area of Effect",
+            "de": "Wirkungsbereich"
+          },
+          "values": {
+            "common": 80,
+            "rare": 80,
+            "legendary": 80
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "Base4AOE",
+          "label": {
+            "en": "4th Shot AOE",
+            "de": "AOE des 4. Schusses"
+          },
+          "values": {
+            "common": 200,
+            "rare": 210,
+            "legendary": 240
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "crescendo-blast-visual",
@@ -544,10 +805,51 @@
         "en": "Barbed Arrows",
         "de": "Widerhakenpfeile"
       },
-      "effectSummary": {
-        "en": "Arrow hits inflict a stacking bleeding effect.",
-        "de": "Pfeiltreffer verursachen einen stapelbaren Blutungseffekt."
+      "effectDescription": {
+        "en": "Arrows of the Arrow Tower inflict a Bleeding debuff on impact.",
+        "de": "Pfeile des Arrow Towers verursachen beim Aufprall einen Blutungseffekt."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CripplingShotBleed",
+          "label": {
+            "en": "Stacks",
+            "de": "Stapel"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "CripplingShotSlow",
+          "label": {
+            "en": "Slow",
+            "de": "Verlangsamen"
+          },
+          "values": {
+            "common": 2,
+            "rare": 3,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 20
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "barbed-arrows-visual",
@@ -572,10 +874,33 @@
         "en": "Deadly Presence",
         "de": "Tödliche Präsenz"
       },
-      "effectSummary": {
-        "en": "Improves critical damage for towers inside a Chaos Reaper's range.",
-        "de": "Erhöht den kritischen Schaden von Türmen im Radius eines Chaos Reapers."
+      "effectDescription": {
+        "en": "Increases the Crit Damage of Towers within the shooting radius of each Chaos Reaper.",
+        "de": "Erhöht den krit. Schaden der Türme im Schussradius jedes Chaos Reapers."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CritAuraCritDamageBonus",
+          "label": {
+            "en": "Crit Damage",
+            "de": "Krit. Schaden"
+          },
+          "values": {
+            "common": 12,
+            "rare": 16,
+            "legendary": 28
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 200
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "deadly-presence-visual",
@@ -600,10 +925,48 @@
         "en": "Critical Nexus",
         "de": "Kritischer Nexus"
       },
-      "effectSummary": {
-        "en": "Critical Arc Tower hits release chain lightning.",
-        "de": "Kritische Treffer des Arc Towers lösen Kettenblitze aus."
+      "effectDescription": {
+        "en": "Critical Hits (not from Jumps) of all Arc Towers trigger chain lightning on several nearby enemies, dealing reduced Damage, but carry on jumping as usual.",
+        "de": "Kritische Treffer (nicht durch Sprünge) aller Arc Tower lösen Kettenblitze bei mehreren Gegnern in der Nähe aus, die weniger Schaden verursachen, aber wie gewohnt weiter springen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseChainLightning",
+          "label": {
+            "en": "Chain Lightnings",
+            "de": "Kettenblitze"
+          },
+          "values": {
+            "common": 3,
+            "rare": 3,
+            "legendary": 4
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseDamagePercent",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 15,
+            "rare": 20,
+            "legendary": 27
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "critical-nexus-visual",
@@ -628,10 +991,51 @@
         "en": "Dark Worship",
         "de": "Dunkle Anbetung"
       },
-      "effectSummary": {
-        "en": "Raises Chaos Reaper critical chance and global spell damage.",
-        "de": "Erhöht die kritische Chance des Chaos Reapers und den globalen Zauberschaden."
+      "effectDescription": {
+        "en": "Increases the Crit Chance of all Chaos Reapers and also increases Spell Damage.",
+        "de": "Erhöht die krit. Chance aller Chaos Reaper und erhöht außerdem den Zauberschaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DarkWorshipCritChance",
+          "label": {
+            "en": "Crit Chance",
+            "de": "Krit. Chance"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 60
+            }
+          }
+        },
+        {
+          "sourceKey": "DarkWorshipSpellDamage",
+          "label": {
+            "en": "Spell Damage",
+            "de": "Zauberschaden"
+          },
+          "values": {
+            "common": 21,
+            "rare": 28,
+            "legendary": 50
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "dark-worship-visual",
@@ -656,10 +1060,33 @@
         "en": "Darkness",
         "de": "Dunkelheit"
       },
-      "effectSummary": {
-        "en": "Shadow Tower kills can mark victims to take more damage.",
-        "de": "Shadow-Tower-Kills können Opfer markieren, sodass sie mehr Schaden erleiden."
+      "effectDescription": {
+        "en": "Each kill from a Shadow Tower has a chance to inflict a Victim Trait on the enemy with the most HP, causing them to take an additional 6/8/14% Damage from all sources (stackable).",
+        "de": "Jeder Kill eines Shadow Towers kann dem Gegner mit den meisten LP ein Opfermal zufügen, das 6/8/14% zusätzlichen Schaden bewirkt (stapelbar)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DarknessChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "values": {
+            "common": 6,
+            "rare": 8,
+            "legendary": 14
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "darkness-visual",
@@ -684,10 +1111,30 @@
         "en": "Doom Blast",
         "de": "Schicksalsschlag"
       },
-      "effectSummary": {
-        "en": "Killed enemies explode for damage based on their maximum health.",
-        "de": "Getötete Gegner explodieren mit Schaden abhängig von ihren maximalen Lebenspunkten."
+      "effectDescription": {
+        "en": "When the Raven Tower kills an enemy, it deals Damage to nearby enemies based on the maximum HP of the defeated enemy.",
+        "de": "Wenn der Raven Tower einen Feind tötet, fügt er Gegnern in der Nähe Schaden zu, basierend auf den maximalen LP des besiegten Gegners."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseMaxXPDamage",
+          "label": {
+            "en": "Maximum HP Damage",
+            "de": "Maximaler LP-Schaden"
+          },
+          "values": {
+            "common": 4,
+            "rare": 6,
+            "legendary": 10
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "doom-blast-visual",
@@ -712,10 +1159,30 @@
         "en": "Double Strike",
         "de": "Doppelschlag"
       },
-      "effectSummary": {
-        "en": "Adds a second Chaos Reaper hit worth part of the first strike.",
-        "de": "Fügt einen zweiten Chaos-Reaper-Treffer mit einem Anteil des ersten Hiebs hinzu."
+      "effectDescription": {
+        "en": "All Chaos Reapers strike twice; the second hit deals a portion of the first hit’s Damage.",
+        "de": "Alle Chaos Reaper schlagen zweimal zu; der zweite Treffer verursacht einen Anteil des Schadens des ersten Treffers."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DoubleStrike2ndHitDamage",
+          "label": {
+            "en": "2nd Hit Damage",
+            "de": "Schaden des 2. Treffers"
+          },
+          "values": {
+            "common": 21,
+            "rare": 28,
+            "legendary": 50
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "double-strike-visual",
@@ -740,10 +1207,40 @@
         "en": "Earthquake",
         "de": "Erdbeben"
       },
-      "effectSummary": {
-        "en": "Creates recurring damaging tremors around Tornado Towers that also stun.",
-        "de": "Erzeugt wiederkehrende Schadensbeben um Tornado Towers, die zusätzlich betäuben."
+      "effectDescription": {
+        "en": "Deals Damage every 3 seconds in the radius of the Tornado Tower and stuns enemies.",
+        "de": "Verursacht alle 3 Sekunden Schaden im Radius des Tornado Towers und betäubt Gegner."
       },
+      "effectValues": [
+        {
+          "sourceKey": "EarthquakeDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 1000
+        },
+        {
+          "sourceKey": "EarthquakeDuration",
+          "label": {
+            "en": "Duration",
+            "de": "Dauer"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 3
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "earthquake-visual",
@@ -767,10 +1264,48 @@
         "en": "Chain Echo",
         "de": "Echokette"
       },
-      "effectSummary": {
-        "en": "Allows Arc Tower lightning to reach more targets.",
-        "de": "Lässt die Blitze des Arc Towers mehr Ziele erreichen."
+      "effectDescription": {
+        "en": "Adds extra Jumps to Arc Tower attacks, minimizing Damage decrease after each Jump.",
+        "de": "Fügt Arc Tower-Angriffen zusätzliche Sprünge hinzu und minimiert zusätzlich die Schadensabnahme nach jedem Sprung."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseJump",
+          "label": {
+            "en": "Jumps",
+            "de": "Sprünge"
+          },
+          "values": {
+            "common": 1,
+            "rare": 1,
+            "legendary": 2
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseJumpDamageIncrease",
+          "label": {
+            "en": "Jump Damage",
+            "de": "Sprungschaden"
+          },
+          "values": {
+            "common": 1,
+            "rare": 3,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "chain-echo-visual",
@@ -795,10 +1330,30 @@
         "en": "Focus Rune",
         "de": "Fokusrune"
       },
-      "effectSummary": {
-        "en": "Repeated attacks on one enemy steadily gain damage.",
-        "de": "Wiederholte Angriffe auf denselben Gegner gewinnen fortlaufend Schaden."
+      "effectDescription": {
+        "en": "Runestone Towers increase their Damage for each second they continuously attack the same target.",
+        "de": "Runestone Tower erhöhen ihren Schaden mit jeder Sekunde, in der sie kontinuierlich dasselbe Ziel angreifen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseDamageIncrease",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 10,
+            "rare": 12,
+            "legendary": 20
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "focus-rune-visual",
@@ -823,10 +1378,33 @@
         "en": "Frost Magician",
         "de": "Frostmagier"
       },
-      "effectSummary": {
-        "en": "Frost Novas periodically grant energy with a global cooldown.",
-        "de": "Frostnovas gewähren regelmäßig Energie mit globaler Abklingzeit."
+      "effectDescription": {
+        "en": "Each Frost Tower's Frost Nova has a chance to grant +2/3/5 Energy for the current wave. A global 20-second cooldown applies before the effect can trigger again.",
+        "de": "Jede Nova eines Frost Towers hat eine Chance, +2/3/5 Energie für die aktuelle Welle zu gewähren. Danach gilt eine globale Abklingzeit von 20 Sek., bevor der Effekt erneut eintreten kann."
       },
+      "effectValues": [
+        {
+          "sourceKey": "FrostMagicianChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "values": {
+            "common": 2,
+            "rare": 3,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "frost-magician-visual",
@@ -851,10 +1429,11 @@
         "en": "Ghost Raven",
         "de": "Geisterrabe"
       },
-      "effectSummary": {
-        "en": "Summons a spectral raven that periodically fires a damaging vortex.",
-        "de": "Beschwört einen Geisterraben, der regelmäßig einen Schadenswirbel abfeuert."
+      "effectDescription": {
+        "en": "Every 30 seconds, a spectral raven circling the Raven Tower fires a projectile that sweeps over enemies as a vortex, dealing a share of Raven Tower's Damage.",
+        "de": "Alle 30 Sekunden feuert ein spektraler Rabe, der den Raven Tower umkreist, ein Projektil ab, das als Wirbel über Feinde hinwegfegt und einen Anteil des Schadens des Raven Towers verursacht."
       },
+      "effectValues": [],
       "visual": {
         "kind": "css",
         "assetId": "ghost-raven-visual",
@@ -878,10 +1457,40 @@
         "en": "Glacial Nova",
         "de": "Gletscher-Nova"
       },
-      "effectSummary": {
-        "en": "Frost Tower kills can unleash a powerful nova with extra freeze potential.",
-        "de": "Frost-Tower-Kills können eine mächtige Nova mit zusätzlichem Gefrierpotenzial entfesseln."
+      "effectDescription": {
+        "en": "Each kill by a Frost Tower has a chance of releasing a powerful Nova, which has also a 3x chance of triggering a Chill Explosion.",
+        "de": "Jede Tötung durch einen Frost Tower hat die Chance, eine mächtige Nova auszulösen, die außerdem eine 3-fache Chance hat, eine Gefrierknall auszulösen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "GlacialNovaChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 10
+        },
+        {
+          "sourceKey": "GlacialNovaDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 1500
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "glacial-nova-visual",
@@ -905,10 +1514,40 @@
         "en": "Light Pillar",
         "de": "Lichtsäule"
       },
-      "effectSummary": {
-        "en": "Kills can summon a sustained ray powered by Runestone Tower damage.",
-        "de": "Kills können einen anhaltenden Strahl auf Basis des Runestone-Tower-Schadens beschwören."
+      "effectDescription": {
+        "en": "Killing an enemy carries a chance to call forth a Ray from the ground, causing Damage from the Runestone Tower per second.",
+        "de": "Das Töten eines Gegners hat eine Chance, einen Strahl aus dem Boden hervorzurufen, der pro Sekunde Schaden vom Runestone Tower verursacht."
       },
+      "effectValues": [
+        {
+          "sourceKey": "HolyPillarAOEDPS",
+          "label": {
+            "en": "Pillar AOE DPS",
+            "de": "Säulen-AOE-DPS"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 1000
+        },
+        {
+          "sourceKey": "HolyPillarDuration",
+          "label": {
+            "en": "Duration",
+            "de": "Dauer"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 6
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "light-pillar-visual",
@@ -932,10 +1571,48 @@
         "en": "Icy Death",
         "de": "Eisiger Tod"
       },
-      "effectSummary": {
-        "en": "Creates an area whose damage per second grows over time.",
-        "de": "Erzeugt einen Bereich, dessen Schaden pro Sekunde mit der Zeit wächst."
+      "effectDescription": {
+        "en": "Enemies within the radius of the Frost Tower take increasing Damage per second.",
+        "de": "Im Radius des Frost Towers erleiden Gegner pro Sekunde steigenden Schaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseZoneDPS",
+          "label": {
+            "en": "Zone DPS",
+            "de": "Zonen-DPS"
+          },
+          "values": {
+            "common": 4,
+            "rare": 6,
+            "legendary": 10
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseDpsIncrease",
+          "label": {
+            "en": "DPS Increase per sec",
+            "de": "DPS-Zuwachs pro Sek."
+          },
+          "values": {
+            "common": 4,
+            "rare": 6,
+            "legendary": 10
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "icy-death-visual",
@@ -960,10 +1637,48 @@
         "en": "Insanity",
         "de": "Wahnsinn"
       },
-      "effectSummary": {
-        "en": "Boosts Shadow Tower damage and adds projectiles at legendary rarity.",
-        "de": "Steigert Shadow-Tower-Schaden und fügt bei legendärer Seltenheit Projektile hinzu."
+      "effectDescription": {
+        "en": "Increases the Damage of all Shadow Towers. Increases the amount of projectiles at Legendary.",
+        "de": "Erhöht den Schaden aller Shadow Tower. Auf legendärer Stufe wird die Anzahl der Projektile erhöht."
       },
+      "effectValues": [
+        {
+          "sourceKey": "InsanityDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 30,
+            "rare": 40,
+            "legendary": 10
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "InsanityAdditionalProjectiles",
+          "label": {
+            "en": "Projectiles",
+            "de": "Projektilanzahl"
+          },
+          "values": {
+            "common": 0,
+            "rare": 0,
+            "legendary": 1
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "insanity-visual",
@@ -988,10 +1703,30 @@
         "en": "Lightning Surge",
         "de": "Blitzschwall"
       },
-      "effectSummary": {
-        "en": "Arc Tower hits can release an additional lightning surge.",
-        "de": "Treffer des Arc Towers können einen zusätzlichen Blitzschwall auslösen."
+      "effectDescription": {
+        "en": "All Arc Tower hits have a chance to cause a max health focusing Lightning Surge (not from Jumps).",
+        "de": "Alle Arc Tower-Treffer haben eine Chance, einen auf maximale Gesundheit fokussierten Blitzschwall auszulösen (nicht durch Sprünge)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "LightningSurgeChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "values": {
+            "common": 1.2,
+            "rare": 1.6,
+            "legendary": 2.8
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "lightning-surge-visual",
@@ -1016,10 +1751,30 @@
         "en": "Magical Charge",
         "de": "Magische Ladung"
       },
-      "effectSummary": {
-        "en": "Adds a share of spell damage to Runestone Tower attacks.",
-        "de": "Fügt Runestone-Tower-Angriffen einen Anteil des Zauberschadens hinzu."
+      "effectDescription": {
+        "en": "A percentage of the Spell Damage bonus is added to the Runestone Tower Damage.",
+        "de": "Ein Anteil des Zauberschaden-Bonus wird zum Runestone Tower Schaden addiert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "MagicalChargeSpellDamage",
+          "label": {
+            "en": "Spell Damage Bonus",
+            "de": "Zauberschaden-Bonus"
+          },
+          "values": {
+            "common": 10,
+            "rare": 12,
+            "legendary": 18
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "magical-charge-visual",
@@ -1044,10 +1799,66 @@
         "en": "Magma Field",
         "de": "Magmafeld"
       },
-      "effectSummary": {
-        "en": "Volcano Mortar explosions leave a stacking burning field.",
-        "de": "Explosionen des Volcano Mortars hinterlassen ein stapelbares Brandfeld."
+      "effectDescription": {
+        "en": "The Volcano Mortar causes Burn on impact and ignites the field it hits, causing additional Burn stacks per hex field crossed.",
+        "de": "Der Volcano Mortar verursacht beim Aufprall Verbrennung und entzündet das Feld, das er trifft, was zusätzliche Verbrennungsstapel pro durchquertem Hexfeld verursacht."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseAppliedDamage",
+          "label": {
+            "en": "Stacks at Impact",
+            "de": "Stapel bei Aufprall"
+          },
+          "values": {
+            "common": 8,
+            "rare": 10,
+            "legendary": 13
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseStackDamage",
+          "label": {
+            "en": "Stacks per Hexfield",
+            "de": "Stapel pro Hexfeld"
+          },
+          "values": {
+            "common": 4,
+            "rare": 5,
+            "legendary": 6
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseBurnFieldDuration",
+          "label": {
+            "en": "Field Duration",
+            "de": "Felddauer"
+          },
+          "values": {
+            "common": 2,
+            "rare": 2,
+            "legendary": 3
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "magma-field-visual",
@@ -1072,10 +1883,30 @@
         "en": "Mastery",
         "de": "Meisterschaft"
       },
-      "effectSummary": {
-        "en": "Increases Raven Tower damage for each of its banners.",
-        "de": "Erhöht den Schaden des Raven Towers für jedes seiner Banner."
+      "effectDescription": {
+        "en": "For each Banner of a Raven Tower, the Damage of all Raven Towers (including this one) increases.",
+        "de": "Für jedes Banner eines Raven Towers wächst der Schaden aller Raven Tower (inklusive diesem)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "MasteryDamagerPerBanner",
+          "label": {
+            "en": "Damage per Banner",
+            "de": "Schaden pro Banner"
+          },
+          "values": {
+            "common": 4,
+            "rare": 5,
+            "legendary": 9
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "mastery-visual",
@@ -1100,10 +1931,30 @@
         "en": "Critical Bond",
         "de": "Kritische Bindung"
       },
-      "effectSummary": {
-        "en": "Turns part of Arc Tower critical chance into critical damage.",
-        "de": "Wandelt einen Teil der kritischen Chance des Arc Towers in kritischen Schaden um."
+      "effectDescription": {
+        "en": "The Crit Chance of an Arc Tower also increases its Crit Damage to a certain share.",
+        "de": "Die Kritische Trefferchance eines Arc Tower erhöht auch dessen Kritischen Schaden zu einem bestimmten Anteil."
       },
+      "effectValues": [
+        {
+          "sourceKey": "NexusAltShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "values": {
+            "common": 70,
+            "rare": 83,
+            "legendary": 123
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "critical-bond-visual",
@@ -1128,10 +1979,30 @@
         "en": "Omnipotence",
         "de": "Allmacht"
       },
-      "effectSummary": {
-        "en": "Improves the Raven Tower's critical damage.",
-        "de": "Verbessert den kritischen Schaden des Raven Towers."
+      "effectDescription": {
+        "en": "Increases the Critical Damage of all Raven Towers.",
+        "de": "Erhöht den Kritischen Schaden aller Raven Tower."
       },
+      "effectValues": [
+        {
+          "sourceKey": "OmnipotenceCritDamage",
+          "label": {
+            "en": "Crit Damage",
+            "de": "Krit. Schaden"
+          },
+          "values": {
+            "common": 45,
+            "rare": 60,
+            "legendary": 105
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "omnipotence-visual",
@@ -1156,10 +2027,30 @@
         "en": "Opening Blitz",
         "de": "Eröffnungsblitz"
       },
-      "effectSummary": {
-        "en": "Deals extra Arc Tower damage to enemies above seventy percent health.",
-        "de": "Verursacht zusätzlichen Arc-Tower-Schaden an Gegnern über siebzig Prozent Leben."
+      "effectDescription": {
+        "en": "Arc Tower hits deal increased damage against enemies with more than 70% health.",
+        "de": "Arc Tower-Treffer verursachen erhöhten Schaden gegen Feinde mit mehr als 70% Gesundheit."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseSpecialDamage",
+          "label": {
+            "en": "Special Damage",
+            "de": "Spezialschaden"
+          },
+          "values": {
+            "common": 48,
+            "rare": 64,
+            "legendary": 112
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "opening-blitz-visual",
@@ -1184,10 +2075,48 @@
         "en": "Outreach First",
         "de": "Eruptionszone"
       },
-      "effectSummary": {
-        "en": "Extends Volcano Mortar range while slightly reducing fire rate.",
-        "de": "Vergrößert die Reichweite des Volcano Mortars bei leicht verringerter Feuerrate."
+      "effectDescription": {
+        "en": "Increases the Range of the Volcano Mortar, reduces Fire Rate.",
+        "de": "Erhöht die Reichweite des Volcano Mortars und verringert die Feuerrate."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseRange",
+          "label": {
+            "en": "Range",
+            "de": "Reichweite"
+          },
+          "values": {
+            "common": 2,
+            "rare": 3,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseFireRate",
+          "label": {
+            "en": "Fire Rate",
+            "de": "Feuerrate"
+          },
+          "values": {
+            "common": -10,
+            "rare": -10,
+            "legendary": -10
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "outreach-first-visual",
@@ -1212,10 +2141,30 @@
         "en": "Overdose",
         "de": "Exzess"
       },
-      "effectSummary": {
-        "en": "Carries excess Shadow Tower damage onward and raises critical damage.",
-        "de": "Überträgt überschüssigen Shadow-Tower-Schaden und erhöht den kritischen Schaden."
+      "effectDescription": {
+        "en": "Shadow Towers transfer excess Damage from their projectiles to the next enemy and increase the Crit Damage.",
+        "de": "Shadow Tower übertragen überschüssigen Schaden ihrer Projektile auf den nächsten Gegner und erhöhen den Kritischen Schaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "OverdoseDamage",
+          "label": {
+            "en": "Crit Damage",
+            "de": "Krit. Schaden"
+          },
+          "values": {
+            "common": 10,
+            "rare": 25,
+            "legendary": 70
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "overdose-visual",
@@ -1240,10 +2189,30 @@
         "en": "Overheating",
         "de": "Überhitzung"
       },
-      "effectSummary": {
-        "en": "Each kill adds Volcano Mortar and burn damage for the current wave.",
-        "de": "Jeder Kill erhöht Volcano-Mortar- und Brandschaden für die laufende Welle."
+      "effectDescription": {
+        "en": "Each Volcano Mortar gains increased Damage and Burn Damage for the rest of the Wave for every Enemy it kills.",
+        "de": "Jeder Volcano Mortar erhöht für den Rest der Welle seinen Schaden und Verbrennungsschaden mit jedem Kill."
       },
+      "effectValues": [
+        {
+          "sourceKey": "OverheatingDamage",
+          "label": {
+            "en": "Damage per kill",
+            "de": "Schaden pro Kill"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "overheating-visual",
@@ -1268,10 +2237,51 @@
         "en": "Painful Cold",
         "de": "Tödliche Kälte"
       },
-      "effectSummary": {
-        "en": "Exchanges part of the Frost Tower's slowing power for damage.",
-        "de": "Tauscht einen Teil der Verlangsamungsstärke des Frost Towers gegen Schaden."
+      "effectDescription": {
+        "en": "Frost Towers exchange their Slow Effect for increased Damage.",
+        "de": "Frost Tower tauschen ihren Verlangsamungseffekt gegen erhöhten Schaden ein."
       },
+      "effectValues": [
+        {
+          "sourceKey": "PainfulColdSlowEffect",
+          "label": {
+            "en": "Effect",
+            "de": "Effekt"
+          },
+          "values": {
+            "common": -6,
+            "rare": -6,
+            "legendary": -6
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "sourceKey": "PainfullColdDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 135,
+            "rare": 140,
+            "legendary": 155
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "painful-cold-visual",
@@ -1296,10 +2306,48 @@
         "en": "Lucky Shot",
         "de": "Glückstreffer"
       },
-      "effectSummary": {
-        "en": "Raises Arrow Tower damage and can add another shot.",
-        "de": "Erhöht den Schaden des Arrow Towers und kann einen weiteren Schuss hinzufügen."
+      "effectDescription": {
+        "en": "Arrows from the Arrow Tower deal more Damage and have the chance to fire an additional arrow.",
+        "de": "Pfeile des Arrow Towers verursachen mehr Schaden und haben die Chance, einen zusätzlichen Pfeil abzufeuern."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseDamagePercent",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 12,
+            "rare": 16,
+            "legendary": 37
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseExtraShotChancePercent",
+          "label": {
+            "en": "Extra Shot Chance",
+            "de": "Chance auf Extraschuss"
+          },
+          "values": {
+            "common": 10,
+            "rare": 13,
+            "legendary": 20
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "lucky-shot-visual",
@@ -1324,10 +2372,30 @@
         "en": "Prism",
         "de": "Prisma"
       },
-      "effectSummary": {
-        "en": "Transfers and amplifies damage between Runestone Towers.",
-        "de": "Überträgt und verstärkt Schaden zwischen Runestone Towers."
+      "effectDescription": {
+        "en": "Runestone Towers that are inactive can beam to another specified Runestone Tower within their radius and transfer a percentage of their own Damage (+18/23/41% bonus Prism Damage from other towers, if any).",
+        "de": "Runestone Tower, die inaktiv sind, können einem anderen Runestone Tower in ihrem Radius einen Prozentsatz ihres eigenen Schadens übertragen (+18/23/41% zusätzlichen Prisma-Schaden von anderen Türmen, falls vorhanden)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "PrismDamageTransfer",
+          "label": {
+            "en": "Damage Transfer",
+            "de": "Schadenstransfer"
+          },
+          "values": {
+            "common": 18,
+            "rare": 23,
+            "legendary": 41
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "prism-visual",
@@ -1352,10 +2420,48 @@
         "en": "Rapid Archer",
         "de": "Salvenschütze"
       },
-      "effectSummary": {
-        "en": "Changes Arrow Tower attacks into three-shot bursts at a slower rate.",
-        "de": "Ändert Arrow-Tower-Angriffe in langsamere Dreiersalven."
+      "effectDescription": {
+        "en": "The Arrow Tower fires a burst of 3 arrows, each dealing reduced Damage. The Fire Rate is moderately decreased.",
+        "de": "Der Arrow Tower feuert eine Salve von 3 Pfeilen ab, die jeweils reduzierten Schaden verursachen. Die Feuerrate wird moderat verringert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BurstDamage",
+          "label": {
+            "en": "Dmg/Arrow",
+            "de": "Schaden/Pfeil"
+          },
+          "values": {
+            "common": 39,
+            "rare": 41,
+            "legendary": 50
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "RapidArcherFireRate",
+          "label": {
+            "en": "Fire Rate",
+            "de": "Feuerrate"
+          },
+          "values": {
+            "common": 85,
+            "rare": 87,
+            "legendary": 90
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "rapid-archer-visual",
@@ -1380,10 +2486,30 @@
         "en": "Runic Fire Aura",
         "de": "Runenfeuer-Aura"
       },
-      "effectSummary": {
-        "en": "Runestone Towers accelerate nearby towers within their radius.",
-        "de": "Runestone Towers beschleunigen nahe Türme in ihrem Radius."
+      "effectDescription": {
+        "en": "Increases the Fire Rate of Towers in the Radius of each Runestone Tower.",
+        "de": "Erhöht die Feuerrate von Türmen im Schussradius jedes Runestone Towers."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseFireRateBonus",
+          "label": {
+            "en": "Fire Rate Bonus",
+            "de": "Feuerratenbonus"
+          },
+          "values": {
+            "common": 5,
+            "rare": 7,
+            "legendary": 12
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "runic-fire-aura-visual",
@@ -1408,10 +2534,30 @@
         "en": "Rapture",
         "de": "Seelenbruch"
       },
-      "effectSummary": {
-        "en": "Strengthens the weakness applied by Shadow Towers.",
-        "de": "Verstärkt die vom Shadow Tower verursachte Schwäche."
+      "effectDescription": {
+        "en": "Increases the Weakness applied by the Shadow Tower.",
+        "de": "Erhöht die von den Shadow Towern angewandte Schwäche."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseWeaknessBonus",
+          "label": {
+            "en": "Weakness",
+            "de": "Schwäche"
+          },
+          "values": {
+            "common": 3,
+            "rare": 4,
+            "legendary": 7
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "rapture-visual",
@@ -1436,10 +2582,11 @@
         "en": "Ring of Death",
         "de": "Ring des Todes"
       },
-      "effectSummary": {
-        "en": "Every tenth Shadow Tower kill triggers a damaging execution nova.",
-        "de": "Jeder zehnte Shadow-Tower-Kill löst eine schädigende Hinrichtungsnova aus."
+      "effectDescription": {
+        "en": "Every 10th kill from a Shadow Tower emits a death nova that deals Damage and kills all enemies (except bosses) that have less than 15% health.",
+        "de": "Jede 10. Tötung eines Shadow Towers stößt eine Todesnova aus, die Schaden verursacht und alle Gegner (außer Bosse) tötet, die weniger als 15 % Leben haben."
       },
+      "effectValues": [],
       "visual": {
         "kind": "css",
         "assetId": "ring-of-death-visual",
@@ -1463,10 +2610,30 @@
         "en": "Scraper",
         "de": "Schaber"
       },
-      "effectSummary": {
-        "en": "Tornado Tower damage rises as the target loses health.",
-        "de": "Der Schaden des Tornado Towers steigt, wenn das Ziel Leben verliert."
+      "effectDescription": {
+        "en": "Increases the Tornado Damage per missing 1% HP of the enemy.",
+        "de": "Erhöht den Schaden von Tornados pro fehlendem 1 % LP des Gegners."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ScraperDamagerPer1Percent",
+          "label": {
+            "en": "Damage per 1 % HP",
+            "de": "Schaden pro 1 % LP"
+          },
+          "values": {
+            "common": 0.7,
+            "rare": 1,
+            "legendary": 2
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "scraper-visual",
@@ -1491,10 +2658,26 @@
         "en": "Skyfall Arrows",
         "de": "Pfeilregen"
       },
-      "effectSummary": {
-        "en": "Calls down an Arrow Rain at regular intervals.",
-        "de": "Ruft in regelmäßigen Abständen einen Pfeilregen herab."
+      "effectDescription": {
+        "en": "Adds an arrow rain every 15 seconds, dealing the Arrow Tower Damage in its impact area.",
+        "de": "Löst alle 15 Sekunden einen Pfeilregen aus, der den Arrow Tower-Schaden im Einschlagsbereich zufügt."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseDamagePercent",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "skyfall-arrows-visual",
@@ -1518,10 +2701,30 @@
         "en": "Squall",
         "de": "Sturmböe"
       },
-      "effectSummary": {
-        "en": "Tornadoes begin stronger and gradually lose power.",
-        "de": "Tornados beginnen stärker und verlieren allmählich Kraft."
+      "effectDescription": {
+        "en": "Tornados start extremely strong but weaken over time.",
+        "de": "Tornados starten extrem stark, schwächen jedoch mit der Zeit ab."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SqualDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 90,
+            "rare": 110,
+            "legendary": 170
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "squall-visual",
@@ -1546,10 +2749,30 @@
         "en": "Stormbringer",
         "de": "Sturmbringer"
       },
-      "effectSummary": {
-        "en": "Makes Tornado Tower vortices travel faster.",
-        "de": "Lässt die Wirbel des Tornado Towers schneller ziehen."
+      "effectDescription": {
+        "en": "Increases the Movement Speed of all Tornados.",
+        "de": "Erhöht die Bewegungsgeschwindigkeit aller Tornados."
       },
+      "effectValues": [
+        {
+          "sourceKey": "StormbringerSpeed",
+          "label": {
+            "en": "Speed",
+            "de": "Geschwindigkeit"
+          },
+          "values": {
+            "common": 21,
+            "rare": 28,
+            "legendary": 50
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "stormbringer-visual",
@@ -1574,10 +2797,40 @@
         "en": "Supernova",
         "de": "Supernova"
       },
-      "effectSummary": {
-        "en": "Volcano Mortar attacks can trigger a large supernova.",
-        "de": "Angriffe des Volcano Mortars können eine große Supernova auslösen."
+      "effectDescription": {
+        "en": "The Volcano Mortar has a chance of firing a shot that triggers a destructive Supernova.",
+        "de": "Der Volcano Mortar hat eine Chance, einen Schuss abzufeuern, der eine zerstörerische Supernova auslöst."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SuperNovaDamage",
+          "label": {
+            "en": "Explosion Damage",
+            "de": "Explosionsschaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 4000
+        },
+        {
+          "sourceKey": "SuperNovaAEO",
+          "label": {
+            "en": "Explosion AOE",
+            "de": "Explosions-AOE"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 500
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "supernova-visual",
@@ -1601,10 +2854,33 @@
         "en": "Tempest Stopper",
         "de": "Windfessel"
       },
-      "effectSummary": {
-        "en": "Adds a brief stun followed by temporary stun immunity.",
-        "de": "Fügt eine kurze Betäubung mit anschließender Betäubungsimmunität hinzu."
+      "effectDescription": {
+        "en": "Tornados briefly stun an enemy on impact. After that, they are immune to further stuns for a short time.",
+        "de": "Tornados betäuben einen Gegner kurzzeitig beim Einschlag. Danach ist er für kurze Zeit immun gegen weitere Betäubungen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "TempestStopperStunTime",
+          "label": {
+            "en": "Stun time",
+            "de": "Betäubungsdauer"
+          },
+          "values": {
+            "common": 0.3,
+            "rare": 0.4,
+            "legendary": 0.7
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 4
+            }
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "tempest-stopper-visual",
@@ -1629,10 +2905,26 @@
         "en": "Thor's Wrath",
         "de": "Thors Zorn"
       },
-      "effectSummary": {
-        "en": "Lets lightning revisit targets or concentrate unused jumps on one enemy.",
-        "de": "Lässt Blitze Ziele erneut treffen oder ungenutzte Sprünge auf einen Gegner bündeln."
+      "effectDescription": {
+        "en": "Jumps can now jump back and forth between identical enemies. If no Jump is possible, the entire potential Jump Damage is unloaded on the single target.",
+        "de": "Sprünge können jetzt zwischen identischen Gegnern hin- und herspringen. Wenn kein Sprung möglich ist, wird der gesamte potenzielle Sprungschaden auf das einzelne Ziel entladen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ThorsWrathDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 20
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "thor-s-wrath-visual",
@@ -1656,10 +2948,48 @@
         "en": "Timberwind Mark",
         "de": "Pfeiler des Waldes"
       },
-      "effectSummary": {
-        "en": "Raises Arrow Tower damage and supplies wood for each Arrow Tower.",
-        "de": "Erhöht Arrow-Tower-Schaden und liefert Holz für jeden Arrow Tower."
+      "effectDescription": {
+        "en": "Each Arrow Tower generates Wood every Wave and strike with increased Damage.",
+        "de": "Jeder Arrow Tower erzeugt Holz pro Welle und verursacht erhöhten Schaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseWoodProduction",
+          "label": {
+            "en": "Wood Production",
+            "de": "Holzproduktion"
+          },
+          "values": {
+            "common": 2,
+            "rare": 3,
+            "legendary": 5
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseDamagePercent",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "values": {
+            "common": 12,
+            "rare": 16,
+            "legendary": 28
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "timberwind-mark-visual",
@@ -1684,10 +3014,30 @@
         "en": "Trinity",
         "de": "Dreifaltigkeit"
       },
-      "effectSummary": {
-        "en": "Splits Runestone Tower beams across several enemies at reduced damage.",
-        "de": "Verteilt Runestone-Tower-Strahlen mit geringerem Schaden auf mehrere Gegner."
+      "effectDescription": {
+        "en": "The power of the Runestone Tower is distributed across 3 beams to attack different enemies. The Damage of the beams is reduced to the value specified below.",
+        "de": "Die Kraft des Runestone Towers wird auf 3 Strahlen verteilt, um verschiedene Gegner anzugreifen. Der Schaden der Strahlen wird auf den unten angegebenen Wert reduziert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseBeamDamagePercent",
+          "label": {
+            "en": "Beam Damage",
+            "de": "Strahlschaden"
+          },
+          "values": {
+            "common": 39,
+            "rare": 41,
+            "legendary": 47
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "trinity-visual",
@@ -1712,10 +3062,30 @@
         "en": "Twin Feathers",
         "de": "Zwillingsfedern"
       },
-      "effectSummary": {
-        "en": "Adds another Raven Tower shot while reducing individual shot damage.",
-        "de": "Fügt einen weiteren Raven-Tower-Schuss hinzu und senkt den Einzelschaden."
+      "effectDescription": {
+        "en": "Raven Towers now shoot twice, but at reduced Damage.",
+        "de": "Raven Tower schießen jetzt zweimal, aber mit reduziertem Schaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseDamagePercent",
+          "label": {
+            "en": "Burst Damage",
+            "de": "Schnellfeuerschaden"
+          },
+          "values": {
+            "common": 58,
+            "rare": 60,
+            "legendary": 68
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "twin-feathers-visual",
@@ -1740,10 +3110,30 @@
         "en": "Volcanic Eruption",
         "de": "Vulkanausbruch"
       },
-      "effectSummary": {
-        "en": "Greatly speeds up Volcano Mortar fire but removes manual control.",
-        "de": "Beschleunigt Volcano-Mortar-Feuer stark, entfernt aber die manuelle Steuerung."
+      "effectDescription": {
+        "en": "Each Volcano Mortar begins to uncontrollably throw magma balls at random enemies. It shoots faster, but can no longer be controlled.",
+        "de": "Jeder Volcano Mortar beginnt unkontrolliert Magmabälle auf zufällige Gegner zu feuern. Er feuert schneller, kann aber nicht mehr gesteuert werden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "VolcanicEruptionFireRate",
+          "label": {
+            "en": "Fire Rate",
+            "de": "Feuerrate"
+          },
+          "values": {
+            "common": 45,
+            "rare": 55,
+            "legendary": 85
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "volcanic-eruption-visual",
@@ -1768,10 +3158,66 @@
         "en": "Vulnerability",
         "de": "Verwundbarkeit"
       },
-      "effectSummary": {
-        "en": "Extends weakness and makes it reduce defensive attributes.",
-        "de": "Verlängert Schwäche und lässt sie Verteidigungswerte senken."
+      "effectDescription": {
+        "en": "Weakness decreases the enemies' defense attributes. It also increases the duration of the Weakness debuff.",
+        "de": "Schwäche verringert die Verteidigungsattribute der Gegner. Sie erhöht außerdem die Dauer des Schwäche-Debuffs."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseWeaknessTime",
+          "label": {
+            "en": "Weakness Duration",
+            "de": "Schwächedauer"
+          },
+          "values": {
+            "common": 0.6,
+            "rare": 0.8,
+            "legendary": 1.4
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseBlockReduction",
+          "label": {
+            "en": "Block",
+            "de": "Block"
+          },
+          "values": {
+            "common": -4,
+            "rare": -6,
+            "legendary": -10
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        },
+        {
+          "sourceKey": "BaseArmorPenetration",
+          "label": {
+            "en": "Armor",
+            "de": "Rüstung"
+          },
+          "values": {
+            "common": -4,
+            "rare": -6,
+            "legendary": -10
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "vulnerability-visual",
@@ -1796,10 +3242,30 @@
         "en": "Wide Blast",
         "de": "Roter Riese"
       },
-      "effectSummary": {
-        "en": "Expands the Volcano Mortar's explosion area.",
-        "de": "Vergrößert den Explosionsbereich des Volcano Mortars."
+      "effectDescription": {
+        "en": "Increases the Area of Effect of the Volcano Mortar.",
+        "de": "Erhöht den Wirkungsbereich des Volcano Mortars."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseAOE",
+          "label": {
+            "en": "Area of Effect",
+            "de": "Wirkungsbereich"
+          },
+          "values": {
+            "common": 20,
+            "rare": 27,
+            "legendary": 47
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "wide-blast-visual",
@@ -1824,10 +3290,30 @@
         "en": "Wrath Scattering",
         "de": "Zornstreuung"
       },
-      "effectSummary": {
-        "en": "Splits Raven Tower shots into several new projectiles.",
-        "de": "Teilt Raven-Tower-Schüsse in mehrere neue Projektile auf."
+      "effectDescription": {
+        "en": "On impact, the Raven Tower fires 4/5/9 shots at random enemies, each dealing a percentage of the current Damage.",
+        "de": "Beim Aufprall feuert der Raven Tower 4/5/9 Schüsse auf zufällige Feinde ab, die jeweils einen Prozentsatz des aktuellen Schadens verursachen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BaseDamage",
+          "label": {
+            "en": "Shots",
+            "de": "Schüsse"
+          },
+          "values": {
+            "common": 4,
+            "rare": 5,
+            "legendary": 9
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          }
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "wrath-scattering-visual",
@@ -1852,10 +3338,26 @@
         "en": "Barrier Bane",
         "de": "Barrierenfluch"
       },
-      "effectSummary": {
-        "en": "Shares Barrier Shatter's bonus barrier damage with Tornado Towers.",
-        "de": "Überträgt den zusätzlichen Barrierschaden von Durchbruch auf Tornado Towers."
+      "effectDescription": {
+        "en": "Grants Tornado Towers the extra Barrier Damage provided by Barrier Shatter.",
+        "de": "Gewährt Tornado Towern den zusätzlichen Barrierschaden von Durchbruch."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BarrierBaneShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 80
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "barrier-bane-visual",
@@ -1879,10 +3381,26 @@
         "en": "Bloody Chain",
         "de": "Blutkette"
       },
-      "effectSummary": {
-        "en": "Arc Tower jumps carry bleeding created by Arrow Towers.",
-        "de": "Sprünge des Arc Towers übertragen vom Arrow Tower verursachte Blutung."
+      "effectDescription": {
+        "en": "Jumps of the Arc Tower transfer a share of the original Arrow Tower Bleed Stacks. The transferred shares are reduced according to the Jump Damage %-figure with each additional Jump.",
+        "de": "Sprünge des Arc Towers übertragen einen Teil der Blutungsstapel des Arrow Towers. Die übertragenen Anteile werden mit jedem Sprung entsprechend dem %-Wert für Sprungschaden reduziert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BloodyChainJumpShare",
+          "label": {
+            "en": "Jump-Share",
+            "de": "Sprung-Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 10
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "bloody-chain-visual",
@@ -1906,10 +3424,26 @@
         "en": "Branding",
         "de": "Einbrennen"
       },
-      "effectSummary": {
-        "en": "Runestone beams add burn stacks derived from Magma Field.",
-        "de": "Runenstrahlen fügen aus Magmafeld abgeleitete Brandstapel hinzu."
+      "effectDescription": {
+        "en": "The Runestone Tower adds Burn Stacks per second based on the “Stacks/Hexfield” value of Magma Field.",
+        "de": "Der Runestone Tower fügt Verbrennungsstapel pro Sekunde hinzu, basierend auf dem „Stapel/Hexfeld“-Wert von Magmafeld."
       },
+      "effectValues": [
+        {
+          "sourceKey": "BrandingAppliedBurn",
+          "label": {
+            "en": "Burn Multiplier",
+            "de": "Verbrennungsmult."
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 450
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "branding-visual",
@@ -1933,10 +3467,26 @@
         "en": "Celestial Jumps",
         "de": "Runische Sprünge"
       },
-      "effectSummary": {
-        "en": "Runestone Towers near Arc Towers can create their own chain jumps.",
-        "de": "Runestone Towers nahe Arc Towers können eigene Kettensprünge erzeugen."
+      "effectDescription": {
+        "en": "With an Arc Tower in range, a Runestone Tower gains a chance to create its own Jumps. Regular Jump Damage is multiplied by the share shown on this banner.",
+        "de": "Mit einem Arc Tower in Reichweite erhält ein Runestone Tower eine Chance, eigene Sprünge zu erzeugen. Der reguläre Sprungschaden wird mit dem auf diesem Banner angegebenen Anteil multipliziert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CelestialJumpsShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 140
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "celestial-jumps-visual",
@@ -1960,10 +3510,26 @@
         "en": "Chaos Bolts",
         "de": "Chaosbolzen"
       },
-      "effectSummary": {
-        "en": "Critical Arrow Tower hits apply bleeding scaled by Critical Bleed.",
-        "de": "Kritische Arrow-Tower-Treffer verursachen durch Kritische Blutung skalierte Blutung."
+      "effectDescription": {
+        "en": "Critical hits from Arrow Towers can now apply Bleeding based on their Damage. Scales with Critical Bleed from the Chaos Reaper.",
+        "de": "Kritische Treffer von Arrow Towern können nun basierend auf ihrem Schaden Blutung anwenden. Skaliert mit Kritische Blutung des Chaos Reaper."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ChaosBoltsShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 66
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "chaos-bolts-visual",
@@ -1987,10 +3553,40 @@
         "en": "Charged Arrows",
         "de": "Geladene Pfeile"
       },
-      "effectSummary": {
-        "en": "Arrow Towers beside Arc Towers can launch empowered chain jumps.",
-        "de": "Arrow Towers neben Arc Towers können verstärkte Kettensprünge auslösen."
+      "effectDescription": {
+        "en": "Arrow Towers, which are adjacent to Arc Towers, shoot arrows with a 25% chance to cause Jumps. The first jump deals extra Damage.",
+        "de": "Arrow Tower, die an Arc Towern angrenzen, schießen Pfeile mit 25 % Chance auf Sprünge. Der erste Sprung verursacht erhöhten Schaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ChargedArrowsDamageModifier",
+          "label": {
+            "en": "1st Jump Damage",
+            "de": "1. Jump Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 125
+        },
+        {
+          "sourceKey": "ChargedArrowJumps",
+          "label": {
+            "en": "Jumps",
+            "de": "Sprünge"
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "none",
+            "hideEqualValues": true,
+            "restriction": null
+          },
+          "value": 0
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "charged-arrows-visual",
@@ -2014,10 +3610,26 @@
         "en": "Clinking Mastery",
         "de": "Frostmeister"
       },
-      "effectSummary": {
-        "en": "Passes a multiplied share of Raven mastery damage to Frost Towers.",
-        "de": "Überträgt einen multiplizierten Anteil des Raven-Meisterschaftsschadens auf Frost Towers."
+      "effectDescription": {
+        "en": "The total addition by Mastery is multiplied and applied to the Frost Tower as a Damage addition.",
+        "de": "Die Gesamtverstärkung durch Meisterschaft wird multipliziert und als Schadensbonus auf den Frost Tower angewendet."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ClinkingMasteryShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 330
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "clinking-mastery-visual",
@@ -2041,10 +3653,43 @@
         "en": "Corpse Explosion",
         "de": "Leichenexplosion"
       },
-      "effectSummary": {
-        "en": "Shadow Tower kills can explode and spread Arrow Tower bleeding.",
-        "de": "Shadow-Tower-Kills können explodieren und Blutung des Arrow Towers verteilen."
+      "effectDescription": {
+        "en": "Enemies killed by the Shadow Tower can trigger an explosion that transfers the Bleed Stacks of the killed enemy with a certain probability.",
+        "de": "Von Shadow Towern getötete Gegner können eine Explosion auslösen, die mit einer bestimmten Wahrscheinlichkeit die Blutungsstapel des getöteten Gegners überträgt."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CorpseExplosionChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 25
+        },
+        {
+          "sourceKey": "CorpseExplosionDamage",
+          "label": {
+            "en": "Explosion Damage",
+            "de": "Explosionsschaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 210
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "corpse-explosion-fusion-visual",
@@ -2068,10 +3713,26 @@
         "en": "Crimson Beak",
         "de": "Scharlachschnabel"
       },
-      "effectSummary": {
-        "en": "Raven Tower shots consume bleeding stacks for multiplied damage.",
-        "de": "Raven-Tower-Schüsse verbrauchen Blutungsstapel für multiplizierten Schaden."
+      "effectDescription": {
+        "en": "Shots from Raven Towers now consume Bleed Stacks, removing them to deal multiplied Damage.",
+        "de": "Schüsse von Raven Towern verbrauchen nun Blutungsstapel und entfernen sie, um vervielfachten Schaden zu verursachen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CrimsonBeakDamagePerStack",
+          "label": {
+            "en": "Damage per Stack",
+            "de": "Schaden pro Stapel"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "none",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 6
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "crimson-beak-visual",
@@ -2095,10 +3756,29 @@
         "en": "Crippling Pain",
         "de": "Lähmungsschmerz"
       },
-      "effectSummary": {
-        "en": "Runestone Tower attacks apply a share of Frost Tower slowing.",
-        "de": "Runestone-Tower-Angriffe wenden einen Anteil der Frost-Tower-Verlangsamung an."
+      "effectDescription": {
+        "en": "The Slow value is applied to a certain share to enemies attacked by the Runestone Tower (additive with Slow from the Frost Tower).",
+        "de": "Der Verlangsamungswert wird zu einem bestimmten Anteil auf Gegner angewendet, die vom Runestone Tower angegriffen werden (additiv mit der Verlangsamung des Frost Towers)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CripplingPainShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 80
+            }
+          },
+          "value": 20
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "crippling-pain-visual",
@@ -2122,10 +3802,26 @@
         "en": "Critical Breach",
         "de": "Kritischer Riss"
       },
-      "effectSummary": {
-        "en": "Arc Towers deal greater critical damage to slowed enemies.",
-        "de": "Arc Towers verursachen höheren kritischen Schaden an verlangsamten Gegnern."
+      "effectDescription": {
+        "en": "Increases the Critical Damage of Arc Towers that attack a slowed enemy.",
+        "de": "Erhöht den Kritischen Schaden von Arc Towern, die einen verlangsamten Gegner angreifen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CriticalBreachExtraCritDamage",
+          "label": {
+            "en": "Extra Crit Damage",
+            "de": "Extra krit. Schaden"
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 220
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "critical-breach-visual",
@@ -2149,10 +3845,29 @@
         "en": "Critical Impact",
         "de": "Kritisches Duo"
       },
-      "effectSummary": {
-        "en": "Shares reduced Collapse and Omnipotence effects between both towers.",
-        "de": "Teilt abgeschwächte Einsturz- und Allmacht-Effekte zwischen beiden Türmen."
+      "effectDescription": {
+        "en": "The Crit Chance of Collapse is also applied to the Raven Tower, and Omnipotence is also applied to the Tornado Tower - both with a reduced multiplicative effect.",
+        "de": "Die Krit. Chance von Einsturz wird auch auf den Raven Tower angewendet und Allmacht auch auf den Tornado Tower – beides mit einem reduzierten multiplikativen Effekt."
       },
+      "effectValues": [
+        {
+          "sourceKey": "CriticalImpactShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 60
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "critical-impact-visual",
@@ -2176,10 +3891,26 @@
         "en": "Damnable Weak",
         "de": "Schicksalsbruch"
       },
-      "effectSummary": {
-        "en": "Adds scaled Doom Blast damage to Shadow attacks against weakened enemies.",
-        "de": "Fügt Shadow-Angriffen gegen geschwächte Gegner skalierten Schicksalsschlag-Schaden hinzu."
+      "effectDescription": {
+        "en": "The Damage percentage of Doom Blast is multiplied and added to attacks from the Shadow Tower on already weakened enemies.",
+        "de": "Der Schadensprozentsatz von Schicksalsschlag wird multipliziert und zu Angriffen des Shadow Towers auf bereits geschwächte Gegner hinzugefügt."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DamnableWeakDoomblastMultiplier",
+          "label": {
+            "en": "Doom Blast Multiplier",
+            "de": "Schicksalsschlag-Mult."
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 700
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "damnable-weak-visual",
@@ -2203,10 +3934,54 @@
         "en": "Destructive Strike",
         "de": "Vernichtungsschlag"
       },
-      "effectSummary": {
-        "en": "Lightning Surge leaves a strong burning field enhanced by Magma Field.",
-        "de": "Blitzschwall hinterlässt ein starkes, durch Magmafeld verbessertes Brandfeld."
+      "effectDescription": {
+        "en": "The lightning triggered by Lightning Surge leaves a strongly Burning Field on impact, scaling with Magma Field values.",
+        "de": "Der durch Blitzschwall ausgelöste Blitz hinterlässt beim Aufprall ein starkes Verbrennungsfeld, das mit den Werten von Magmafeld skaliert."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DestructiveStrikeAppliedBurn",
+          "label": {
+            "en": "Stacks at Impact",
+            "de": "Stapel bei Aufprall"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "multiplier",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 12
+        },
+        {
+          "sourceKey": "DestructiveStrikeBurnStack",
+          "label": {
+            "en": "Stacks per Hex Field",
+            "de": "Stapel pro Hexfeld"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "multiplier",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 5
+        },
+        {
+          "sourceKey": "DestructiveStrikeFieldDuration",
+          "label": {
+            "en": "Field Duration",
+            "de": "Felddauer"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "seconds",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 0
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "destructive-strike-visual",
@@ -2230,10 +4005,29 @@
         "en": "Doom Cold",
         "de": "Unheilvolle Kälte"
       },
-      "effectSummary": {
-        "en": "Doom Blast can leave a slowing zone behind.",
-        "de": "Schicksalsschlag kann eine Verlangsamungszone hinterlassen."
+      "effectDescription": {
+        "en": "Each Doom Blast has the chance to leave a doubly strong Slow Zone.",
+        "de": "Jeder Schicksalsschlag hat die Chance, eine doppelt so stark verlangsamende Verlangsamungszone zu hinterlassen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DoomColdChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 50
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "doom-cold-visual",
@@ -2257,10 +4051,26 @@
         "en": "Doom Scattering",
         "de": "Schicksalsstreuung"
       },
-      "effectSummary": {
-        "en": "Tornado kills can trigger an empowered Wrath Scattering volley.",
-        "de": "Tornado-Kills können eine verstärkte Schicksalsstreuungs-Salve auslösen."
+      "effectDescription": {
+        "en": "When a Tornado kills an enemy, there is a chance of triggering a muliplicatively increased Wrath Scattering.",
+        "de": "Wenn ein Tornado einen Gegner tötet, besteht eine Chance, eine multiplikativ erhöhte Zornstreuung auszulösen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DoomScatteringDamageMultiplier",
+          "label": {
+            "en": "Multiplier",
+            "de": "Multiplikator"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 250
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "doom-scattering-visual",
@@ -2284,10 +4094,40 @@
         "en": "Wings of Chaos",
         "de": "Chaosflügel"
       },
-      "effectSummary": {
-        "en": "Shares critical aura and Omnipotence bonuses between both towers.",
-        "de": "Teilt Boni von kritischer Aura und Allmacht zwischen beiden Türmen."
+      "effectDescription": {
+        "en": "Raven Towers inside Deadly Presence now gain a larger share of the Deadly Presence bonus; Chaos Reapers instead gain a share of Omnipotence.",
+        "de": "Raven Towern innerhalb von Tödliche Präsenz profitieren nun von einem größeren Anteil des Tödliche Präsenz-Bonus; Chaos Reaper erhalten hingegen einen Anteil an Allmacht."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DoomlanceCritAuraShare",
+          "label": {
+            "en": "Deadly Presence-Share",
+            "de": "Tödliche Präsenz-Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 120
+        },
+        {
+          "sourceKey": "DoomlanceCritOmnipotenceShare",
+          "label": {
+            "en": "Omnipotence-Share",
+            "de": "Allmacht-Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 30
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "wings-of-chaos-visual",
@@ -2311,10 +4151,29 @@
         "en": "Double Nova",
         "de": "Doppelnova"
       },
-      "effectSummary": {
-        "en": "Frost Tower attacks can release a second nova.",
-        "de": "Angriffe des Frost Towers können eine zweite Nova freisetzen."
+      "effectDescription": {
+        "en": "Frost Towers have a chance to trigger a second nova immediately after their normal attack.",
+        "de": "Frost Tower haben eine Chance, unmittelbar nach ihrem normalen Angriff eine zweite Nova auszulösen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DoubleNovaChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 50
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "double-nova-visual",
@@ -2338,10 +4197,26 @@
         "en": "Fire Arrows",
         "de": "Feuerpfeile"
       },
-      "effectSummary": {
-        "en": "Arrow Tower shots add burn stacks scaled by Magma Field.",
-        "de": "Arrow-Tower-Schüsse fügen durch Magmafeld skalierte Brandstapel hinzu."
+      "effectDescription": {
+        "en": "The arrows of the Arrow Tower burn and add Burn Stacks based on the \"Stacks at Impact\" of Magma Field",
+        "de": "Die Pfeile des Arrow Towers brennen und fügen Verbrennungsstapel, basierend auf den \"Stapeln bei Aufprall \" von Magmafeld, hinzu."
       },
+      "effectValues": [
+        {
+          "sourceKey": "FireArrowsDamageScale",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 85
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "fire-arrows-visual",
@@ -2365,10 +4240,26 @@
         "en": "Frost Scythe",
         "de": "Frostsichel"
       },
-      "effectSummary": {
-        "en": "Chaos Reapers deal multiplied damage to slowed enemies.",
-        "de": "Chaos Reaper verursachen multiplizierten Schaden an verlangsamten Gegnern."
+      "effectDescription": {
+        "en": "Enemies affected by Slow take multiplied Damage from Chaos Reapers.",
+        "de": "Von Verlangsamung betroffene Gegner erleiden vervielfachten Schaden durch Chaos Reaper."
       },
+      "effectValues": [
+        {
+          "sourceKey": "FrostScytheDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 130
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "frost-scythe-visual",
@@ -2392,10 +4283,40 @@
         "en": "Hydra",
         "de": "Hydra"
       },
-      "effectSummary": {
-        "en": "Applies Trinity to Volcano Mortars with slower fire and amplified transfer.",
-        "de": "Wendet Trinität mit langsamerem Feuer und verstärkter Übertragung auf Volcano Mortars an."
+      "effectDescription": {
+        "en": "Trinity is applied to the Volcano Mortar. This reduces the Fire Rate, but adjusts the Damage transferred by Trinity with a multiplier.",
+        "de": "Dreifaltigkeit wird auf den Volcano Mortar angewendet. Dies verringert die Feuerrate, verstärkt jedoch den von Dreifaltigkeit übertragenen Schaden mit einem Multiplikator."
       },
+      "effectValues": [
+        {
+          "sourceKey": "HydraTrinityEffect",
+          "label": {
+            "en": "Trinity Effect",
+            "de": "Dreifaltigkeitseffekt"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": true,
+            "restriction": null
+          },
+          "value": 110
+        },
+        {
+          "sourceKey": "HydraFireRate",
+          "label": {
+            "en": "Fire Rate",
+            "de": "Feuerrate"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 75
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "hydra-visual",
@@ -2419,10 +4340,26 @@
         "en": "Iced Target",
         "de": "Eisiges Ziel"
       },
-      "effectSummary": {
-        "en": "Slowed enemies receive additional spell damage.",
+      "effectDescription": {
+        "en": "Slowed enemies take additional Spell Damage.",
         "de": "Verlangsamte Gegner erleiden zusätzlichen Zauberschaden."
       },
+      "effectValues": [
+        {
+          "sourceKey": "IcedTargetExtraDamage",
+          "label": {
+            "en": "Extra Damage",
+            "de": "Extra Schaden"
+          },
+          "format": {
+            "prefix": "plus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 210
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "iced-target-visual",
@@ -2446,10 +4383,29 @@
         "en": "Lightstorm",
         "de": "Lichtsturm"
       },
-      "effectSummary": {
-        "en": "Lightning Surge can burst through targets, strongly scaling with Magical Charge.",
-        "de": "Blitzschwall kann Ziele durchbrechen und stark mit Magischer Ladung skalieren."
+      "effectDescription": {
+        "en": "Lightning Surge strikes can create a Lightburst, dealing the same Damage as the lightning strike in front of and behind the impact; this damage scales by 3x with Magical Charge, but ignores Weakness.",
+        "de": "Einschläge von Blitzschwall können eine Lichteruption erzeugen, die vor und hinter dem Einschlag denselben Schaden wie der Blitz verursacht; dieser Schaden skaliert mit Magische Ladung um 3x, allerdings ignoriert er Schwäche."
       },
+      "effectValues": [
+        {
+          "sourceKey": "LightburstChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 10
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "lightstorm-visual",
@@ -2473,10 +4429,26 @@
         "en": "Mystic Winds",
         "de": "Mystische Winde"
       },
-      "effectSummary": {
-        "en": "Transfers a share of Magical Charge damage into tornadoes.",
-        "de": "Überträgt einen Anteil des Schadens von Magischer Ladung auf Tornados."
+      "effectDescription": {
+        "en": "The Damage from Magical Charge is transferred to the tornadoes of the Tornado Tower in certain shares.",
+        "de": "Der Schaden von Magische Ladung wird anteilig auf die Tornados des Tornado Towers übertragen."
       },
+      "effectValues": [
+        {
+          "sourceKey": "MysticWindsShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 70
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "mystic-winds-visual",
@@ -2500,10 +4472,26 @@
         "en": "Nightburst",
         "de": "Nachtstoß"
       },
-      "effectSummary": {
-        "en": "Volcano Mortar explosions apply an amplified weakness effect.",
-        "de": "Explosionen des Volcano Mortars wenden einen verstärkten Schwächeeffekt an."
+      "effectDescription": {
+        "en": "Volcano Mortar explosions apply a special Weakness that is stronger than the normal value and scaled by a multiplier.",
+        "de": "Volcano Mortar-Explosionen wenden eine spezielle Schwäche an, die stärker als die normale ist und durch einen Multiplikator skaliert wird."
       },
+      "effectValues": [
+        {
+          "sourceKey": "NightburstWeaknessMultiplier",
+          "label": {
+            "en": "Multiplier",
+            "de": "Multiplikator"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "nightburst-visual",
@@ -2527,10 +4515,26 @@
         "en": "Pact of Dusk",
         "de": "Pakt der Dämmerung"
       },
-      "effectSummary": {
-        "en": "Moves weakness to arrows and redirects Arrow damage bonuses to Shadow Towers.",
-        "de": "Verlagert Schwäche auf Pfeile und leitet Arrow-Schadensboni an Shadow Towers weiter."
+      "effectDescription": {
+        "en": "Arrows inflict Weakness; the Shadow Tower no longer does. Additive Damage Banners from the Arrow Tower now boost the Shadow Tower instead, with a multiplied bonus.",
+        "de": "Arrow Tower verursachen Schwäche; Shadow Tower tun dies nicht mehr. Additive Schadensbanner des Arrow Tower verstärken stattdessen den Shadow Tower, mit einem multiplizierten Bonus."
       },
+      "effectValues": [
+        {
+          "sourceKey": "PactOfDuskDamageScale",
+          "label": {
+            "en": "Multiplier",
+            "de": "Multiplikator"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 250
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "pact-of-dusk-visual",
@@ -2554,10 +4558,26 @@
         "en": "Precision Shots",
         "de": "Präzisionsschüsse"
       },
-      "effectSummary": {
-        "en": "Scales Volcano Mortar damage with additive Arrow Tower damage banners.",
-        "de": "Skaliert Volcano-Mortar-Schaden mit additiven Schadensbannern des Arrow Towers."
+      "effectDescription": {
+        "en": "Damage of the Volcano Mortars scales with all additive Damage Banners of the Arrow Tower.",
+        "de": "Der Schaden der Volcano Mortars skaliert mit allen additiven Schadensbannern der Arrow Tower."
       },
+      "effectValues": [
+        {
+          "sourceKey": "PrecisionShotsDamageScale",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 120
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "precision-shots-visual",
@@ -2581,10 +4601,26 @@
         "en": "Scorching",
         "de": "Versengung"
       },
-      "effectSummary": {
-        "en": "Applies a share of Scraper's missing-health bonus to Runestone attacks.",
-        "de": "Wendet einen Anteil des Feger-Bonus gegen fehlendes Leben auf Runenangriffe an."
+      "effectDescription": {
+        "en": "Scraper is applied to the Runestone Tower attacks to a certain share.",
+        "de": "Schaber wird zu einem bestimmten Anteil auf die Angriffe des Runestone Towers angewendet."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ScorchingShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 35
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "scorching-visual",
@@ -2608,10 +4644,54 @@
         "en": "Shadow Tornado",
         "de": "Schatten-Tornado"
       },
-      "effectSummary": {
-        "en": "Nearby Tornado Towers let Shadow Towers summon longer, stronger tornadoes.",
-        "de": "Nahe Tornado Towers lassen Shadow Towers längere, stärkere Tornados beschwören."
+      "effectDescription": {
+        "en": "Shadow Towers can cast Tornadoes with increased Damage and duration when Tornado Towers are in range. Additional Shadow Towers in range reduce this chance.",
+        "de": "Shadow Tower können Tornados mit erhöhtem Schaden und längerer Dauer wirken, wenn Tornado Tower in Reichweite sind. Zusätzliche Shadow Tower in Reichweite verringern diese Chance."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ShadowTornadoChancePerTower",
+          "label": {
+            "en": "Chance per Tower",
+            "de": "Chance pro Turm"
+          },
+          "format": {
+            "prefix": "plus-or-minus",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 3
+        },
+        {
+          "sourceKey": "ShadowTornadoDamage",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 200
+        },
+        {
+          "sourceKey": "ShadowTornadoTornadoDuration",
+          "label": {
+            "en": "Tornado Duration",
+            "de": "Tornado-Dauer"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 130
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "shadow-tornado-visual",
@@ -2635,10 +4715,43 @@
         "en": "Shockwave",
         "de": "Schockwelle"
       },
-      "effectSummary": {
-        "en": "Critical Arc Tower hits can emit area shockwaves scaled by Wide Blast.",
-        "de": "Kritische Arc-Tower-Treffer können durch Großexplosion skalierte Flächenschockwellen auslösen."
+      "effectDescription": {
+        "en": "Each Critical Hit from an Arc Tower can trigger a shockwave dealing a percentage of its Damage. The AOE size scales with Wide Blast.",
+        "de": "Jeder kritische Treffer eines Arc Towers kann eine Schockwelle auslösen, die einen Prozentsatz seines Schadens verursacht. Die AOE-Größe skaliert mit Roter Riese."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ShockwaveChance",
+          "label": {
+            "en": "Chance",
+            "de": "Chance"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "value": 20
+        },
+        {
+          "sourceKey": "ShockwaveDamage",
+          "label": {
+            "en": "Shockwave Damage",
+            "de": "Schockwellenschaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "shockwave-visual",
@@ -2662,10 +4775,26 @@
         "en": "Soulflame",
         "de": "Seelenflamme"
       },
-      "effectSummary": {
-        "en": "Makes weakness amplify burning damage more strongly.",
-        "de": "Lässt Schwäche den Brandschaden stärker erhöhen."
+      "effectDescription": {
+        "en": "Weakness has a multiplied effect on Burn.",
+        "de": "Schwäche hat einen vervielfachten Effekt auf Brand."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SoulflameWeaknessMultiplier",
+          "label": {
+            "en": "Multiplier",
+            "de": "Multiplikator"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 200
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "soulflame-visual",
@@ -2689,10 +4818,26 @@
         "en": "Speedy Death",
         "de": "Schneller Tod"
       },
-      "effectSummary": {
-        "en": "Focus Rune increases the damage growth granted by Icy Death.",
-        "de": "Fokusrune erhöht das von Eisiger Tod gewährte Schadenswachstum."
+      "effectDescription": {
+        "en": "The DPS increase per second from Icy Death is increased according to a share of Focus Rune.",
+        "de": "Der DPS-Anstieg pro Sekunde durch Eisiger Tod wird entsprechend einem Anteil von Fokusrune erhöht."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SpeedyDeathShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 210
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "speedy-death-visual",
@@ -2716,10 +4861,26 @@
         "en": "Spinning Scythe",
         "de": "Wirbelnde Sense"
       },
-      "effectSummary": {
-        "en": "Adjacent Chaos Reapers can create bleed-only scythes based on their damage.",
-        "de": "Angrenzende Chaos Reaper können reine Blutungssensen anhand ihres Schadens erzeugen."
+      "effectDescription": {
+        "en": "Each adjacent Chaos Reaper grants a Tornado Tower an individual chance to spawn a magic scythe. The scythe deals no damage; it only applies Bleeding based on a portion of that Chaos Reaper’s Damage.",
+        "de": "Jeder angrenzende Chaos Reaper gewährt einem Tornado Tower eine individuelle Chance, eine magische Sense zu erschaffen. Die Sense verursacht keinen Schaden; sie wendet nur Blutung an, basierend auf einem Anteil des Schadens dieses Chaos Reaper."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SpinningScytheShare",
+          "label": {
+            "en": "Share",
+            "de": "Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 50
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "spinning-scythe-visual",
@@ -2743,10 +4904,26 @@
         "en": "Spiral of Pain",
         "de": "Schmerzspirale"
       },
-      "effectSummary": {
-        "en": "Tornadoes multiply their damage against weakened enemies.",
-        "de": "Tornados multiplizieren ihren Schaden gegen geschwächte Gegner."
+      "effectDescription": {
+        "en": "Tornadoes inflict increased Damage against weakened enemies (multiplies the total value including Weakness).",
+        "de": "Tornados verursachen erhöhten Schaden gegen geschwächte Gegner (multipliziert den Gesamtwert inklusive Schwäche)."
       },
+      "effectValues": [
+        {
+          "sourceKey": "SpiralOfPainDamageScale",
+          "label": {
+            "en": "Multiplier",
+            "de": "Multiplikator"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 140
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "spiral-of-pain-visual",
@@ -2770,10 +4947,26 @@
         "en": "Sweeper",
         "de": "Feger"
       },
-      "effectSummary": {
-        "en": "Applies a share of Scraper to Wrath Scattering projectiles.",
-        "de": "Wendet einen Anteil von Feger auf Projektile der Schicksalsstreuung an."
+      "effectDescription": {
+        "en": "Wrath Scattering applies Scraper to itself at a specific percentage.",
+        "de": "Zornstreuung wendet Schaber mit einem bestimmten Prozentsatz auf sich selbst an."
       },
+      "effectValues": [
+        {
+          "sourceKey": "ScraperShare",
+          "label": {
+            "en": "Scraper Share",
+            "de": "Schaber-Anteil"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 80
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "sweeper-visual",
@@ -2797,10 +4990,26 @@
         "en": "Unchained Rage",
         "de": "Ungezügelte Wut"
       },
-      "effectSummary": {
-        "en": "Raven kills transfer capped Shadow overflow damage through Overdose.",
-        "de": "Raven-Kills übertragen begrenzten Shadow-Überschussschaden durch Exzess."
+      "effectDescription": {
+        "en": "Overdose applies to kills from Raven Tower shots, with overflow damage multiplied by the number of Overdose Banners, up to a 100% limit.",
+        "de": "Exzess wird auf Tötungen durch Schüsse des Raven Towers angewendet, wobei der überschüssige Schaden mit der Anzahl der Exzess Banner multipliziert wird, bis maximal 100 %."
       },
+      "effectValues": [
+        {
+          "sourceKey": "UnchainedRangeShare",
+          "label": {
+            "en": "Share per Overdose",
+            "de": "Anteil pro Exzess"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 40
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "unchained-rage-visual",
@@ -2824,10 +5033,26 @@
         "en": "Venomous Bleed",
         "de": "Giftige Blutung"
       },
-      "effectSummary": {
-        "en": "Bleeding from either tower also inflicts a special weakness.",
-        "de": "Blutung beider Türme verursacht zusätzlich eine besondere Schwäche."
+      "effectDescription": {
+        "en": "Bleeding applied by either Tower also applies Special Weakness to the affected enemy.",
+        "de": "Von einem der beiden Türme verursachte Blutung wendet beim betroffenen Gegner zusätzlich Spezielle Schwäche an."
       },
+      "effectValues": [
+        {
+          "sourceKey": "VenomousBleedSpecialWeakness",
+          "label": {
+            "en": "Special Weakness",
+            "de": "Spezielle Schwäche"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 20
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "venomous-bleed-visual",
@@ -2851,10 +5076,40 @@
         "en": "Dispersion",
         "de": "Zerstreuung"
       },
-      "effectSummary": {
-        "en": "Doubles banner choices while increasing tower and upgrade cost growth.",
-        "de": "Verdoppelt Bannerwahlen und erhöht dafür das Wachstum von Turm- und Upgradekosten."
+      "effectDescription": {
+        "en": "From now on, you will receive 2x Banner Choice Events. In return, Tower Price Inflation and Tower Upgrade Costs will be increased.",
+        "de": "Von nun an erhältst Du 2x Bannerwahl-Events. Im Gegenzug steigen die Turmpreis-Teuerungsrate und die Turm-Upgrade-Kosten."
       },
+      "effectValues": [
+        {
+          "sourceKey": "DispersionTowerPriceInflation",
+          "label": {
+            "en": "Tower Price Inflation",
+            "de": "Turmpreis-Teuerungsrate"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        },
+        {
+          "sourceKey": "DispersionTowerUpgradeCosts",
+          "label": {
+            "en": "Tower Upgrade Costs",
+            "de": "Turm-Upgrade-Kosten"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "dispersion-visual",
@@ -2878,10 +5133,11 @@
         "en": "Multitude",
         "de": "Vielfältigkeit"
       },
-      "effectSummary": {
-        "en": "Creates separate common-only banner choices per tower and disables new uniques and fusions.",
-        "de": "Erzeugt getrennte, gewöhnliche Bannerwahlen pro Turm und deaktiviert neue Einzigartige und Fusionen."
+      "effectDescription": {
+        "en": "In the future, you will receive separate Banner Choice Events for each Tower Type that has a Banner. No new Fusions or Uniques can be created. Only Common Banners are available (overwriting any other effect).",
+        "de": "In Zukunft erhältst du eigene Bannerwahl-Events für jeden Turmtyp mit einem Banner. Es können keine neuen Fusionen oder Einzigartigen mehr erstellt werden. Nur Gewöhnliche Banner sind verfügbar (überschreibt alle anderen Effekte)."
       },
+      "effectValues": [],
       "visual": {
         "kind": "css",
         "assetId": "multitude-visual",
@@ -2905,10 +5161,26 @@
         "en": "Power Rise",
         "de": "Machtzuwachs"
       },
-      "effectSummary": {
-        "en": "Multiplies the damage of every tower.",
-        "de": "Multipliziert den Schaden aller Türme."
+      "effectDescription": {
+        "en": "All Towers receive multiplicative Damage increase.",
+        "de": "Alle Türme erhalten einen multiplikativen Schadens-Bonus."
       },
+      "effectValues": [
+        {
+          "sourceKey": "PowerRiseDamagePercentageIncrease",
+          "label": {
+            "en": "Damage",
+            "de": "Schaden"
+          },
+          "format": {
+            "prefix": "none",
+            "suffix": "percent",
+            "hideEqualValues": false,
+            "restriction": null
+          },
+          "value": 150
+        }
+      ],
       "visual": {
         "kind": "css",
         "assetId": "power-rise-visual",

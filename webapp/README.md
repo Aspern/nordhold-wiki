@@ -26,9 +26,14 @@ German and English are supported and English is the fallback.
 
 Banner classifications are expanded by default and can be collapsed
 independently. Each classification badge reports the currently visible banner
-count. Fusion banner cards derive and display their tower-icon combination from
-the same validated eligibility relationships used to select the banner; the
-pair is never maintained as separate presentation data.
+count. Banner cards show the source-derived description plus compact
+common/rare/legendary effect sequences for tower-specific banners. Generalist,
+unique, and fusion banners show one neutral fixed value per effect instead. A
+visible localized key and screen-reader labels identify all three rarity colors.
+Fusion banner cards derive and display
+their tower-icon combination from the same validated eligibility relationships
+used to select the banner; the pair is never maintained as separate
+presentation data.
 
 ## Content and Provenance
 
@@ -38,13 +43,32 @@ extraction and identity decisions reviewable. Draft 2020-12 schemas live in
 `src/content/schemas/` and must stay byte-identical to the accepted feature
 contracts.
 
-The initial data was generated read-only from Nordhold Steam build `23261523`
-with the repository `nordhold-game-data` skill. Raw extraction output belongs
-only in a verified temporary directory and must never be committed. All effect
-summaries are independently worded in English and German. The only game media
-authorized for this application are the nine exact tower PNGs recorded in
+The data was generated read-only from Nordhold Steam build `23261523` with the
+repository `nordhold-game-data` skill. Raw extraction output belongs only in a
+verified temporary directory and must never be committed. The 97 active banner
+descriptions use the extracted English and German source localization with game
+formatting removed, supported placeholders resolved, and 126 source-derived
+effect records decoded from current or explicitly adapted legacy Odin data. Of
+these, 66 tower-specific records retain rarity values and 60 generalist, unique,
+or fusion records store their identical source slots as one fixed value. The only
+game media authorized for this application are the nine exact
+tower PNGs recorded in
 `src/assets/entities/towers/extraction-manifest.json`; banner artwork is not
 copied and is produced by the original deterministic CSS visual system.
+
+After producing a fresh raw JSON dump outside the repository with the skill's
+read-only extractor, regenerate the checked-in content from `webapp/`:
+
+```powershell
+npm.cmd run content:generate -- --raw <absolute-temporary-json-path> --output src/content
+npm.cmd run content:contracts
+npm.cmd run content:validate
+```
+
+Generation fails if the reviewed inventory, required bilingual localization,
+binary rarity dictionaries, source build, or authorized tower manifest is
+missing or inconsistent. It also fails if a non-tower-specific effect unexpectedly
+contains different source values across the three decoded slots.
 
 For a future game update, follow the accepted refresh contract and content
 inventory. Never replace stable IDs from translated names, silently accept parse

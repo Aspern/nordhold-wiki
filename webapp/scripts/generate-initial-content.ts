@@ -8,9 +8,13 @@ import {
   type NormalizationEditorial,
   type RawExtraction,
 } from "./normalize-game-data.ts";
+import { extractBannerEffectValues, sanitizeGameText } from "./extract-banner-effects.ts";
 import {
   cssVisualMotifs,
   type BannerClassification,
+  type BannerEffectValue,
+  type BannerRarityEffectValue,
+  type BannerRarityValues,
   type ImageVisual,
   type ProvenanceDataset,
   type RequiredLocalizedText,
@@ -41,6 +45,43 @@ interface InventoryBanner extends InventoryTower {
   readonly classification: BannerClassification;
   readonly towerIds: readonly string[];
 }
+
+type LocalizationTerms = ReadonlyMap<string, RequiredLocalizedText>;
+
+const bannerPlaceholderIds: Readonly<Record<string, string>> = {
+  BarrierBreaker: "barrier-shatter",
+  BleedCrits: "critical-bleed",
+  CardName: "",
+  ChillExplosion: "chill-explosion",
+  Collapse: "collapse",
+  CritAura: "deadly-presence",
+  DoomBlast: "doom-blast",
+  FocusRune: "focus-rune",
+  IcyDeath: "icy-death",
+  LightningSurge: "lightning-surge",
+  MagicalCharge: "magical-charge",
+  MagmaField: "magma-field",
+  Mastery: "mastery",
+  Omnipotence: "omnipotence",
+  Overdose: "overdose",
+  Scraper: "scraper",
+  Shockwave: "shockwave",
+  Trinity: "trinity",
+  WideBlast: "wide-blast",
+  WrathScattering: "wrath-scattering",
+};
+
+const numericPlaceholderSources: Readonly<
+  Record<string, Readonly<Record<string, string | number>>>
+> = {
+  "chaos-storm": { Amount: "ChaosStormAmount" },
+  darkness: { Amount: "DarknessChance" },
+  earthquake: { Amount: "EarthquakeDuration" },
+  "frost-magician": { Amount: "FrostMagicianChance" },
+  prism: { Amount: "PrismDamageTransfer" },
+  trinity: { Amount: 3 },
+  "wrath-scattering": { Amount: "BaseDamage" },
+};
 
 const towerSummaries: Readonly<Record<string, RequiredLocalizedText>> = {
   "arc-tower": {
@@ -78,397 +119,6 @@ const towerSummaries: Readonly<Record<string, RequiredLocalizedText>> = {
   "chaos-reaper": {
     en: "Deals heavy close-range scythe strikes with strong critical and barrier damage.",
     de: "Verursacht schwere Sensenhiebe im Nahbereich mit hohem Krit- und Barrierschaden.",
-  },
-};
-
-const bannerSummaries: Readonly<Record<string, RequiredLocalizedText>> = {
-  "barrier-shatter": {
-    en: "Boosts Chaos Reaper damage against health and barriers.",
-    de: "Steigert den Schaden des Chaos Reapers gegen Leben und Barrieren.",
-  },
-  "critical-bleed": {
-    en: "Converts part of Chaos Reaper critical damage into bleeding stacks.",
-    de: "Wandelt einen Teil des kritischen Chaos-Reaper-Schadens in Blutungsstapel um.",
-  },
-  "bodkin-arrow": {
-    en: "Raises the Arrow Tower's firing speed.",
-    de: "Erhöht die Feuerrate des Arrow Towers.",
-  },
-  "chain-crits": {
-    en: "Each critical hit builds additional critical chance.",
-    de: "Jeder kritische Treffer baut zusätzliche kritische Chance auf.",
-  },
-  "chaos-storm": {
-    en: "Periodically releases multiple barrier-burning strikes around the target.",
-    de: "Entfesselt regelmäßig mehrere barriereverbrennende Schläge im Zielgebiet.",
-  },
-  "chill-explosion": {
-    en: "Lets Frost Tower attacks occasionally freeze their targets.",
-    de: "Lässt Angriffe des Frost Towers gelegentlich Ziele einfrieren.",
-  },
-  "cold-snap": {
-    en: "Strengthens and extends the Frost Tower's slowing effect.",
-    de: "Verstärkt und verlängert den Verlangsamungseffekt des Frost Towers.",
-  },
-  collapse: {
-    en: "Provides stone each wave and improves Tornado Tower critical chance.",
-    de: "Gewährt pro Welle Stein und erhöht die kritische Chance des Tornado Towers.",
-  },
-  "corpse-explosion-tower-specific": {
-    en: "Gives Shadow Tower kills a chance to detonate the victim for area damage.",
-    de: "Gibt Shadow-Tower-Kills eine Chance, das Opfer für Flächenschaden explodieren zu lassen.",
-  },
-  "crescendo-blast": {
-    en: "Trades normal blast size for a greatly enlarged fourth explosion.",
-    de: "Tauscht normale Explosionsgröße gegen eine stark vergrößerte vierte Explosion.",
-  },
-  "barbed-arrows": {
-    en: "Arrow hits inflict a stacking bleeding effect.",
-    de: "Pfeiltreffer verursachen einen stapelbaren Blutungseffekt.",
-  },
-  "deadly-presence": {
-    en: "Improves critical damage for towers inside a Chaos Reaper's range.",
-    de: "Erhöht den kritischen Schaden von Türmen im Radius eines Chaos Reapers.",
-  },
-  "critical-nexus": {
-    en: "Critical Arc Tower hits release chain lightning.",
-    de: "Kritische Treffer des Arc Towers lösen Kettenblitze aus.",
-  },
-  "dark-worship": {
-    en: "Raises Chaos Reaper critical chance and global spell damage.",
-    de: "Erhöht die kritische Chance des Chaos Reapers und den globalen Zauberschaden.",
-  },
-  darkness: {
-    en: "Shadow Tower kills can mark victims to take more damage.",
-    de: "Shadow-Tower-Kills können Opfer markieren, sodass sie mehr Schaden erleiden.",
-  },
-  "doom-blast": {
-    en: "Killed enemies explode for damage based on their maximum health.",
-    de: "Getötete Gegner explodieren mit Schaden abhängig von ihren maximalen Lebenspunkten.",
-  },
-  "double-strike": {
-    en: "Adds a second Chaos Reaper hit worth part of the first strike.",
-    de: "Fügt einen zweiten Chaos-Reaper-Treffer mit einem Anteil des ersten Hiebs hinzu.",
-  },
-  earthquake: {
-    en: "Creates recurring damaging tremors around Tornado Towers that also stun.",
-    de: "Erzeugt wiederkehrende Schadensbeben um Tornado Towers, die zusätzlich betäuben.",
-  },
-  "chain-echo": {
-    en: "Allows Arc Tower lightning to reach more targets.",
-    de: "Lässt die Blitze des Arc Towers mehr Ziele erreichen.",
-  },
-  "focus-rune": {
-    en: "Repeated attacks on one enemy steadily gain damage.",
-    de: "Wiederholte Angriffe auf denselben Gegner gewinnen fortlaufend Schaden.",
-  },
-  "frost-magician": {
-    en: "Frost Novas periodically grant energy with a global cooldown.",
-    de: "Frostnovas gewähren regelmäßig Energie mit globaler Abklingzeit.",
-  },
-  "ghost-raven": {
-    en: "Summons a spectral raven that periodically fires a damaging vortex.",
-    de: "Beschwört einen Geisterraben, der regelmäßig einen Schadenswirbel abfeuert.",
-  },
-  "glacial-nova": {
-    en: "Frost Tower kills can unleash a powerful nova with extra freeze potential.",
-    de: "Frost-Tower-Kills können eine mächtige Nova mit zusätzlichem Gefrierpotenzial entfesseln.",
-  },
-  "light-pillar": {
-    en: "Kills can summon a sustained ray powered by Runestone Tower damage.",
-    de: "Kills können einen anhaltenden Strahl auf Basis des Runestone-Tower-Schadens beschwören.",
-  },
-  "icy-death": {
-    en: "Creates an area whose damage per second grows over time.",
-    de: "Erzeugt einen Bereich, dessen Schaden pro Sekunde mit der Zeit wächst.",
-  },
-  insanity: {
-    en: "Boosts Shadow Tower damage and adds projectiles at legendary rarity.",
-    de: "Steigert Shadow-Tower-Schaden und fügt bei legendärer Seltenheit Projektile hinzu.",
-  },
-  "lightning-surge": {
-    en: "Arc Tower hits can release an additional lightning surge.",
-    de: "Treffer des Arc Towers können einen zusätzlichen Blitzschwall auslösen.",
-  },
-  "magical-charge": {
-    en: "Adds a share of spell damage to Runestone Tower attacks.",
-    de: "Fügt Runestone-Tower-Angriffen einen Anteil des Zauberschadens hinzu.",
-  },
-  "magma-field": {
-    en: "Volcano Mortar explosions leave a stacking burning field.",
-    de: "Explosionen des Volcano Mortars hinterlassen ein stapelbares Brandfeld.",
-  },
-  mastery: {
-    en: "Increases Raven Tower damage for each of its banners.",
-    de: "Erhöht den Schaden des Raven Towers für jedes seiner Banner.",
-  },
-  "critical-bond": {
-    en: "Turns part of Arc Tower critical chance into critical damage.",
-    de: "Wandelt einen Teil der kritischen Chance des Arc Towers in kritischen Schaden um.",
-  },
-  omnipotence: {
-    en: "Improves the Raven Tower's critical damage.",
-    de: "Verbessert den kritischen Schaden des Raven Towers.",
-  },
-  "opening-blitz": {
-    en: "Deals extra Arc Tower damage to enemies above seventy percent health.",
-    de: "Verursacht zusätzlichen Arc-Tower-Schaden an Gegnern über siebzig Prozent Leben.",
-  },
-  "outreach-first": {
-    en: "Extends Volcano Mortar range while slightly reducing fire rate.",
-    de: "Vergrößert die Reichweite des Volcano Mortars bei leicht verringerter Feuerrate.",
-  },
-  overdose: {
-    en: "Carries excess Shadow Tower damage onward and raises critical damage.",
-    de: "Überträgt überschüssigen Shadow-Tower-Schaden und erhöht den kritischen Schaden.",
-  },
-  overheating: {
-    en: "Each kill adds Volcano Mortar and burn damage for the current wave.",
-    de: "Jeder Kill erhöht Volcano-Mortar- und Brandschaden für die laufende Welle.",
-  },
-  "painful-cold": {
-    en: "Exchanges part of the Frost Tower's slowing power for damage.",
-    de: "Tauscht einen Teil der Verlangsamungsstärke des Frost Towers gegen Schaden.",
-  },
-  "lucky-shot": {
-    en: "Raises Arrow Tower damage and can add another shot.",
-    de: "Erhöht den Schaden des Arrow Towers und kann einen weiteren Schuss hinzufügen.",
-  },
-  prism: {
-    en: "Transfers and amplifies damage between Runestone Towers.",
-    de: "Überträgt und verstärkt Schaden zwischen Runestone Towers.",
-  },
-  "rapid-archer": {
-    en: "Changes Arrow Tower attacks into three-shot bursts at a slower rate.",
-    de: "Ändert Arrow-Tower-Angriffe in langsamere Dreiersalven.",
-  },
-  "runic-fire-aura": {
-    en: "Runestone Towers accelerate nearby towers within their radius.",
-    de: "Runestone Towers beschleunigen nahe Türme in ihrem Radius.",
-  },
-  rapture: {
-    en: "Strengthens the weakness applied by Shadow Towers.",
-    de: "Verstärkt die vom Shadow Tower verursachte Schwäche.",
-  },
-  "ring-of-death": {
-    en: "Every tenth Shadow Tower kill triggers a damaging execution nova.",
-    de: "Jeder zehnte Shadow-Tower-Kill löst eine schädigende Hinrichtungsnova aus.",
-  },
-  scraper: {
-    en: "Tornado Tower damage rises as the target loses health.",
-    de: "Der Schaden des Tornado Towers steigt, wenn das Ziel Leben verliert.",
-  },
-  "skyfall-arrows": {
-    en: "Calls down an Arrow Rain at regular intervals.",
-    de: "Ruft in regelmäßigen Abständen einen Pfeilregen herab.",
-  },
-  squall: {
-    en: "Tornadoes begin stronger and gradually lose power.",
-    de: "Tornados beginnen stärker und verlieren allmählich Kraft.",
-  },
-  stormbringer: {
-    en: "Makes Tornado Tower vortices travel faster.",
-    de: "Lässt die Wirbel des Tornado Towers schneller ziehen.",
-  },
-  supernova: {
-    en: "Volcano Mortar attacks can trigger a large supernova.",
-    de: "Angriffe des Volcano Mortars können eine große Supernova auslösen.",
-  },
-  "tempest-stopper": {
-    en: "Adds a brief stun followed by temporary stun immunity.",
-    de: "Fügt eine kurze Betäubung mit anschließender Betäubungsimmunität hinzu.",
-  },
-  "thor-s-wrath": {
-    en: "Lets lightning revisit targets or concentrate unused jumps on one enemy.",
-    de: "Lässt Blitze Ziele erneut treffen oder ungenutzte Sprünge auf einen Gegner bündeln.",
-  },
-  "timberwind-mark": {
-    en: "Raises Arrow Tower damage and supplies wood for each Arrow Tower.",
-    de: "Erhöht Arrow-Tower-Schaden und liefert Holz für jeden Arrow Tower.",
-  },
-  trinity: {
-    en: "Splits Runestone Tower beams across several enemies at reduced damage.",
-    de: "Verteilt Runestone-Tower-Strahlen mit geringerem Schaden auf mehrere Gegner.",
-  },
-  "twin-feathers": {
-    en: "Adds another Raven Tower shot while reducing individual shot damage.",
-    de: "Fügt einen weiteren Raven-Tower-Schuss hinzu und senkt den Einzelschaden.",
-  },
-  "volcanic-eruption": {
-    en: "Greatly speeds up Volcano Mortar fire but removes manual control.",
-    de: "Beschleunigt Volcano-Mortar-Feuer stark, entfernt aber die manuelle Steuerung.",
-  },
-  vulnerability: {
-    en: "Extends weakness and makes it reduce defensive attributes.",
-    de: "Verlängert Schwäche und lässt sie Verteidigungswerte senken.",
-  },
-  "wide-blast": {
-    en: "Expands the Volcano Mortar's explosion area.",
-    de: "Vergrößert den Explosionsbereich des Volcano Mortars.",
-  },
-  "wrath-scattering": {
-    en: "Splits Raven Tower shots into several new projectiles.",
-    de: "Teilt Raven-Tower-Schüsse in mehrere neue Projektile auf.",
-  },
-  "barrier-bane": {
-    en: "Shares Barrier Shatter's bonus barrier damage with Tornado Towers.",
-    de: "Überträgt den zusätzlichen Barrierschaden von Durchbruch auf Tornado Towers.",
-  },
-  "bloody-chain": {
-    en: "Arc Tower jumps carry bleeding created by Arrow Towers.",
-    de: "Sprünge des Arc Towers übertragen vom Arrow Tower verursachte Blutung.",
-  },
-  branding: {
-    en: "Runestone beams add burn stacks derived from Magma Field.",
-    de: "Runenstrahlen fügen aus Magmafeld abgeleitete Brandstapel hinzu.",
-  },
-  "celestial-jumps": {
-    en: "Runestone Towers near Arc Towers can create their own chain jumps.",
-    de: "Runestone Towers nahe Arc Towers können eigene Kettensprünge erzeugen.",
-  },
-  "chaos-bolts": {
-    en: "Critical Arrow Tower hits apply bleeding scaled by Critical Bleed.",
-    de: "Kritische Arrow-Tower-Treffer verursachen durch Kritische Blutung skalierte Blutung.",
-  },
-  "charged-arrows": {
-    en: "Arrow Towers beside Arc Towers can launch empowered chain jumps.",
-    de: "Arrow Towers neben Arc Towers können verstärkte Kettensprünge auslösen.",
-  },
-  "clinking-mastery": {
-    en: "Passes a multiplied share of Raven mastery damage to Frost Towers.",
-    de: "Überträgt einen multiplizierten Anteil des Raven-Meisterschaftsschadens auf Frost Towers.",
-  },
-  "corpse-explosion-fusion": {
-    en: "Shadow Tower kills can explode and spread Arrow Tower bleeding.",
-    de: "Shadow-Tower-Kills können explodieren und Blutung des Arrow Towers verteilen.",
-  },
-  "crimson-beak": {
-    en: "Raven Tower shots consume bleeding stacks for multiplied damage.",
-    de: "Raven-Tower-Schüsse verbrauchen Blutungsstapel für multiplizierten Schaden.",
-  },
-  "crippling-pain": {
-    en: "Runestone Tower attacks apply a share of Frost Tower slowing.",
-    de: "Runestone-Tower-Angriffe wenden einen Anteil der Frost-Tower-Verlangsamung an.",
-  },
-  "critical-breach": {
-    en: "Arc Towers deal greater critical damage to slowed enemies.",
-    de: "Arc Towers verursachen höheren kritischen Schaden an verlangsamten Gegnern.",
-  },
-  "critical-impact": {
-    en: "Shares reduced Collapse and Omnipotence effects between both towers.",
-    de: "Teilt abgeschwächte Einsturz- und Allmacht-Effekte zwischen beiden Türmen.",
-  },
-  "damnable-weak": {
-    en: "Adds scaled Doom Blast damage to Shadow attacks against weakened enemies.",
-    de: "Fügt Shadow-Angriffen gegen geschwächte Gegner skalierten Schicksalsschlag-Schaden hinzu.",
-  },
-  "destructive-strike": {
-    en: "Lightning Surge leaves a strong burning field enhanced by Magma Field.",
-    de: "Blitzschwall hinterlässt ein starkes, durch Magmafeld verbessertes Brandfeld.",
-  },
-  "doom-cold": {
-    en: "Doom Blast can leave a slowing zone behind.",
-    de: "Schicksalsschlag kann eine Verlangsamungszone hinterlassen.",
-  },
-  "doom-scattering": {
-    en: "Tornado kills can trigger an empowered Wrath Scattering volley.",
-    de: "Tornado-Kills können eine verstärkte Schicksalsstreuungs-Salve auslösen.",
-  },
-  "wings-of-chaos": {
-    en: "Shares critical aura and Omnipotence bonuses between both towers.",
-    de: "Teilt Boni von kritischer Aura und Allmacht zwischen beiden Türmen.",
-  },
-  "double-nova": {
-    en: "Frost Tower attacks can release a second nova.",
-    de: "Angriffe des Frost Towers können eine zweite Nova freisetzen.",
-  },
-  "fire-arrows": {
-    en: "Arrow Tower shots add burn stacks scaled by Magma Field.",
-    de: "Arrow-Tower-Schüsse fügen durch Magmafeld skalierte Brandstapel hinzu.",
-  },
-  "frost-scythe": {
-    en: "Chaos Reapers deal multiplied damage to slowed enemies.",
-    de: "Chaos Reaper verursachen multiplizierten Schaden an verlangsamten Gegnern.",
-  },
-  hydra: {
-    en: "Applies Trinity to Volcano Mortars with slower fire and amplified transfer.",
-    de: "Wendet Trinität mit langsamerem Feuer und verstärkter Übertragung auf Volcano Mortars an.",
-  },
-  "iced-target": {
-    en: "Slowed enemies receive additional spell damage.",
-    de: "Verlangsamte Gegner erleiden zusätzlichen Zauberschaden.",
-  },
-  lightstorm: {
-    en: "Lightning Surge can burst through targets, strongly scaling with Magical Charge.",
-    de: "Blitzschwall kann Ziele durchbrechen und stark mit Magischer Ladung skalieren.",
-  },
-  "mystic-winds": {
-    en: "Transfers a share of Magical Charge damage into tornadoes.",
-    de: "Überträgt einen Anteil des Schadens von Magischer Ladung auf Tornados.",
-  },
-  nightburst: {
-    en: "Volcano Mortar explosions apply an amplified weakness effect.",
-    de: "Explosionen des Volcano Mortars wenden einen verstärkten Schwächeeffekt an.",
-  },
-  "pact-of-dusk": {
-    en: "Moves weakness to arrows and redirects Arrow damage bonuses to Shadow Towers.",
-    de: "Verlagert Schwäche auf Pfeile und leitet Arrow-Schadensboni an Shadow Towers weiter.",
-  },
-  "precision-shots": {
-    en: "Scales Volcano Mortar damage with additive Arrow Tower damage banners.",
-    de: "Skaliert Volcano-Mortar-Schaden mit additiven Schadensbannern des Arrow Towers.",
-  },
-  scorching: {
-    en: "Applies a share of Scraper's missing-health bonus to Runestone attacks.",
-    de: "Wendet einen Anteil des Feger-Bonus gegen fehlendes Leben auf Runenangriffe an.",
-  },
-  "shadow-tornado": {
-    en: "Nearby Tornado Towers let Shadow Towers summon longer, stronger tornadoes.",
-    de: "Nahe Tornado Towers lassen Shadow Towers längere, stärkere Tornados beschwören.",
-  },
-  shockwave: {
-    en: "Critical Arc Tower hits can emit area shockwaves scaled by Wide Blast.",
-    de: "Kritische Arc-Tower-Treffer können durch Großexplosion skalierte Flächenschockwellen auslösen.",
-  },
-  soulflame: {
-    en: "Makes weakness amplify burning damage more strongly.",
-    de: "Lässt Schwäche den Brandschaden stärker erhöhen.",
-  },
-  "speedy-death": {
-    en: "Focus Rune increases the damage growth granted by Icy Death.",
-    de: "Fokusrune erhöht das von Eisiger Tod gewährte Schadenswachstum.",
-  },
-  "spinning-scythe": {
-    en: "Adjacent Chaos Reapers can create bleed-only scythes based on their damage.",
-    de: "Angrenzende Chaos Reaper können reine Blutungssensen anhand ihres Schadens erzeugen.",
-  },
-  "spiral-of-pain": {
-    en: "Tornadoes multiply their damage against weakened enemies.",
-    de: "Tornados multiplizieren ihren Schaden gegen geschwächte Gegner.",
-  },
-  sweeper: {
-    en: "Applies a share of Scraper to Wrath Scattering projectiles.",
-    de: "Wendet einen Anteil von Feger auf Projektile der Schicksalsstreuung an.",
-  },
-  "unchained-rage": {
-    en: "Raven kills transfer capped Shadow overflow damage through Overdose.",
-    de: "Raven-Kills übertragen begrenzten Shadow-Überschussschaden durch Exzess.",
-  },
-  "venomous-bleed": {
-    en: "Bleeding from either tower also inflicts a special weakness.",
-    de: "Blutung beider Türme verursacht zusätzlich eine besondere Schwäche.",
-  },
-  dispersion: {
-    en: "Doubles banner choices while increasing tower and upgrade cost growth.",
-    de: "Verdoppelt Bannerwahlen und erhöht dafür das Wachstum von Turm- und Upgradekosten.",
-  },
-  multitude: {
-    en: "Creates separate common-only banner choices per tower and disables new uniques and fusions.",
-    de: "Erzeugt getrennte, gewöhnliche Bannerwahlen pro Turm und deaktiviert neue Einzigartige und Fusionen.",
-  },
-  "power-rise": {
-    en: "Multiplies the damage of every tower.",
-    de: "Multipliziert den Schaden aller Türme.",
   },
 };
 
@@ -519,7 +169,7 @@ function parseInventory(markdown: string): {
       section = "banners";
       continue;
     }
-    if (!line.startsWith("| [ ] |") && !line.startsWith("| [x] |")) {
+    if (!/^\|\s*\[[ x]\]\s*\|/u.test(line)) {
       continue;
     }
     const cells = parseCells(line);
@@ -577,6 +227,172 @@ function rawString(record: ReturnType<typeof rawRecord>, key: string): string {
   return value;
 }
 
+function rawBytes(record: ReturnType<typeof rawRecord>): readonly number[] {
+  const data = record.data as Readonly<Record<string, unknown>>;
+  const serialization = data.serializationData;
+  if (typeof serialization !== "object" || serialization === null) {
+    throw new Error(`Raw record '${String(record.path_id)}' has no serialization data.`);
+  }
+  const bytes = (serialization as Readonly<Record<string, unknown>>).SerializedBytes;
+  if (!Array.isArray(bytes) || !bytes.every((value) => typeof value === "number")) {
+    throw new Error(`Raw record '${String(record.path_id)}' has no serialized byte array.`);
+  }
+  return bytes;
+}
+
+function localizationTerms(raw: RawExtraction): LocalizationTerms {
+  const source = raw.records.find(
+    (record) => record.source === "NordHold_Data/resources.assets" && record.name === "I2Languages",
+  );
+  const data = source?.data as Readonly<Record<string, unknown>> | undefined;
+  const mSource = data?.mSource as Readonly<Record<string, unknown>> | undefined;
+  const terms = mSource?.mTerms;
+  if (!Array.isArray(terms)) {
+    throw new Error("I2Languages localization terms are unavailable.");
+  }
+  const result = new Map<string, RequiredLocalizedText>();
+  for (const value of terms) {
+    if (typeof value !== "object" || value === null) {
+      continue;
+    }
+    const term = (value as Readonly<Record<string, unknown>>).Term;
+    const languages = (value as Readonly<Record<string, unknown>>).Languages;
+    const en: unknown = Array.isArray(languages) ? languages[1] : undefined;
+    const de: unknown = Array.isArray(languages) ? languages[2] : undefined;
+    if (typeof term === "string" && typeof en === "string" && typeof de === "string") {
+      result.set(term, { en, de });
+    }
+  }
+  return result;
+}
+
+function requiredLocalization(terms: LocalizationTerms, term: string): RequiredLocalizedText {
+  const localized = terms.get(term);
+  if (localized === undefined || localized.en.length === 0 || localized.de.length === 0) {
+    throw new Error(`Required English/German localization '${term}' is unavailable.`);
+  }
+  return localized;
+}
+
+function resolveBannerReferences(
+  value: string,
+  locale: "en" | "de",
+  banner: InventoryBanner,
+  bannerNames: ReadonlyMap<string, RequiredLocalizedText>,
+): string {
+  return value.replace(/\[([A-Za-z0-9]+)\]/gu, (_placeholder, token: string) => {
+    if (token === "CardName") {
+      return banner.name[locale];
+    }
+    const targetId = bannerPlaceholderIds[token];
+    if (targetId === undefined || targetId.length === 0) {
+      throw new Error(`Banner '${banner.id}' has unresolved placeholder '${token}'.`);
+    }
+    return requiredMapValue(bannerNames, targetId, "Banner placeholder")[locale];
+  });
+}
+
+function compactNumbers(values: BannerRarityValues): string {
+  return [values.common, values.rare, values.legendary].map(String).join("/");
+}
+
+function resolveNumericPlaceholders(
+  value: string,
+  bannerId: string,
+  locale: "en" | "de",
+  effects: readonly BannerEffectValue[],
+): string {
+  let resolved = value;
+  const configured = numericPlaceholderSources[bannerId] ?? {};
+  for (const [placeholder, source] of Object.entries(configured)) {
+    const replacement =
+      typeof source === "number"
+        ? String(source)
+        : (() => {
+            const effect = effects.find((candidate) => candidate.sourceKey === source);
+            if (effect === undefined) {
+              throw new Error(
+                `Banner '${bannerId}' cannot resolve numeric placeholder '${placeholder}'.`,
+              );
+            }
+            return "value" in effect ? String(effect.value) : compactNumbers(effect.values);
+          })();
+    resolved = resolved.replaceAll(`[${placeholder}]`, replacement);
+  }
+
+  if (bannerId === "chaos-storm") {
+    resolved = resolved.replace("[Amount2]x", locale === "de" ? "mehrfachen" : "multiple");
+  } else if (bannerId === "ghost-raven") {
+    resolved =
+      locale === "de"
+        ? resolved.replace("[Amount]% des", "einen Anteil des")
+        : resolved.replace("[Amount]% of", "a share of");
+  } else if (
+    ["light-pillar", "supernova", "celestial-jumps", "spinning-scythe"].includes(bannerId)
+  ) {
+    resolved =
+      locale === "de"
+        ? resolved.replace("[Amount]%-Chance", "Chance")
+        : resolved.replace("[Amount]% chance", "chance");
+  } else if (bannerId === "squall") {
+    resolved =
+      locale === "de"
+        ? resolved.replace("alle [Amount2] Sekunden um [Amount]% ab", "mit der Zeit ab")
+        : resolved.replace("by [Amount]% every [Amount2] seconds", "over time");
+  } else if (bannerId === "tempest-stopper") {
+    resolved =
+      locale === "de"
+        ? resolved.replace("für [Amount] Sekunden", "für kurze Zeit")
+        : resolved.replace("for [Amount] seconds", "for a short time");
+  } else if (bannerId === "doom-scattering") {
+    resolved = resolved
+      .replace("[Chance] Chance", "Chance")
+      .replace("a [Chance] chance", "a chance");
+  }
+  return resolved;
+}
+
+function resolveDescription(
+  source: RequiredLocalizedText,
+  banner: InventoryBanner,
+  effects: readonly BannerEffectValue[],
+  bannerNames: ReadonlyMap<string, RequiredLocalizedText>,
+): RequiredLocalizedText {
+  const resolveLocale = (locale: "en" | "de"): string => {
+    let value = resolveNumericPlaceholders(
+      sanitizeGameText(source[locale]),
+      banner.id,
+      locale,
+      effects,
+    );
+    value = resolveBannerReferences(value, locale, banner, bannerNames);
+    if (/<[^>]+>|\[[^\]]+\]/u.test(value)) {
+      throw new Error(`Banner '${banner.id}' has an unresolved ${locale} description: '${value}'.`);
+    }
+    return value;
+  };
+  return { en: resolveLocale("en"), de: resolveLocale("de") };
+}
+
+export function normalizeBannerEffectValues(
+  bannerId: string,
+  classification: BannerClassification,
+  effects: readonly BannerRarityEffectValue[],
+): readonly BannerEffectValue[] {
+  if (classification === "tower-specific") {
+    return effects;
+  }
+
+  return effects.map(({ values, ...effect }) => {
+    if (values.common !== values.rare || values.common !== values.legendary) {
+      throw new Error(
+        `Banner '${bannerId}' has rarity-dependent source values despite its '${classification}' classification.`,
+      );
+    }
+    return { ...effect, value: values.common };
+  });
+}
+
 function requiredMapValue<T>(values: ReadonlyMap<string, T>, key: string, label: string): T {
   const value = values.get(key);
   if (value === undefined) {
@@ -612,7 +428,7 @@ function reviewedInventory(content: WikiContent, provenance: ProvenanceDataset):
     `**Source build**: \`${content.gameBuildId}\`  `,
     "**Status**: Agent editorial and technical review complete; human release visual inspection remains tracked separately.",
     "",
-    "This review record maps every published stable identity to independently worded bilingual editorial content, deterministic visual metadata, runtime eligibility, and source provenance. It contains no copied game descriptions or banner artwork.",
+    "This review record maps every published stable identity to bilingual source content, deterministic visual metadata, runtime eligibility, and source provenance. It contains no raw extraction dump or banner artwork.",
     "",
     "## Towers",
     "",
@@ -629,8 +445,8 @@ function reviewedInventory(content: WikiContent, provenance: ProvenanceDataset):
     "",
     "## Banners",
     "",
-    "| Done | Stable ID | English name | German name | Classification | Eligible towers | English summary | German summary | Visual | Authorship / license | Provenance |",
-    "|---|---|---|---|---|---|---|---|---|---|---|",
+    "| Done | Stable ID | English name | German name | Classification | Eligible towers | English description | German description | Effect values | Visual | Authorship / license | Provenance |",
+    "|---|---|---|---|---|---|---|---|---|---|---|---|",
   );
   for (const banner of content.banners) {
     const eligibleTowers = content.eligibility
@@ -638,7 +454,7 @@ function reviewedInventory(content: WikiContent, provenance: ProvenanceDataset):
       .map((entry) => `\`${entry.towerId}\``)
       .join(", ");
     lines.push(
-      `| [x] | \`${banner.id}\` | ${markdownCell(banner.name.en)} | ${markdownCell(banner.name.de ?? banner.name.en)} | \`${banner.classification}\` | ${eligibleTowers} | ${markdownCell(banner.effectSummary.en)} | ${markdownCell(banner.effectSummary.de)} | CSS \`${banner.visual.motif}\`, seed ${String(banner.visual.seed)} | Original CSS; \`${banner.visual.licenseReference}\` | ${sourceLabel(banner.provenanceRef)} |`,
+      `| [x] | \`${banner.id}\` | ${markdownCell(banner.name.en)} | ${markdownCell(banner.name.de ?? banner.name.en)} | \`${banner.classification}\` | ${eligibleTowers} | ${markdownCell(banner.effectDescription.en)} | ${markdownCell(banner.effectDescription.de)} | ${String(banner.effectValues.length)} source record(s) | CSS \`${banner.visual.motif}\`, seed ${String(banner.visual.seed)} | Original CSS; \`${banner.visual.licenseReference}\` | ${sourceLabel(banner.provenanceRef)} |`,
     );
   }
   return `${lines.join("\n")}\n`;
@@ -672,6 +488,31 @@ async function main(): Promise<void> {
   ) {
     throw new Error("Tower sprite authorization is missing or belongs to another game build.");
   }
+
+  const terms = localizationTerms(raw);
+  const bannerNames = new Map<string, RequiredLocalizedText>(
+    inventory.banners.map((banner) => [banner.id, banner.name]),
+  );
+  const bannerEffects = new Map(
+    inventory.banners.map((banner) => {
+      const record = rawRecord(raw, banner.pathId);
+      const extractedValues = extractBannerEffectValues(banner.id, rawBytes(record), (term) => {
+        const label = requiredLocalization(terms, term);
+        return {
+          en: resolveBannerReferences(label.en, "en", banner, bannerNames),
+          de: resolveBannerReferences(label.de, "de", banner, bannerNames),
+        };
+      });
+      const values = normalizeBannerEffectValues(banner.id, banner.classification, extractedValues);
+      const description = resolveDescription(
+        requiredLocalization(terms, rawString(record, "Description")),
+        banner,
+        values,
+        bannerNames,
+      );
+      return [banner.id, { description, values }] as const;
+    }),
+  );
 
   const towerSourceKeyById = new Map<string, string>();
   for (const tower of inventory.towers) {
@@ -783,14 +624,12 @@ async function main(): Promise<void> {
       return [tower.id, { effectSummary, visual }] as const;
     }),
     ...inventory.banners.map((banner, index) => {
-      const effectSummary = bannerSummaries[banner.id];
-      if (effectSummary === undefined) {
-        throw new Error(`Banner '${banner.id}' lacks editorial data.`);
-      }
+      const effect = requiredMapValue(bannerEffects, banner.id, "Banner effect");
       return [
         banner.id,
         {
-          effectSummary,
+          effectDescription: effect.description,
+          effectValues: effect.values,
           visual: {
             kind: "css" as const,
             assetId: `${banner.id}-visual`,
@@ -851,4 +690,6 @@ async function main(): Promise<void> {
   );
 }
 
-await main();
+if (process.argv[1] !== undefined && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await main();
+}

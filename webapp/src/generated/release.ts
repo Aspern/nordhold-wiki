@@ -1,7 +1,7 @@
 import type { ReleaseMetadata } from "../types/release.ts";
 
 export const releaseMetadata = {
-  "version": "0.1.0",
-  "buildDate": "2026-09-05",
-  "commitSha": "21b1276c03e5091f1d71c789d24c88f855c3ed83"
+  "version": "1.0.0",
+  "buildDate": "2026-09-08",
+  "commitSha": "3e781f465619ecfa5ab7ec06f0595ba89130eb08"
 } as const satisfies ReleaseMetadata;

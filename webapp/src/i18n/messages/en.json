@@ -36,6 +36,12 @@
   "navigation": {
     "backToTowers": "Back to all towers"
   },
+  "rarity": {
+    "common": "Common",
+    "key": "Rarity colors",
+    "legendary": "Legendary",
+    "rare": "Rare"
+  },
   "notFound": {
     "body": "This page or tower does not exist in the current wiki data.",
     "title": "Nothing found here"

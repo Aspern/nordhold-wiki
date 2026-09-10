@@ -64,6 +64,30 @@ function classificationLabel(classification: BannerClassification): string {
         :label="t('detail.searchLabel')"
         :clear-label="t('search.clear')"
       />
+      <div class="detail-rarity-key" :aria-label="t('rarity.key')">
+        <span class="detail-rarity-key__title">{{ t("rarity.key") }}:</span>
+        <span class="detail-rarity-key__item">
+          <span
+            class="detail-rarity-key__swatch detail-rarity-key__swatch--common"
+            aria-hidden="true"
+          ></span>
+          {{ t("rarity.common") }}
+        </span>
+        <span class="detail-rarity-key__item">
+          <span
+            class="detail-rarity-key__swatch detail-rarity-key__swatch--rare"
+            aria-hidden="true"
+          ></span>
+          {{ t("rarity.rare") }}
+        </span>
+        <span class="detail-rarity-key__item">
+          <span
+            class="detail-rarity-key__swatch detail-rarity-key__swatch--legendary"
+            aria-hidden="true"
+          ></span>
+          {{ t("rarity.legendary") }}
+        </span>
+      </div>
       <p v-if="bannerSearch" class="wiki-result-meta" aria-live="polite">
         {{
           t("detail.resultCount", {
@@ -149,5 +173,46 @@ function classificationLabel(classification: BannerClassification): string {
   margin-bottom: var(--wiki-space-4);
   font-family: var(--wiki-font-family-display);
   font-size: var(--wiki-font-size-section);
+}
+
+.detail-rarity-key {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--wiki-space-2) var(--wiki-space-4);
+  margin-top: var(--wiki-space-3);
+  color: var(--wiki-color-ink-muted);
+  font-size: var(--wiki-font-size-small);
+}
+
+.detail-rarity-key__title {
+  color: var(--wiki-color-ink);
+  font-weight: 800;
+}
+
+.detail-rarity-key__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wiki-space-1);
+}
+
+.detail-rarity-key__swatch {
+  width: var(--wiki-space-3);
+  height: var(--wiki-space-3);
+  border: var(--wiki-border-width) solid var(--wiki-color-border);
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.detail-rarity-key__swatch--common {
+  color: var(--wiki-color-rarity-common);
+}
+
+.detail-rarity-key__swatch--rare {
+  color: var(--wiki-color-rarity-rare);
+}
+
+.detail-rarity-key__swatch--legendary {
+  color: var(--wiki-color-rarity-legendary);
 }
 </style>

@@ -60,7 +60,7 @@ describe("content repository", () => {
     if (executableBanner === undefined) {
       throw new Error("The valid fixture requires a banner.");
     }
-    (executableBanner.effectSummary as { en: string }).en = "javascript:alert(1)";
+    (executableBanner.effectDescription as { en: string }).en = "javascript:alert(1)";
     expect(() => createContentRepository(executable)).toThrow("unsafe text");
   });
 

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import type {
   Banner,
   BannerClassification,
+  BannerEffectValue,
   ContentBundle,
   EntityVisual,
   Eligibility,
@@ -100,7 +101,9 @@ export interface NormalizationDecisions {
 }
 
 export interface EditorialRecord {
-  readonly effectSummary: RequiredLocalizedText;
+  readonly effectSummary?: RequiredLocalizedText;
+  readonly effectDescription?: RequiredLocalizedText;
+  readonly effectValues?: readonly BannerEffectValue[];
   readonly visual: EntityVisual;
 }
 
@@ -421,6 +424,10 @@ export function normalizeGameData(
       issues.push(`Tower '${id}' requires an authorized image visual.`);
       continue;
     }
+    if (presentation.effectSummary === undefined) {
+      issues.push(`Tower '${id}' requires an editorial effect summary.`);
+      continue;
+    }
     const provenanceRef = `tower-${id}-source`;
     towers.push({
       id,
@@ -457,6 +464,10 @@ export function normalizeGameData(
       issues.push(`Banner '${id}' requires an original CSS visual.`);
       continue;
     }
+    if (presentation.effectDescription === undefined || presentation.effectValues === undefined) {
+      issues.push(`Banner '${id}' requires an extracted effect description and values.`);
+      continue;
+    }
     const towerAffinityId =
       decision.towerAffinitySourceKey === undefined
         ? undefined
@@ -476,7 +487,8 @@ export function normalizeGameData(
       sortOrder: decision.sortOrder,
       classification: decision.classification,
       name: decision.name,
-      effectSummary: presentation.effectSummary,
+      effectDescription: presentation.effectDescription,
+      effectValues: presentation.effectValues,
       visual: presentation.visual,
       provenanceRef,
       ...(towerAffinityId === undefined ? {} : { towerAffinityId }),
